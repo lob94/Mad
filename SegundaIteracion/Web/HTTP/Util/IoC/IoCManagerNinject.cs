@@ -32,7 +32,7 @@ namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
                 To<EventDaoEntityFramework>();
 
             kernel.Bind<IEventService>().
-                To<IEventService>();
+                To<EventService>();
 
             /* DbContext */
             string connectionString =

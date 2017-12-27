@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.Event.WebForm1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Miniportal.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" 
+    Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.Event.WebForm1" meta:resourcekey="Page" %>
 
 <!DOCTYPE html>
 
