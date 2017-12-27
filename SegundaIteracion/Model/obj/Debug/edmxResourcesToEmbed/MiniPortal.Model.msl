@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EsUdcDotNetMiniPortalModelStoreContainer" CdmEntityContainer="MiniPortalEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="commentDate" ColumnName="commentDate" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="loginName" ColumnName="loginName" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labels">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Label">
+        <MappingFragment StoreEntitySet="Label">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="labelId" ColumnName="labelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recommendations">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Recommendation">
+        <MappingFragment StoreEntitySet="Recommendation">
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="recommendationId" ColumnName="recommendationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGroups">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.UserGroup">
+        <MappingFragment StoreEntitySet="UserGroup">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="enPassword" ColumnName="enPassword" />
+          <ScalarProperty Name="loginName" ColumnName="loginName" />
+          <ScalarProperty Name="usrId" ColumnName="usrId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CommentsAndLabels" TypeName="Es.Udc.DotNet.MiniPortal.Model.CommentsAndLabels" StoreEntitySet="CommentsAndLabels">
+      <EndProperty Name="Label">
+        <ScalarProperty Name="labelId" ColumnName="labelId" />
+      </EndProperty>
+      <EndProperty Name="Comment">
+        <ScalarProperty Name="commentId" ColumnName="commentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UsersAndGroups" TypeName="Es.Udc.DotNet.MiniPortal.Model.UsersAndGroups" StoreEntitySet="UsersAndGroups">
+      <EndProperty Name="UserGroup">
+        <ScalarProperty Name="groupId" ColumnName="groupId" />
+      </EndProperty>
+      <EndProperty Name="UserProfile">
+        <ScalarProperty Name="usrId" ColumnName="userId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,114 @@
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\EntityFramework.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\ModelUtil.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Ninject.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\EntityFramework.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Ninject.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\EntityFramework.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\ModelUtil.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Ninject.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\EntityFramework.xml
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Ninject.xml
+C:\Users\LUIS\Desktop\universidad\programas\Med\MiniPortal\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\EntityFramework.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\ModelUtil.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Ninject.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\EntityFramework.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Ninject.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MiniPortal\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\EntityFramework.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\ModelUtil.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Ninject.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\EntityFramework.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Ninject.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\it-1\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\EntityFramework.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\ModelUtil.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Ninject.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\EntityFramework.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Ninject.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\EntityFramework.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\ModelUtil.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Ninject.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\EntityFramework.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Ninject.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MISCAMBIOS\Model\obj\Debug\MiniPortal.Model.pdb

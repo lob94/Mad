@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Es.Udc.DotNet.MiniPortal.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="commentId" />
+    </Key>
+    <Property Name="commentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="bigint" />
+    <Property Name="eventId" Type="bigint" />
+    <Property Name="loginName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="content" Type="varchar" MaxLength="255" />
+    <Property Name="commentDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentsAndLabels">
+    <Key>
+      <PropertyRef Name="labelId" />
+      <PropertyRef Name="commentId" />
+    </Key>
+    <Property Name="labelId" Type="bigint" Nullable="false" />
+    <Property Name="commentId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="eventId" />
+    </Key>
+    <Property Name="eventId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryId" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="review" Type="varchar" MaxLength="255" />
+    <Property Name="eventDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Label">
+    <Key>
+      <PropertyRef Name="labelId" />
+    </Key>
+    <Property Name="labelId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recommendation">
+    <Key>
+      <PropertyRef Name="recommendationId" />
+    </Key>
+    <Property Name="recommendationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="bigint" />
+    <Property Name="groupId" Type="bigint" />
+    <Property Name="eventId" Type="bigint" />
+    <Property Name="reason" Type="varchar" MaxLength="50" />
+    <Property Name="created" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="usrId" />
+    </Key>
+    <Property Name="usrId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loginName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="enPassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="language" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersAndGroups">
+    <Key>
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="groupId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Comment_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="eventId" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="eventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="usrId" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsAndLabels_Comment">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CommentsAndLabels" Type="Self.CommentsAndLabels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="commentId" />
+      </Principal>
+      <Dependent Role="CommentsAndLabels">
+        <PropertyRef Name="commentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsAndLabels_Label">
+    <End Role="Label" Type="Self.Label" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CommentsAndLabels" Type="Self.CommentsAndLabels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Label">
+        <PropertyRef Name="labelId" />
+      </Principal>
+      <Dependent Role="CommentsAndLabels">
+        <PropertyRef Name="labelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommendation_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Recommendation" Type="Self.Recommendation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="eventId" />
+      </Principal>
+      <Dependent Role="Recommendation">
+        <PropertyRef Name="eventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommendation_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="Recommendation" Type="Self.Recommendation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="usrId" />
+      </Principal>
+      <Dependent Role="Recommendation">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommendation_UserGroup">
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="0..1" />
+    <End Role="Recommendation" Type="Self.Recommendation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="Recommendation">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersAndGroups_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsersAndGroups" Type="Self.UsersAndGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="usrId" />
+      </Principal>
+      <Dependent Role="UsersAndGroups">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersAndGroups_UserGroup">
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsersAndGroups" Type="Self.UsersAndGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="UsersAndGroups">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EsUdcDotNetMiniPortalModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentsAndLabels" EntityType="Self.CommentsAndLabels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recommendation" EntityType="Self.Recommendation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersAndGroups" EntityType="Self.UsersAndGroups" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Comment_Event" Association="Self.FK_Comment_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsAndLabels_Comment" Association="Self.FK_CommentsAndLabels_Comment">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="CommentsAndLabels" EntitySet="CommentsAndLabels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsAndLabels_Label" Association="Self.FK_CommentsAndLabels_Label">
+      <End Role="Label" EntitySet="Label" />
+      <End Role="CommentsAndLabels" EntitySet="CommentsAndLabels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Category" Association="Self.FK_Event_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommendation_Event" Association="Self.FK_Recommendation_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Recommendation" EntitySet="Recommendation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommendation_User" Association="Self.FK_Recommendation_User">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Recommendation" EntitySet="Recommendation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommendation_UserGroup" Association="Self.FK_Recommendation_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroup" />
+      <End Role="Recommendation" EntitySet="Recommendation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersAndGroups_User" Association="Self.FK_UsersAndGroups_User">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="UsersAndGroups" EntitySet="UsersAndGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersAndGroups_UserGroup" Association="Self.FK_UsersAndGroups_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroup" />
+      <End Role="UsersAndGroups" EntitySet="UsersAndGroups" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

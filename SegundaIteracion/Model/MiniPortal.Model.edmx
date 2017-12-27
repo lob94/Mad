@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Es.Udc.DotNet.MiniPortal.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="commentId" />
+          </Key>
+          <Property Name="commentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="bigint" />
+          <Property Name="eventId" Type="bigint" />
+          <Property Name="loginName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="content" Type="varchar" MaxLength="255" />
+          <Property Name="commentDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommentsAndLabels">
+          <Key>
+            <PropertyRef Name="labelId" />
+            <PropertyRef Name="commentId" />
+          </Key>
+          <Property Name="labelId" Type="bigint" Nullable="false" />
+          <Property Name="commentId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoryId" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="review" Type="varchar" MaxLength="255" />
+          <Property Name="eventDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Label">
+          <Key>
+            <PropertyRef Name="labelId" />
+          </Key>
+          <Property Name="labelId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recommendation">
+          <Key>
+            <PropertyRef Name="recommendationId" />
+          </Key>
+          <Property Name="recommendationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="bigint" />
+          <Property Name="groupId" Type="bigint" />
+          <Property Name="eventId" Type="bigint" />
+          <Property Name="reason" Type="varchar" MaxLength="50" />
+          <Property Name="created" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="groupId" />
+          </Key>
+          <Property Name="groupId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="usrId" />
+          </Key>
+          <Property Name="usrId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="loginName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="enPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="language" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersAndGroups">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="groupId" />
+          </Key>
+          <Property Name="userId" Type="bigint" Nullable="false" />
+          <Property Name="groupId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Comment_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="eventId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="usrId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentsAndLabels_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CommentsAndLabels" Type="Self.CommentsAndLabels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="commentId" />
+            </Principal>
+            <Dependent Role="CommentsAndLabels">
+              <PropertyRef Name="commentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentsAndLabels_Label">
+          <End Role="Label" Type="Self.Label" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CommentsAndLabels" Type="Self.CommentsAndLabels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Label">
+              <PropertyRef Name="labelId" />
+            </Principal>
+            <Dependent Role="CommentsAndLabels">
+              <PropertyRef Name="labelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Recommendation" Type="Self.Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="eventId" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_User">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+          <End Role="Recommendation" Type="Self.Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="usrId" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_UserGroup">
+          <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="0..1" />
+          <End Role="Recommendation" Type="Self.Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroup">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersAndGroups_User">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersAndGroups" Type="Self.UsersAndGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="usrId" />
+            </Principal>
+            <Dependent Role="UsersAndGroups">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersAndGroups_UserGroup">
+          <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersAndGroups" Type="Self.UsersAndGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroup">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="UsersAndGroups">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsUdcDotNetMiniPortalModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentsAndLabels" EntityType="Self.CommentsAndLabels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recommendation" EntityType="Self.Recommendation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersAndGroups" EntityType="Self.UsersAndGroups" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Comment_Event" Association="Self.FK_Comment_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentsAndLabels_Comment" Association="Self.FK_CommentsAndLabels_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="CommentsAndLabels" EntitySet="CommentsAndLabels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentsAndLabels_Label" Association="Self.FK_CommentsAndLabels_Label">
+            <End Role="Label" EntitySet="Label" />
+            <End Role="CommentsAndLabels" EntitySet="CommentsAndLabels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Category" Association="Self.FK_Event_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_Event" Association="Self.FK_Recommendation_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Recommendation" EntitySet="Recommendation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_User" Association="Self.FK_Recommendation_User">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Recommendation" EntitySet="Recommendation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_UserGroup" Association="Self.FK_Recommendation_UserGroup">
+            <End Role="UserGroup" EntitySet="UserGroup" />
+            <End Role="Recommendation" EntitySet="Recommendation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersAndGroups_User" Association="Self.FK_UsersAndGroups_User">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UsersAndGroups" EntitySet="UsersAndGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersAndGroups_UserGroup" Association="Self.FK_UsersAndGroups_UserGroup">
+            <End Role="UserGroup" EntitySet="UserGroup" />
+            <End Role="UsersAndGroups" EntitySet="UsersAndGroups" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Es.Udc.DotNet.MiniPortal.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="MiniPortalEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Categories" EntityType="Es.Udc.DotNet.MiniPortal.Model.Category" />
+          <EntitySet Name="Comments" EntityType="Es.Udc.DotNet.MiniPortal.Model.Comment" />
+          <EntitySet Name="Events" EntityType="Es.Udc.DotNet.MiniPortal.Model.Event" />
+          <EntitySet Name="Labels" EntityType="Es.Udc.DotNet.MiniPortal.Model.Label" />
+          <EntitySet Name="Recommendations" EntityType="Es.Udc.DotNet.MiniPortal.Model.Recommendation" />
+          <EntitySet Name="UserGroups" EntityType="Es.Udc.DotNet.MiniPortal.Model.UserGroup" />
+          <EntitySet Name="UserProfiles" EntityType="Es.Udc.DotNet.MiniPortal.Model.UserProfile" />
+          <AssociationSet Name="FK_Event_Category" Association="Es.Udc.DotNet.MiniPortal.Model.FK_Event_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Event" Association="Es.Udc.DotNet.MiniPortal.Model.FK_Comment_Event">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Es.Udc.DotNet.MiniPortal.Model.FK_Comment_User">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_Event" Association="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_Event">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="Recommendation" EntitySet="Recommendations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_User" Association="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_User">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Recommendation" EntitySet="Recommendations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_UserGroup" Association="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_UserGroup">
+            <End Role="UserGroup" EntitySet="UserGroups" />
+            <End Role="Recommendation" EntitySet="Recommendations" />
+          </AssociationSet>
+          <AssociationSet Name="CommentsAndLabels" Association="Es.Udc.DotNet.MiniPortal.Model.CommentsAndLabels">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="Label" EntitySet="Labels" />
+          </AssociationSet>
+          <AssociationSet Name="UsersAndGroups" Association="Es.Udc.DotNet.MiniPortal.Model.UsersAndGroups">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Event_Category" FromRole="Category" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="commentId" />
+          </Key>
+          <Property Name="commentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int64" />
+          <Property Name="eventId" Type="Int64" />
+          <Property Name="loginName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="commentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Event" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Comment_Event" FromRole="Comment" ToRole="Event" />
+          <NavigationProperty Name="UserProfile" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Comment_User" FromRole="Comment" ToRole="UserProfile" />
+          <NavigationProperty Name="Labels" Relationship="Es.Udc.DotNet.MiniPortal.Model.CommentsAndLabels" FromRole="Comment" ToRole="Label" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoryId" Type="Int64" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="review" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="eventDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Category" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Event_Category" FromRole="Event" ToRole="Category" />
+          <NavigationProperty Name="Comments" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Comment_Event" FromRole="Event" ToRole="Comment" />
+          <NavigationProperty Name="Recommendations" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_Event" FromRole="Event" ToRole="Recommendation" />
+        </EntityType>
+        <EntityType Name="Label">
+          <Key>
+            <PropertyRef Name="labelId" />
+          </Key>
+          <Property Name="labelId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comments" Relationship="Es.Udc.DotNet.MiniPortal.Model.CommentsAndLabels" FromRole="Label" ToRole="Comment" />
+        </EntityType>
+        <EntityType Name="Recommendation">
+          <Key>
+            <PropertyRef Name="recommendationId" />
+          </Key>
+          <Property Name="recommendationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int64" />
+          <Property Name="groupId" Type="Int64" />
+          <Property Name="eventId" Type="Int64" />
+          <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Event" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_Event" FromRole="Recommendation" ToRole="Event" />
+          <NavigationProperty Name="UserProfile" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_User" FromRole="Recommendation" ToRole="UserProfile" />
+          <NavigationProperty Name="UserGroup" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_UserGroup" FromRole="Recommendation" ToRole="UserGroup" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="groupId" />
+          </Key>
+          <Property Name="groupId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Recommendations" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_UserGroup" FromRole="UserGroup" ToRole="Recommendation" />
+          <NavigationProperty Name="UserProfiles" Relationship="Es.Udc.DotNet.MiniPortal.Model.UsersAndGroups" FromRole="UserGroup" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="usrId" />
+          </Key>
+          <Property Name="usrId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="loginName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="enPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="language" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comments" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Comment_User" FromRole="UserProfile" ToRole="Comment" />
+          <NavigationProperty Name="Recommendations" Relationship="Es.Udc.DotNet.MiniPortal.Model.FK_Recommendation_User" FromRole="UserProfile" ToRole="Recommendation" />
+          <NavigationProperty Name="UserGroups" Relationship="Es.Udc.DotNet.MiniPortal.Model.UsersAndGroups" FromRole="UserProfile" ToRole="UserGroup" />
+        </EntityType>
+        <Association Name="FK_Event_Category">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Event">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Event" Role="Event" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="eventId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.UserProfile" Role="UserProfile" Multiplicity="0..1" />
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="usrId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_Event">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Event" Role="Event" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Recommendation" Role="Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="eventId" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_User">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.UserProfile" Role="UserProfile" Multiplicity="0..1" />
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Recommendation" Role="Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="usrId" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_UserGroup">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.UserGroup" Role="UserGroup" Multiplicity="0..1" />
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Recommendation" Role="Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroup">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommentsAndLabels">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Comment" Role="Comment" Multiplicity="*" />
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.Label" Role="Label" Multiplicity="*" />
+        </Association>
+        <Association Name="UsersAndGroups">
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.UserProfile" Role="UserProfile" Multiplicity="*" />
+          <End Type="Es.Udc.DotNet.MiniPortal.Model.UserGroup" Role="UserGroup" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EsUdcDotNetMiniPortalModelStoreContainer" CdmEntityContainer="MiniPortalEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="commentDate" ColumnName="commentDate" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="loginName" ColumnName="loginName" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+                <ScalarProperty Name="review" ColumnName="review" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labels">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Label">
+              <MappingFragment StoreEntitySet="Label">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="labelId" ColumnName="labelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recommendations">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.Recommendation">
+              <MappingFragment StoreEntitySet="Recommendation">
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="recommendationId" ColumnName="recommendationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroups">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.MiniPortal.Model.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="language" ColumnName="language" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="enPassword" ColumnName="enPassword" />
+                <ScalarProperty Name="loginName" ColumnName="loginName" />
+                <ScalarProperty Name="usrId" ColumnName="usrId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CommentsAndLabels" TypeName="Es.Udc.DotNet.MiniPortal.Model.CommentsAndLabels" StoreEntitySet="CommentsAndLabels">
+            <EndProperty Name="Label">
+              <ScalarProperty Name="labelId" ColumnName="labelId" />
+            </EndProperty>
+            <EndProperty Name="Comment">
+              <ScalarProperty Name="commentId" ColumnName="commentId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UsersAndGroups" TypeName="Es.Udc.DotNet.MiniPortal.Model.UsersAndGroups" StoreEntitySet="UsersAndGroups">
+            <EndProperty Name="UserGroup">
+              <ScalarProperty Name="groupId" ColumnName="groupId" />
+            </EndProperty>
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="usrId" ColumnName="userId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams />
+  </edmx:Designer>
+</edmx:Edmx>
