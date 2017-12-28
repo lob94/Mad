@@ -22,12 +22,12 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// eventList control.
+        /// eventList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox eventList;
+        protected global::System.Web.UI.WebControls.GridView eventList2;
     }
 }

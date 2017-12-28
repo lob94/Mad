@@ -8,6 +8,9 @@ using Es.Udc.DotNet.MiniPortal.Model.UserProfileDao;
 using Es.Udc.DotNet.MiniPortal.Model.UserService;
 using Es.Udc.DotNet.MiniPortal.Model.EventDao;
 using Es.Udc.DotNet.MiniPortal.Model.EventService;
+using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
+using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
+using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 
 namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
 {
@@ -33,6 +36,15 @@ namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
 
             kernel.Bind<IEventService>().
                 To<EventService>();
+
+            kernel.Bind<ICategoryDao>().
+                To<CategoryDaoEntityFramework>();
+
+            kernel.Bind<ICommentDao>().
+                To<CommentDaoEntityFramework>();
+
+            kernel.Bind<ILabelDao>().
+                To<LabelDaoEntityFramework>();
 
             /* DbContext */
             string connectionString =

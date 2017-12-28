@@ -5,7 +5,14 @@
     runat="server">
     <div id="form" style="margin-right: auto; margin-left: auto;">
         <form id="form1" runat="server">
-            <asp:ListBox ID="eventList" runat="server" Width="881px"></asp:ListBox>
+            <asp:GridView ID="eventList2" runat="server"
+                            AutoGenerateColumns="False"
+                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
+                            <Columns>
+                                <asp:BoundField DataField="name" meta:resourcekey="name" />
+                                <asp:BoundField DataField="categoryName" meta:resourcekey="categoryName" />
+                            </Columns>
+            </asp:GridView>
         </form>
     </div>
 </asp:Content>

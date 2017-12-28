@@ -234,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sql\SqlServerCreateDatabase.sql" />
+    <None Include="Sql\Insert.sql">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
