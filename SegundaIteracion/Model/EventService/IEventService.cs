@@ -38,8 +38,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         /// Find a event by category.
         /// </summary>
         /// <param name="Name">The event name</param>
-        /// <param startIndex="StartIndex">The event name</param>
-        /// <param count="Count">The event name</param>
+        /// <param startIndex="StartIndex">Starting search position</param>
+        /// <param count="Count">Max. number of events to search</param>
         /// <return>The list of events</return>
         /// <exception cref="InstanceNotFoundException"/>
         ICollection<EventDto> FindEventsByKeywords(string name, int startIndex, int count);
@@ -48,11 +48,22 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         /// Find a event by category.
         /// </summary>
         /// <param categoryId="CategoryId">The event categoryId.</param>
-        /// <param startIndex="StartIndex">The event name</param>
-        /// <param count="Count">The event name</param>
+        /// <param startIndex="StartIndex">Starting search position</param>
+        /// <param count="Count">Max. number of events to search</param>
         /// <return>The list of events</return>
         /// <exception cref="InstanceNotFoundException"/>
         ICollection<EventDto> FindEventsByCategory(long categoryId, int startIndex, int count);
+
+        /// <summary>
+        /// Find a event by keywords and category.
+        /// </summary>
+        /// <param name="Name">The event name</param>
+        /// <param categoryId="CategoryId">The event categoryId.</param>
+        /// <param startIndex="StartIndex">Starting search position</param>
+        /// <param count="Count">Max. number of events to search</param>
+        /// <return>The list of events</return>
+        /// <exception cref="InstanceNotFoundException"/>
+        ICollection<EventDto> FindEventsByKeywordsAndCategory(String name, long categoryId, int startIndex, int count);
 
         /// <summary>
         /// Find a event by category.
@@ -71,6 +82,13 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         /// <return>A list of commentsDto</return>
         /// <exception cref="InstanceNotFoundException"/>
         ICollection<CommentDto> FindAllComments(long eventId, int startIndex, int count);
+
+        /// <summary>
+        /// Show all the categories.
+        /// </summary>
+        /// <return>A list of categories</return>
+        /// <exception cref="InstanceNotFoundException"/>
+        ICollection<Category> FindAllCategories();
 
         /// <summary>
         /// Add new Comment to an event
@@ -125,6 +143,10 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         [Transactional]
         ICollection<Label> ShowLabels();
 
+        int CountFindEventsByKeywords(string name);
 
+        int CountFindEventsByCategory(long categoryId);
+
+        int CountFindEventsByKeywordsAndCategory(string name, long categoryId);
     }
 }

@@ -2,6 +2,7 @@
 using Es.Udc.DotNet.MiniPortal.Model.EventDao;
 using Es.Udc.DotNet.ModelUtil.Exceptions;
 using System.Collections.Generic;
+using System.Runtime.Caching;
 using Ninject;
 using Es.Udc.DotNet.ModelUtil.Transactions;
 using Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao;
@@ -27,6 +28,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         public ILabelDao LabelDao { private get; set; }
         [Inject]
         public ICategoryDao CategoryDao { private get; set; }
+
+        private ObjectCache cache = MemoryCache.Default;
 
 
         #region IEventService Members
@@ -68,6 +71,20 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             return eventsDto;
         }
 
+        /// <exception cref="InstanceNotFoundException"/>     
+        [Transactional]
+        public ICollection<EventDto> FindEventsByKeywordsAndCategory(String name, long categoryId, int startIndex, int count)
+        {
+            String[] keywords = name.Split(' ');
+            ICollection<Event> events = EventDao.FindByKeywordsAndCategory(keywords, categoryId, startIndex, count);
+            ICollection<EventDto> eventsDto = new HashSet<EventDto>();
+            foreach (Event e in events)
+            {
+                eventsDto.Add(new EventDto(e));
+            }
+            return eventsDto;
+        }
+
         public ICollection<EventDto> FindAllEvents()
         {
             ICollection<Event> events = EventDao.GetAllElements();
@@ -96,6 +113,16 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             }
             return commentsDto;
         }
+
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        public ICollection<Category> FindAllCategories()
+        {
+            ICollection<Category> categories = CategoryDao.GetAllElements();
+            return categories;
+
+        }
+
         [Transactional]
         public Comment AddComment(string comment, long eventId, long userId)
         {
@@ -165,6 +192,75 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         {
             ICollection<Label> lista = LabelDao.GetAllElements();
             return lista;
+        }
+
+        public int CountFindEventsByKeywords(string name)
+        {
+            String clave = "CountFindProducts" + name;
+            CacheItemPolicy policy = new CacheItemPolicy();
+            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
+            object cacheCountProducts = (object)cache.Get(clave);
+            int countProducts;
+            if (cacheCountProducts == null)
+            {
+                String[] keywords = name.Split(' ');
+                countProducts = EventDao.CountFindEvents(keywords, -1);
+                cache.Add(clave, countProducts, policy);
+            }
+            else
+            {
+                countProducts = (int)cacheCountProducts;
+            }
+
+            return (int)countProducts;
+        }
+
+        public int CountFindEventsByCategory(long categoryId)
+        {
+            String clave = "CountFindProducts" + categoryId;
+            CacheItemPolicy policy = new CacheItemPolicy();
+            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
+            object cacheCountProducts = (object)cache.Get(clave);
+            int countProducts;
+            if (cacheCountProducts == null)
+            {
+                String keywords = "";
+                String[] name = keywords.Split(' ');
+                countProducts = EventDao.CountFindEvents(name, categoryId);
+                cache.Add(clave, countProducts, policy);
+            }
+            else
+            {
+                countProducts = (int)cacheCountProducts;
+            }
+
+            return (int)countProducts;
+        }
+
+
+        public int CountFindEventsByKeywordsAndCategory(string name, long categoryId)
+        {
+            String clave = "CountFindProductsByKeywordsAndCategory" + name + "categoryId" + categoryId;
+            CacheItemPolicy policy = new CacheItemPolicy();
+            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
+            object cacheCountProducts = (object)cache.Get(clave);
+            if (name == null)
+            {
+                name = "";
+            }
+            int countProducts;
+            if (cacheCountProducts == null)
+            {
+                String[] keywords = name.Split(' ');
+                countProducts = EventDao.CountFindEvents(keywords, categoryId);
+                cache.Add(clave, countProducts, policy);
+            }
+            else
+            {
+                countProducts = (int)cacheCountProducts;
+            }
+
+            return (int)countProducts;
         }
 
         #endregion

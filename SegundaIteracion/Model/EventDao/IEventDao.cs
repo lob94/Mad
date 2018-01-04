@@ -16,6 +16,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
         /// <exception cref="InstanceNotFoundException"/>
         ICollection<Event> FindByKeywordsAndCategory(String[] name, long categoryId, int startIndex, int count);
 
+        /// <summary>
+        /// Finds Total Event by name and category
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <param categoryId="categoryId">categoryId</param>
+        /// <returns>Total events od this search</returns>
+        int CountFindEvents(String[] name, long categoryId);
+
     }
 }
 

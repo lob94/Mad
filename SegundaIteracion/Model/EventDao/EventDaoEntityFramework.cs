@@ -20,11 +20,27 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
 
         public ICollection<Event> FindByKeywordsAndCategory(String[] name, long categoryId, int startIndex, int count)
         {
-            int i = 0;
+           
             ICollection<Event> events = new List<Event>();
 
-            #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
+            ObjectQuery<Event> query = getFindQuery(name, categoryId);
 
+            var result = query.Skip(startIndex).Take(count).ToList<Event>();
+
+            try
+            {
+                events = result.ToList<Event>();
+            }
+            catch (Exception)
+            {
+            }
+
+            return events;
+        }
+
+        private System.Data.Entity.Core.Objects.ObjectQuery<Event> getFindQuery(string[] name, long categoryId)
+        {
+            int i = 0;
             String sqlQuery =
                 "SELECT VALUE u FROM MiniPortalEntities.Events AS u ";
 
@@ -58,20 +74,13 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
 
             ObjectQuery<Event> query =
               ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Event>(sqlQuery, pCategoryId);
+            return query;
+        }
 
-            var result = query.Skip(startIndex).Take(count).ToList<Event>();
-
-            try
-            {
-                events = result.ToList<Event>();
-            }
-            catch (Exception)
-            {
-            }
-
-            #endregion
-
-            return events;
+        public int CountFindEvents(String[] name, long categoryId)
+        {
+            int result = getFindQuery(name, categoryId).Count();
+            return result;
         }
 
         #endregion
