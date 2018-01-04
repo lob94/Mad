@@ -11,7 +11,7 @@ using Ninject;
 using System.Collections;
 using System.Data;
 
-namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
+namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 {
     public partial class Home : System.Web.UI.Page
     {
