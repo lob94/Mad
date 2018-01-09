@@ -96,6 +96,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             }
             return commentsDto;
         }
+
         [Transactional]
         public Comment AddComment(string comment, long eventId, long userId)
         {

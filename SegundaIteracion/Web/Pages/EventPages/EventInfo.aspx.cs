@@ -14,12 +14,13 @@ using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
 using Es.Udc.DotNet.MiniPortal.Model.UserService;
 using Es.Udc.DotNet.MiniPortal.Model;
 
-namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventInfo
+namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 {
     public partial class EventInfo : System.Web.UI.Page
     {
         long evId;
         IEventService eventService;
+        IUserService userService;
         Event evento;
       
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventInfo
             callService();
             if (!IsPostBack)
             {
-                
+                initFromValues();
                 initGridView();
             }
             else
@@ -44,13 +45,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventInfo
         }
         private void initGridView()
         {
-            /* dataSource.ObjectCreating += this.dataSource_CreateObject;     
-             dataSource.TypeName = "Es.Udc.DotNet.MiniPortal.Model.EventService.IEventService";
-             dataSource.SelectMethod = "FindAllComments";
-
-             comentarios.DataSource = dataSource;
-             comentarios.DataBind();*/
-            eventService.FindAllComments(evento.eventId,0,1);
+            try
+            {
+                ICollection<CommentDto> comentarios = eventService.FindAllComments(evento.eventId, 0, 10);
+                comentariosList.DataSource = comentarios;
+                comentariosList.DataBind();
+            }
+            catch{ }
         }
 
         protected void initFromValues()
@@ -58,9 +59,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventInfo
             string evString = Request.Params.Get("eventId");
             evId = Convert.ToInt32(evString);
             evento = eventService.FindEventById(evId);
-
-
-
+            nombre.Text = evento.name;
+            categoria.Text = evento.Category.name;
+            review.Text = evento.review;
+            date.Text = evento.eventDate.ToString();
+           
         }
 
         protected void addComentario_Click(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventInfo
                 UserProfileDetails userProfileDetails =
                     SessionManager.FindUserProfileDetails(Context);
                 String login = userProfileDetails.Email;
-                //Necesitamos el userId
+                UserProfile u = userService.FindUserByLoginName(login);
                 
                 DateTime commentDate = DateTime.Now;
 
@@ -79,11 +82,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventInfo
                 c.loginName = login;
                 c.commentDate = commentDate;
                 c.Event = evento;
-                eventService.AddComment(c,evento.eventId.);
-
+                eventService.AddComment(contentComment,evento.eventId,u.usrId);
             }
             catch{
-
+                throw new Exception();
             }
         }
     }

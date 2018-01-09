@@ -11,7 +11,7 @@
              <asp:Label ID="date" runat="server"></asp:Label>     
           </div>
           <div>
-             <asp:GridView ID="comentarios" runat="server"
+             <asp:GridView ID="comentariosList" runat="server"
                  AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
                             <Columns>

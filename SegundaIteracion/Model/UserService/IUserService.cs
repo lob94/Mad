@@ -126,6 +126,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         [Transactional]
         ICollection<UserGroupDto> FindAllGroups();
 
+        /// <summary>
+        /// Find user by Login Name
+        /// </summary>
+        /// <returns>One user</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]   UserProfile FindUserByLoginName(string login);
+     
+
         /// <sumary>
         /// List all groups
         /// </sumary>
