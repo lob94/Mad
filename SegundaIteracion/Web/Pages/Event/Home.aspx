@@ -22,5 +22,16 @@
                             </Columns>
             </asp:GridView>
         </form>
-    </div>
+        <div class="previousNextLinks">
+            <span class="previousLink">
+                <asp:HyperLink ID="linkPrevious" Text="Previous" 
+                    runat="server" Visible="False">
+                </asp:HyperLink>
+            </span>
+            <span class="nextLink">
+                <asp:HyperLink ID="linkNext" Text="Next" 
+                    runat="server" Visible="False">
+                </asp:HyperLink>
+            </span>
+        </div>
 </asp:Content>

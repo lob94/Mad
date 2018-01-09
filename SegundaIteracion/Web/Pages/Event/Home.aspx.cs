@@ -11,6 +11,7 @@ using Ninject;
 using System.Collections;
 using System.Data;
 using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
+using Es.Udc.DotNet.MiniPortal.Web.Properties;
 
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
 {
@@ -19,10 +20,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
         String keywords;
         Boolean categoryForm = false;
         long categoryID = -1;
+        int startIndex = 0;
+        int count = 1;
+        ICollection<EventDto> events;
         IEventService eventService;
 
-        ObjectDataSource dataSource = new ObjectDataSource();
-        ObjectDataSource dropDataSource = new ObjectDataSource();
         protected void Page_Load(object sender, EventArgs e)
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
@@ -31,23 +33,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
             initFromsValues();
             initDropDownListView();
             initGridView();
-        }
-        protected void dropDataSource_CreateObject(object sender, ObjectDataSourceEventArgs e)
-        {
-            IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
-            IEventService eventService = container.Resolve<IEventService>();
-            
-            e.ObjectInstance = (IEventService)eventService;
-
+            PreviousNextButtons();
         }
         private void initDropDownListView()
         {
-            dropDataSource.ObjectCreating += this.dropDataSource_CreateObject;
-            dropDataSource.TypeName = "Es.Udc.DotNet.MiniPortal.Model.EventService.IEventService";
-            dropDataSource.SelectMethod = "FindAllCategories";
-
-
-            dropDownList.DataSource = dropDataSource;
+            dropDownList.DataSource = eventService.FindAllCategories();
             dropDownList.DataBind();
         }
         private void initFromsValues()
@@ -56,6 +46,16 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
             if (keywords == null)
             {
                 keywords = "";
+            }
+
+            String startString = Request.Params.Get("startIndex");
+            if (startString == null || startString == "0")
+            {
+                startIndex = 0;
+            }
+            else
+            {
+                startIndex = Convert.ToInt16(startString);
             }
 
             String catString = Request.Params.Get("categoryId");
@@ -70,51 +70,62 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
 
             }
         }
-        protected void dataSource_CreateObject(object sender, ObjectDataSourceEventArgs e)
-        {
-            IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
-            IEventService eventService = container.Resolve<IEventService>();
-
-            e.ObjectInstance = (IEventService)eventService;
-
-        }
         private void initGridView()
         {
-            dataSource.ObjectCreating += this.dataSource_CreateObject;
-            
-            
-            dataSource.TypeName = "Es.Udc.DotNet.MiniPortal.Model.EventService.IEventService";
-
-
-
             if (categoryForm)
             {
-                dataSource.SelectParameters.Add("categoryId", DbType.Int32, categoryID.ToString());
                 if(keywords != "")
                 {
-                    dataSource.SelectParameters.Add("name", DbType.String, keywords);
-                    dataSource.SelectMethod = "FindEventsByKeywordsAndCategory";
-                    dataSource.SelectCountMethod = "CountFindEventsByKeywordsAndCategory";
+                    events = eventService.FindEventsByKeywordsAndCategory(keywords, categoryID, startIndex, count);
                 }else
                 {
-                    dataSource.SelectMethod = "FindEventsByCategory";
-                    dataSource.SelectCountMethod = "CountFindEventsByCategory";
+                    events = eventService.FindEventsByCategory(categoryID, startIndex, count);
                 }
             }else
             {
-                dataSource.SelectParameters.Add("name", DbType.String, keywords);
-                dataSource.SelectMethod = "FindEventsByKeywords";
-                dataSource.SelectCountMethod = "CountFindEventsByKeywords";
+                events = eventService.FindEventsByKeywords(keywords, startIndex, count);
             }
-            
-
-            
-
-            eventList2.AllowPaging = true;
-            eventList2.PageSize = 10;
-            eventList2.DataSource = dataSource;
+            eventList2.DataSource = events;
             eventList2.DataBind();
         }
+
+        private void PreviousNextButtons()
+        {
+            if ((startIndex - count) >= 0)
+            {
+                String url = "http://localhost:8082/Pages/Event/" + "Home.aspx" + "?startIndex=" + (startIndex - count);
+                if(keywords != "")
+                {
+                    url += "&keywords=" + keywords;
+                }
+                if (categoryForm)
+                {
+                    url += "&categoryId=" + categoryID;
+                }
+                this.linkPrevious.NavigateUrl = Response.ApplyAppPathModifier(url);
+                this.linkPrevious.Visible = true;
+            }
+            int numberResult;
+            if (categoryForm)
+                numberResult = eventService.CountFindEventsByKeywordsAndCategory(keywords, categoryID);
+            else
+                numberResult = eventService.CountFindEventsByKeywords(keywords);
+            if((startIndex + count) < numberResult)
+            {
+                String url = "http://localhost:8082/Pages/Event/" + "Home.aspx" + "?startIndex=" + (startIndex + count);
+                if (keywords != "")
+                {
+                    url += "&keywords=" + keywords;
+                }
+                if (categoryForm)
+                {
+                    url += "&categoryId=" + categoryID;
+                }
+                this.linkNext.NavigateUrl = Response.ApplyAppPathModifier(url);
+                this.linkNext.Visible = true;
+            }
+        }
+
         protected void search_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
