@@ -103,7 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\styles.css" />
-    <Content Include="Pages\Event\Home.aspx" />
+    <Content Include="Pages\EventPages\EventInfo.aspx" />
+    <Content Include="Pages\EventPages\Home.aspx" />
     <Content Include="Pages\User\UpdateUserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -153,11 +154,18 @@
     <Compile Include="Pages\Errors\InternalError.aspx.designer.cs">
       <DependentUpon>InternalError.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Event\Home.aspx.cs">
+    <Compile Include="Pages\EventPages\EventInfo.aspx.cs">
+      <DependentUpon>EventInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventPages\EventInfo.aspx.designer.cs">
+      <DependentUpon>EventInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventPages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Event\Home.aspx.designer.cs">
+    <Compile Include="Pages\EventPages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.aspx.cs">
@@ -237,18 +245,18 @@
     <Content Include="Pages\Errors\App_LocalResources\en-default\InternalError.aspx.resx" />
     <Content Include="Pages\Errors\App_LocalResources\es\InternalError.aspx.es.resx" />
     <Content Include="Pages\Errors\App_LocalResources\gl\InternalError.aspx.gl.resx" />
-    <Content Include="Pages\Event\App_LocalResources\en-default\Authentication.aspx.resx" />
-    <Content Include="Pages\Event\App_LocalResources\en-default\ChangePassword.aspx.resx" />
-    <Content Include="Pages\Event\App_LocalResources\en-default\Register.aspx.resx" />
-    <Content Include="Pages\Event\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
-    <Content Include="Pages\Event\App_LocalResources\es\Authentication.aspx.es.resx" />
-    <Content Include="Pages\Event\App_LocalResources\es\ChangePassword.aspx.es.resx" />
-    <Content Include="Pages\Event\App_LocalResources\es\Register.aspx.es.resx" />
-    <Content Include="Pages\Event\App_LocalResources\es\UpdateUserProfile.aspx.es.resx" />
-    <Content Include="Pages\Event\App_LocalResources\gl\Authentication.aspx.gl.resx" />
-    <Content Include="Pages\Event\App_LocalResources\gl\ChangePassword.aspx.gl.resx" />
-    <Content Include="Pages\Event\App_LocalResources\gl\Register.aspx.gl.resx" />
-    <Content Include="Pages\Event\App_LocalResources\gl\UpdateUserProfile.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\Authentication.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\ChangePassword.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\Register.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\Authentication.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\ChangePassword.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\Register.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\UpdateUserProfile.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\Authentication.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\ChangePassword.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\Register.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\UpdateUserProfile.aspx.gl.resx" />
     <EmbeddedResource Include="Pages\User\App_LocalResources\en-default\Register.aspx.resx" />
     <Content Include="Pages\User\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
   </ItemGroup>

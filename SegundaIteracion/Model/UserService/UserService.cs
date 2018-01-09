@@ -198,6 +198,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             return groupsDto;
         }
 
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        public UserProfile FindUserByLoginName(string login)
+        {
+            UserProfile u = UserProfileDao.FindByLoginName(login);
+            return u;
+        }
+
         [Transactional]
         public UserGroup AddGroup(string name, string description, long userId)
         {

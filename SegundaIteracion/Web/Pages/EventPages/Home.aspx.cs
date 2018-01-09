@@ -13,7 +13,7 @@ using System.Data;
 using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
 using Es.Udc.DotNet.MiniPortal.Web.Properties;
 
-namespace Es.Udc.DotNet.MiniPortal.Web.Pages.Event
+namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 {
     public partial class Home : System.Web.UI.Page
     {

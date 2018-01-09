@@ -114,6 +114,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             return commentsDto;
         }
 
+<<<<<<< HEAD
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
         public ICollection<Category> FindAllCategories()
@@ -123,6 +124,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 
         }
 
+=======
+>>>>>>> d1d94190653cd2caade979c0b1b83d1ac4a60926
         [Transactional]
         public Comment AddComment(string comment, long eventId, long userId)
         {

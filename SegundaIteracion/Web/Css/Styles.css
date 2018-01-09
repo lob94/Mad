@@ -113,8 +113,9 @@ div.button {
 
 input, select, textarea  {
     background-color: #f4f4f4;
-    margin-left: 0px;
+    margin-left: 128px;
     margin-right: 7px;
+    margin-bottom: 25px;
 }
 
 /* Error messages. */
