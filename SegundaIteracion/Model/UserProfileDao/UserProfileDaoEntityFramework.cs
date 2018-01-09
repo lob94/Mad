@@ -75,6 +75,27 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserProfileDao
             return userProfile;
         }
 
+        public UserProfile FindByEmail(string email)
+        {
+            UserProfile userProfile = null;
+
+            #region Option 2: Using eSQL over dbSet
+
+            string sqlQuery = "Select * FROM UserProfile where email=@email";
+            DbParameter emailParameter =
+                new System.Data.SqlClient.SqlParameter("email", email);
+
+            userProfile = Context.Database.SqlQuery<UserProfile>(sqlQuery, emailParameter).FirstOrDefault<UserProfile>();
+
+            #endregion
+
+            if (userProfile == null)
+                throw new InstanceNotFoundException(email,
+                    typeof(UserProfile).FullName);
+
+            return userProfile;
+        }
+
         #endregion
     }
 

@@ -206,6 +206,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             return u;
         }
 
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        public UserProfile FindUserByEmail(string email)
+        {
+            UserProfile u = UserProfileDao.FindByEmail(email);
+            return u;
+        }
+
         [Transactional]
         public UserGroup AddGroup(string name, string description, long userId)
         {
