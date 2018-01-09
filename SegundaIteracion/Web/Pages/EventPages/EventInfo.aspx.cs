@@ -41,6 +41,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
             eventService = container.Resolve<IEventService>();
+            userService = container.Resolve<IUserService>();
 
         }
         private void initGridView()

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Miniportal.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" 
-    Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.Event.Home" meta:resourcekey="Page"%>
+    Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages.Home" meta:resourcekey="Page"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
@@ -16,12 +16,13 @@
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
                             <Columns>
                                 <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
-                                    meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/Event/Event.aspx?eventId={0}" />
+                                    meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventInfo.aspx?eventId={0}" />
                                 <asp:BoundField DataField="name" meta:resourcekey="name" />
                                 <asp:BoundField DataField="categoryName" meta:resourcekey="categoryName" />
                             </Columns>
             </asp:GridView>
         </form>
+        </div>
         <div class="previousNextLinks">
             <span class="previousLink">
                 <asp:HyperLink ID="linkPrevious" Text="Previous" 
