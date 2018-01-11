@@ -18,8 +18,9 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
     {
         [Inject]
         public IUserProfileDao UserProfileDao { private get; set; }
+        [Inject]
         public IUserGroup1Dao GroupDao { private get; set; }
-
+        [Inject]
         public IRecommendationDao RecommendationDao { private get; set; }
         [Inject]
         public IEventDao EventDao { private get; set; }

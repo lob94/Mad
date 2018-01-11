@@ -12,33 +12,27 @@ using System.Collections;
 using System.Data;
 using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
 using Es.Udc.DotNet.MiniPortal.Web.Properties;
+using Es.Udc.DotNet.MiniPortal.Model.UserService;
 
-namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
+namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class Groups : System.Web.UI.Page
     {
         String keywords;
         Boolean categoryForm = false;
         long categoryID = -1;
         int startIndex = 0;
         int count = 1;
-        ICollection<EventDto> events;
-        IEventService eventService;
+        ICollection<UserGroupDto> groups;
+        IUserService userService;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
-            eventService = container.Resolve<IEventService>();
-            ICollection<EventDto> eventDto = eventService.FindAllEvents();
+            userService = container.Resolve<IUserService>();
             initFromsValues();
-            initDropDownListView();
             initGridView();
-            PreviousNextButtons();
-        }
-        private void initDropDownListView()
-        {
-            dropDownList.DataSource = eventService.FindAllCategories();
-            dropDownList.DataBind();
+            //PreviousNextButtons();
         }
         private void initFromsValues()
         {
@@ -57,44 +51,20 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             {
                 startIndex = Convert.ToInt16(startString);
             }
-
-            String catString = Request.Params.Get("categoryId");
-            if (catString == null || catString == "0")
-            {
-                categoryForm = false;
-            }
-            else
-            {
-                categoryForm = true;
-                categoryID = Convert.ToInt32(catString);
-
-            }
         }
         private void initGridView()
         {
-            if (categoryForm)
-            {
-                if(keywords != "")
-                {
-                    events = eventService.FindEventsByKeywordsAndCategory(keywords, categoryID, startIndex, count);
-                }else
-                {
-                    events = eventService.FindEventsByCategory(categoryID, startIndex, count);
-                }
-            }else
-            {
-                events = eventService.FindEventsByKeywords(keywords, startIndex, count);
-            }
-            eventList2.DataSource = events;
-            eventList2.DataBind();
+            groups = userService.FindAllGroups();
+            groupList.DataSource = groups;
+            groupList.DataBind();
         }
 
-        private void PreviousNextButtons()
+        /*private void PreviousNextButtons()
         {
             if ((startIndex - count) >= 0)
             {
                 String url = "http://localhost:8082/Pages/EventPages/" + "Home.aspx" + "?startIndex=" + (startIndex - count);
-                if(keywords != "")
+                if (keywords != "")
                 {
                     url += "&keywords=" + keywords;
                 }
@@ -110,7 +80,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
                 numberResult = eventService.CountFindEventsByKeywordsAndCategory(keywords, categoryID);
             else
                 numberResult = eventService.CountFindEventsByKeywords(keywords);
-            if((startIndex + count) < numberResult)
+            if ((startIndex + count) < numberResult)
             {
                 String url = "http://localhost:8082/Pages/EventPages/" + "Home.aspx" + "?startIndex=" + (startIndex + count);
                 if (keywords != "")
@@ -124,23 +94,23 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
                 this.linkNext.NavigateUrl = Response.ApplyAppPathModifier(url);
                 this.linkNext.Visible = true;
             }
-        }
+        }*/
 
         protected void search_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
-            {
+            /*if (Page.IsValid)
+            {*/
                 /* Get data. */
-                
-                String keywords = textEntry.Text;
-                String categoryId = dropDownList.SelectedItem.Value;
+
+               /* String keywords = textEntry.Text;
+                String categoryId = dropDownList.SelectedItem.Value;*/
                 /* Do action. */
-                String url =
+               /* String url =
                     String.Format("./Home.aspx?keywords={0}&categoryId={1}", keywords, categoryId);
 
                 Response.Redirect(Response.ApplyAppPathModifier(url));
 
-            }
+            }*/
         }
     }
 }

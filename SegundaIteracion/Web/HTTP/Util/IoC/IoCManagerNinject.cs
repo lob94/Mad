@@ -11,6 +11,8 @@ using Es.Udc.DotNet.MiniPortal.Model.EventService;
 using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
 using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
 using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
+using Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao;
+using Es.Udc.DotNet.MiniPortal.Model.RecommendationDao;
 
 namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
 {
@@ -45,6 +47,12 @@ namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
 
             kernel.Bind<ILabelDao>().
                 To<LabelDaoEntityFramework>();
+
+            kernel.Bind<IUserGroup1Dao>().
+                To<UserGroup1DaoEntityFramework>();
+
+            kernel.Bind<IRecommendationDao>().
+                To<RecommendationDaoEntityFramework>();
 
             /* DbContext */
             string connectionString =
