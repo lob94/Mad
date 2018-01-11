@@ -29,12 +29,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             if (!IsPostBack)
             {
                 initFromValues();
-                initGridView();
             }
             else
             {
                 initFromValues();
-                initGridView();
             }
         }
         protected void callService()
@@ -43,16 +41,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             eventService = container.Resolve<IEventService>();
             userService = container.Resolve<IUserService>();
 
-        }
-        private void initGridView()
-        {
-            try
-            {
-                ICollection<CommentDto> comentarios = eventService.FindAllComments(evento.eventId, 0, 10);
-                comentariosList.DataSource = comentarios;
-                comentariosList.DataBind();
-            }
-            catch{ }
         }
 
         protected void initFromValues()

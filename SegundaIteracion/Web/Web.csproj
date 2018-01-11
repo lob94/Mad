@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\styles.css" />
+    <Content Include="Pages\EventPages\EventComments.aspx" />
     <Content Include="Pages\EventPages\EventInfo.aspx" />
     <Content Include="Pages\EventPages\Home.aspx" />
     <Content Include="Pages\User\UpdateUserProfile.aspx" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="Pages\Errors\InternalError.aspx.designer.cs">
       <DependentUpon>InternalError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventPages\EventComments.aspx.cs">
+      <DependentUpon>EventComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventPages\EventComments.aspx.designer.cs">
+      <DependentUpon>EventComments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EventPages\EventInfo.aspx.cs">
       <DependentUpon>EventInfo.aspx</DependentUpon>

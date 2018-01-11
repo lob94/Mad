@@ -4,26 +4,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
         <form id="form2" runat="server">
-           <div id="form" style="margin-right: auto; margin-left: auto;">
-             <asp:Label ID="nombre" runat="server"> </asp:Label>
-             <asp:Label ID="categoria" runat="server"></asp:Label>
-             <asp:Label ID="review" runat="server"></asp:Label>
-             <asp:Label ID="date" runat="server"></asp:Label>     
-          </div>
-          <div>
-             <asp:GridView ID="comentariosList" runat="server"
-                 AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
-                            <Columns>
-                                <asp:BoundField DataField="loginName" meta:resourcekey="loginName" />
-                                <asp:BoundField DataField="content" meta:resourcekey="content" />
-                                <asp:BoundField DataField="commentDate" meta:resourcekey="commentDate" />
-                            </Columns>
-             </asp:GridView>
-          </div>
-          <div>
-            <asp:Button ID="addComentario" runat="server" Text="Añadir comentario" Width="264px" OnClick="addComentario_Click"></asp:Button>
-            <asp:TextBox ID="introducirComentario" runat="server" Width="247px"></asp:TextBox>
-          </div>
+            <div style="width: 40%; margin-top:33px; margin-bottom:33px; font-size:20px;">
+                <asp:Label ID="nombre" runat="server"> </asp:Label><br/>
+                <asp:Label ID="categoria" runat="server"></asp:Label><br/>
+                <asp:Label ID="review" runat="server"></asp:Label><br/>
+                <asp:Label ID="date" runat="server"></asp:Label><br />
+            </div>
+            <div style="width: 40%; vertical-align:top; margin-right:40px; margin-top:-125px; float:right;">
+      
+            </div>
+            <div style="float:none; margin-top:-125px; width:85%">
+                  <asp:Button ID="addComentario" runat="server" Text="Añadir comentario" Width="160px" OnClick="addComentario_Click" Height="34px"></asp:Button><br />  
+                  <asp:TextBox ID="introducirComentario" runat="server" Width="160px" Height="34px"></asp:TextBox>
+            </div>
         </form>
 </asp:Content>
