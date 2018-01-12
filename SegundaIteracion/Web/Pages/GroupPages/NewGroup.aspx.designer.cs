@@ -10,7 +10,7 @@
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
     
     
-    public partial class Groups {
+    public partial class NewGroup {
         
         /// <summary>
         /// form1 control.
@@ -22,48 +22,48 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// textEntry control.
+        /// lclNewGroupName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textEntry;
+        protected global::System.Web.UI.WebControls.Localize lclNewGroupName;
         
         /// <summary>
-        /// searchButton control.
+        /// txtNewGroupName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchButton;
+        protected global::System.Web.UI.WebControls.TextBox txtNewGroupName;
         
         /// <summary>
-        /// groupList control.
+        /// lclNewGroupDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView groupList;
+        protected global::System.Web.UI.WebControls.Localize lclNewGroupDescription;
         
         /// <summary>
-        /// linkPrevious control.
+        /// TxtNewGroupDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkPrevious;
+        protected global::System.Web.UI.WebControls.TextBox TxtNewGroupDescription;
         
         /// <summary>
-        /// linkNext control.
+        /// btnEnter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkNext;
+        protected global::System.Web.UI.WebControls.Button btnEnter;
     }
 }
