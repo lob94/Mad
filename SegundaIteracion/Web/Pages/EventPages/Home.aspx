@@ -9,7 +9,7 @@
                 <asp:TextBox ID="textEntry" runat="server" AutoPostBack="True"> </asp:TextBox>
                 <asp:DropDownList ID="dropDownList" runat="server" DataTextField="name" DataValueField="categoryId" 
                     AppendDataBoundItems="True"></asp:DropDownList>
-                <asp:Button ID="searchButton" class="btn btn-primary" runat="server" OnClick="search_Click" meta:resourcekey="btnLogin" Text="Search" />
+                <asp:Button ID="searchButton" runat="server" OnClick="search_Click" meta:resourcekey="btnLogin" Text="Search" />
             </div>
             <asp:GridView ID="eventList2" runat="server"
                             AutoGenerateColumns="False"
@@ -22,6 +22,7 @@
                             </Columns>
             </asp:GridView>
         </form>
+        </div>
         <div class="previousNextLinks">
             <span class="previousLink">
                 <asp:HyperLink ID="linkPrevious" Text="Previous" 

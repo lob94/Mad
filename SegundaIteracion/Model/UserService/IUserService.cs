@@ -131,8 +131,17 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// </summary>
         /// <returns>One user</returns>
         /// <exception cref="InstanceNotFoundException"/>
-        [Transactional]   UserProfile FindUserByLoginName(string login);
-     
+        [Transactional]
+        UserProfile FindUserByLoginName(string login);
+
+        /// <summary>
+        /// Find user by email
+        /// </summary>
+        /// <returns>One user</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        UserProfile FindUserByEmail(string email);
+
 
         /// <sumary>
         /// List all groups

@@ -214,3 +214,30 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Es.Udc.DotNet
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csproj.GenerateResource.Cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\obj\Debug\Es.Udc.DotNet.MiniPortal.Web.Pages.User.App_LocalResources.en_default.Register.aspx.resources
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\obj\Debug\Web.csproj.GenerateResource.Cache
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.dll.config
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Castle.Core.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\EntityFramework.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\MiniPortal.Model.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\ModelUtil.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.DynamicProxy.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\MiniPortal.Model.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Castle.Core.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\EntityFramework.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.DynamicProxy.xml

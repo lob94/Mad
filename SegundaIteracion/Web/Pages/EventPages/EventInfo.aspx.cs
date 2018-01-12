@@ -29,29 +29,18 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             if (!IsPostBack)
             {
                 initFromValues();
-                initGridView();
             }
             else
             {
                 initFromValues();
-                initGridView();
             }
         }
         protected void callService()
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
             eventService = container.Resolve<IEventService>();
+            userService = container.Resolve<IUserService>();
 
-        }
-        private void initGridView()
-        {
-            try
-            {
-                ICollection<CommentDto> comentarios = eventService.FindAllComments(evento.eventId, 0, 10);
-                comentariosList.DataSource = comentarios;
-                comentariosList.DataBind();
-            }
-            catch{ }
         }
 
         protected void initFromValues()
@@ -72,14 +61,14 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
                 String contentComment = introducirComentario.Text;
                 UserProfileDetails userProfileDetails =
                     SessionManager.FindUserProfileDetails(Context);
-                String login = userProfileDetails.Email;
-                UserProfile u = userService.FindUserByLoginName(login);
+                String email = userProfileDetails.Email;
+                UserProfile u = userService.FindUserByEmail(email);
                 
                 DateTime commentDate = DateTime.Now;
 
                 Comment c = new Comment();
                 c.content = contentComment;
-                c.loginName = login;
+                c.loginName = u.loginName;
                 c.commentDate = commentDate;
                 c.Event = evento;
                 eventService.AddComment(contentComment,evento.eventId,u.usrId);

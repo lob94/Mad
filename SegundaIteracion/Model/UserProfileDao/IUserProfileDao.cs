@@ -13,6 +13,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserProfileDao
         /// <returns>The UserProfile</returns>
         /// <exception cref="InstanceNotFoundException"/>
         UserProfile FindByLoginName(String loginName);
+
+        /// <summary>
+        /// Finds a UserProfile by email
+        /// </summary>
+        /// <param name="email">email</param>
+        /// <returns>The UserProfile</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        UserProfile FindByEmail(String email);
     }
 }
 

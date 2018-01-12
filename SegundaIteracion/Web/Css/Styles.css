@@ -7,6 +7,10 @@ body {
     background-color: #dddde0;    
 }
 
+comentarioslist {
+    font-size: 49px;
+}
+
 /* Links. */
 
 a {
@@ -113,7 +117,7 @@ div.button {
 
 input, select, textarea  {
     background-color: #f4f4f4;
-    margin-left: 128px;
+    margin-left: 198px;
     margin-right: 7px;
     margin-bottom: 25px;
 }
