@@ -118,6 +118,15 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         [Transactional]
         UserGroupDto FindGroupByName(string name);
 
+        /// <summary>
+        /// Finds group by id.
+        /// </summary>
+        /// <param id="Id">The group id.</param>
+        /// <returns>The groupDto</returns> 
+        /// <exception cref="InstanceNotFoundException"/>  
+        [Transactional]
+        UserGroupDto FindGroupById(long groupId);
+
         /// <sumary>
         /// List all groups
         /// </sumary>
