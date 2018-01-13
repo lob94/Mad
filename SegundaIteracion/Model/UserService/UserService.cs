@@ -188,6 +188,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         }
 
         [Transactional]
+        public UserGroupDto FindGroupById(long groupId)
+        {
+            UserGroup group = GroupDao.Find(groupId);
+            UserGroupDto groupDto = new UserGroupDto(group);
+            return groupDto;
+        }
+
+        [Transactional]
         public ICollection<UserGroupDto> FindAllGroups()
         {
             ICollection<UserGroup> groups = GroupDao.GetAllElements();
@@ -206,6 +214,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             UserProfile u = UserProfileDao.FindByLoginName(login);
             return u;
         }
+
 
         [Transactional]
         public UserGroup AddGroup(string name, string description, long userId)
