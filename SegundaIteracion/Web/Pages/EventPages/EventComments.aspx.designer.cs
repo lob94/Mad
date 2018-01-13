@@ -13,6 +13,15 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
     public partial class EventComments {
         
         /// <summary>
+        /// Control lclMenuExplanation.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize lclMenuExplanation;
+        
+        /// <summary>
         /// Control form1.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,14 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView comentariosList;
+        
+        /// <summary>
+        /// Control volverHome.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button volverHome;
     }
 }

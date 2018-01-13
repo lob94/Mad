@@ -214,8 +214,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             UserProfile u = UserProfileDao.FindByLoginName(login);
             return u;
         }
-
-<<<<<<< HEAD
+        
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
         public UserProfile FindUserByEmail(string email)
@@ -223,8 +222,6 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             UserProfile u = UserProfileDao.FindByEmail(email);
             return u;
         }
-=======
->>>>>>> PaginaMostrarRecomendaciones
 
         [Transactional]
         public UserGroup AddGroup(string name, string description, long userId)
@@ -273,6 +270,15 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             else throw new Exception();
             //FILTRAR RECOMENDACIONES POR EVENTOS
             //Y SOLO DEBEN APARECER AQUELLAS DE LOS GRUPOS A LOS Q PERTENECE UN USUARIO
+        }
+
+
+        [Transactional]
+        public ICollection<Recommendation> FindAllRecommendations()
+        {
+            ICollection<Recommendation> rs = RecommendationDao.GetAllElements();
+           
+            return rs;
         }
 
         #endregion
