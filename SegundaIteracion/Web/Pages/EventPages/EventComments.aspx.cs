@@ -53,5 +53,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             evento = eventService.FindEventById(evId);
 
         }
+
+        protected void volver_Click(object sender, EventArgs e)
+        {
+            String url =
+                    String.Format("./Home.aspx");
+
+            Response.Redirect(Response.ApplyAppPathModifier(url));
+        }
     }
 }
