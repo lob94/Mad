@@ -10,6 +10,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
     {
         public long eventId { get; set; }
         public string name { get; set; }
+        public string review { get; set; }
         public long categoryId { get; set; }
         public string categoryName { get; set; }
 
@@ -19,6 +20,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             this.name = evento.name;
             this.categoryId = evento.Category.categoryId;
             this.categoryName = evento.Category.name;
+            this.review = evento.review;
         }
     }
 }

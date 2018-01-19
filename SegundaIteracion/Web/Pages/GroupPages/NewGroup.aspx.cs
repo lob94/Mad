@@ -1,4 +1,5 @@
 ﻿using Es.Udc.DotNet.MiniPortal.Model.UserService;
+using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
 using Es.Udc.DotNet.ModelUtil.IoC;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 
                 String name = txtNewGroupName.Text;
                 String description = TxtNewGroupDescription.Text;
-
-                //userService.AddGroup(name, description, );
+                long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
+                userService.AddGroup(name, description, usrId);
 
             }
         }

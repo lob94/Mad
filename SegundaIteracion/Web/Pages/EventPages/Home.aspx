@@ -17,7 +17,7 @@
                             <Columns>
                                 <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventInfo.aspx?eventId={0}" />
-                                <asp:BoundField DataField="name" meta:resourcekey="name" />
+                                <asp:BoundField DataField="review" meta:resourcekey="review" />
                                 <asp:BoundField DataField="categoryName" meta:resourcekey="categoryName" />
                             </Columns>
             </asp:GridView>

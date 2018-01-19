@@ -59,6 +59,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             groupList.DataBind();
         }
 
+        protected void subs_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void PreviousNextButtons()
         {
             if ((startIndex - count) >= 0)
