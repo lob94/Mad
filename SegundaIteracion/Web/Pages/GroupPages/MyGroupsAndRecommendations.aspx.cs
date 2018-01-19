@@ -12,10 +12,13 @@ using System.Web.UI.WebControls;
 
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 {
-    public partial class RecomendationsPage : System.Web.UI.Page
+    public partial class MyGroupsAndRecommendationsPage : System.Web.UI.Page
     {
-        int startIndex = 0;
-        int count = 1;
+        int startIndexGroup = 0;
+        int countGroup = 1;
+        int startIndexRec = 0;
+        int countRec = 1;
+        long groupId=-1;
         ICollection<Recommendation> recommendations;
         ICollection<UserGroupDto> groupList;
         IUserService userService;
@@ -24,47 +27,55 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         {
             callService();
             initFromValues();
-            initGridView();
+            initGridViewMyGroups();
         }
+
         protected void callService()
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
             userService = container.Resolve<IUserService>();
             eventService = container.Resolve<IEventService>();
-
         }
 
         protected void initFromValues()
         {
-            String startString = Request.Params.Get("startIndex");
-            if (startString == null || startString == "0")
+            String groupIdString = Request.Params.Get("groupId");
+            if (groupIdString == null)
             {
-                startIndex = 0;
+                groupId = -1;
             }
             else
             {
-                startIndex = Convert.ToInt16(startString);
-            }
-
+                groupId = Convert.ToInt32(groupIdString);
+                initGridViewMyRecommendations();
+            }    
         }
 
-        protected void initGridView()
+        protected void initGridViewMyGroups()
         {
             UserProfileDetails userProfileDetails =
                    SessionManager.FindUserProfileDetails(Context);
             String email = userProfileDetails.Email;
             UserProfile u = userService.FindUserByEmail(email);
+            groupList = userService.FindGroupsByUserId(u.usrId);
+            myGroupsList.DataSource = groupList;
+            myGroupsList.DataBind();
+        }
 
-            groupList = userService.FindAllGroups();
-            foreach (UserGroupDto gr in groupList)
-            {
-              //  recommendations = userService.FindGroupRecommendations(gr.id,u.usrId,startIndex,count);
-            }
-            ///PROBLEMA!!! NECESARIO OBTENER EL ID DEL GRUPO, PERO TENEMOS UN GROUPDTO EN VEZ DE UN GRUPO
-            ///Por ello necesitamos el grupo y su id
-            ///Ademas vamos a tener que mostrar la lista de recomendaciones de cada grupo 
-            ///RECORRIENDO UNO POR UNO LOS GRUPOS Y MOSTRANDO DE CADA UNO SUS RECOMENDACIONES
-            ///CADA RECOMENDACION LLEVARIA ASIGNADA UN EVENTO Y UNA DESCRIPCION.
+        protected void initGridViewMyRecommendations()
+        {
+            UserProfileDetails userProfileDetails =
+                 SessionManager.FindUserProfileDetails(Context);
+            String email = userProfileDetails.Email;
+            UserProfile u = userService.FindUserByEmail(email);
+            recommendations = userService.FindGroupRecommendations(groupId, u.usrId, startIndexRec, countRec);
+            recommendationList.DataSource = recommendations;
+            recommendationList.DataBind();
+        }
+
+        protected void dropout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

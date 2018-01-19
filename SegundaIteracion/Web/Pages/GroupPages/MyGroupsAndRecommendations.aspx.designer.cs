@@ -10,7 +10,7 @@
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
     
     
-    public partial class RecomendationsPage {
+    public partial class MyGroupsAndRecommendationsPage {
         
         /// <summary>
         /// Control lclMenuExplanation.
@@ -29,6 +29,15 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Control myGroupsList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView myGroupsList;
         
         /// <summary>
         /// Control recommendationList.
