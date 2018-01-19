@@ -107,6 +107,7 @@
     <Content Include="Pages\EventPages\EventInfo.aspx" />
     <Content Include="Pages\EventPages\Home.aspx" />
     <Content Include="Pages\GroupPages\Groups.aspx" />
+    <Content Include="Pages\GroupPages\NewGroup.aspx" />
     <Content Include="Pages\User\UpdateUserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="Pages\GroupPages\Groups.aspx.designer.cs">
       <DependentUpon>Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupPages\NewGroup.aspx.cs">
+      <DependentUpon>NewGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupPages\NewGroup.aspx.designer.cs">
+      <DependentUpon>NewGroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
@@ -285,6 +293,9 @@
     <Content Include="Pages\GroupPages\App_LocalResources\gl\ChangePassword.aspx.gl.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\Register.aspx.gl.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\UpdateUserProfile.aspx.gl.resx" />
+    <Content Include="Pages\GroupPages\App_LocalResources\es\NewGroup.aspx.es.resx" />
+    <Content Include="Pages\GroupPages\App_LocalResources\en-default\NewGroup.aspx.resx" />
+    <Content Include="Pages\GroupPages\App_LocalResources\gl\NewGroup.aspx.gl.resx" />
     <EmbeddedResource Include="Pages\User\App_LocalResources\en-default\Register.aspx.resx" />
     <Content Include="Pages\User\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
   </ItemGroup>
