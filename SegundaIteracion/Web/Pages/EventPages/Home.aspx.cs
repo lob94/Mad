@@ -12,6 +12,7 @@ using System.Collections;
 using System.Data;
 using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
 using Es.Udc.DotNet.MiniPortal.Web.Properties;
+using Es.Udc.DotNet.MiniPortal.Model;
 
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 {
@@ -37,7 +38,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         }
         private void initDropDownListView()
         {
-            dropDownList.DataSource = eventService.FindAllCategories();
+            ICollection<Category> cat = eventService.FindAllCategories();
+            dropDownList.DataSource = cat;
             dropDownList.DataBind();
         }
         private void initFromsValues()

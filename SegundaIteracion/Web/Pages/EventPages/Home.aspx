@@ -7,7 +7,7 @@
         <form id="form1" runat="server">
             <div class="form-group">
                 <asp:TextBox ID="textEntry" meta:resourcekey="searchEventName" runat="server" AutoPostBack="True"> </asp:TextBox>
-                <asp:DropDownList ID="dropDownList" meta:resourcekey="searchCategory" runat="server" DataTextField="name" DataValueField="categoryId" 
+                <asp:DropDownList ID="dropDownList" runat="server" DataTextField="name" DataValueField="categoryId" 
                     AppendDataBoundItems="True"></asp:DropDownList>
                 <asp:Button ID="searchButton" runat="server" OnClick="search_Click" meta:resourcekey="btnSearch" Text="Search" />
             <asp:GridView ID="eventList2" runat="server"
@@ -16,8 +16,8 @@
                             <Columns>
                                 <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventInfo.aspx?eventId={0}" />
-                                <asp:BoundField DataField="name" />
-                                <asp:BoundField DataField="categoryName"/>
+                                <asp:BoundField DataField="review" meta:resourcekey="review" />
+                                <asp:BoundField DataField="categoryName" meta:resourcekey="categoryName" />
                             </Columns>
             </asp:GridView>
                 <asp:Button ID="myGroupsButton" runat="server" OnClick="myGroups_Click" meta:resourcekey="btnMyGroups" Text="My Groups" />

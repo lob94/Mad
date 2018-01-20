@@ -13,8 +13,15 @@
                             AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
                             <Columns>
-                                <asp:HyperLinkField DataNavigateUrlFields="groupId" DataTextField="name" 
-                                    meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/GroupPages/GroupInfo.aspx?groupId={0}" />
+                                <asp:BoundField DataField="name" meta:resourcekey="name" />
+                                <asp:BoundField DataField="description" meta:resourcekey="description" />
+                                <asp:BoundField DataField="usersCount" meta:resourcekey="usersCount" />
+                                <asp:BoundField DataField="recommendationsCount" meta:resourcekey="recommendationCount" />
+                                <asp:TemplateField  HeaderText="Seleccionar">
+                                  <ItemTemplate>
+                                    <asp:Button ID="subs" runat="server" OnClick="subs_Click" Text="Inscribirse"/>
+                                  </ItemTemplate> 
+                                </asp:TemplateField>
                             </Columns>
             </asp:GridView>
         </form>
