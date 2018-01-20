@@ -30,8 +30,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
             userService = container.Resolve<IUserService>();
-            initFromsValues();
-            initGridView();
+            if (!IsPostBack)
+            {
+                initFromsValues();
+                initGridView();
+            }
             //PreviousNextButtons();
         }
         private void initFromsValues()
@@ -61,7 +64,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 
         protected void subs_Click(object sender, EventArgs e)
         {
-
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            String s = gvr.Cells[0].Text;
+            UserGroupDto userGroup = userService.FindGroupByName(s);
+            long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
+            userService.JoinGroup(usrId ,userGroup.groupId);
+            Response.Redirect("Groups.aspx");
         }
 
         /*private void PreviousNextButtons()

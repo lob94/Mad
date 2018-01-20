@@ -108,6 +108,7 @@
     <Content Include="Pages\EventPages\Home.aspx" />
     <Content Include="Pages\GroupPages\Groups.aspx" />
     <Content Include="Pages\GroupPages\MyGroupsAndRecommendations.aspx" />
+    <Content Include="Pages\GroupPages\NewGroupForm.aspx" />
     <Content Include="Pages\User\UpdateUserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -191,6 +192,13 @@
     </Compile>
     <Compile Include="Pages\GroupPages\MyGroupsAndRecommendations.aspx.designer.cs">
       <DependentUpon>MyGroupsAndRecommendations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupPages\NewGroupForm.aspx.cs">
+      <DependentUpon>NewGroupForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupPages\NewGroupForm.aspx.designer.cs">
+      <DependentUpon>NewGroupForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>

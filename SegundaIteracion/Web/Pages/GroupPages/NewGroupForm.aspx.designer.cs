@@ -10,7 +10,7 @@
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
     
     
-    public partial class NewGroup {
+    public partial class NewGroupForm {
         
         /// <summary>
         /// form1 control.

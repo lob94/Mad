@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 {
-    public partial class NewGroup : System.Web.UI.Page
+    public partial class NewGroupForm : System.Web.UI.Page
     {
         IUserService userService;
         protected void Page_Load(object sender, EventArgs e)
