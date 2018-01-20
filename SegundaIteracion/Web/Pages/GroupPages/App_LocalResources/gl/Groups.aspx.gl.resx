@@ -112,36 +112,24 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnLogin.Text" xml:space="preserve">
-    <value>Aceptar</value>
+    <value>Buscar</value>
   </data>
-  <data name="checkRememberPassword.Text" xml:space="preserve">
-    <value>Recordar mi contraseña (las cookies deben estar habilitadas)</value>
+  <data name="nameField.Text" xml:space="preserve">
+    <value>Nome do grupo</value>
   </data>
-  <data name="lblLoginError.Text" xml:space="preserve">
-    <value>Usuario no encontrado</value>
-  </data>
-  <data name="lblPasswordError.Text" xml:space="preserve">
-    <value>Contraseña incorrecta</value>
-  </data>
-  <data name="lclLogin.Text" xml:space="preserve">
-    <value>Usuario</value>
-  </data>
-  <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>Autenticación</value>
-  </data>
-  <data name="lclPassword.Text" xml:space="preserve">
-    <value>Contraseña</value>
-  </data>
-  <data name="lnkRegister.Text" xml:space="preserve">
-    <value>Registrarme (usuario no registrado)</value>
+  <data name="next.Text" xml:space="preserve">
+    <value>Seguinte</value>
   </data>
   <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Página de Autenticación</value>
+    <value>Miniportal - Ver Grupos</value>
+  </data>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Anterior</value>
   </data>
 </root>

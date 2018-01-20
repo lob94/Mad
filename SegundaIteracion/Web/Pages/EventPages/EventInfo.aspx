@@ -5,17 +5,17 @@
     runat="server">
         <form id="form2" runat="server">
             <div style="width: 40%; margin-top:33px; margin-bottom:33px; font-size:20px;">
-                <asp:Label ID="nombre" runat="server"> </asp:Label><br/>
-                <asp:Label ID="categoria" runat="server"></asp:Label><br/>
-                <asp:Label ID="review" runat="server"></asp:Label><br/>
-                <asp:Label ID="date" runat="server"></asp:Label><br />
+                <asp:Label ID="nombre" meta:resourcekey="nombre" runat="server"> </asp:Label><br/>
+                <asp:Label ID="categoria" meta:resourcekey="categoria" runat="server"></asp:Label><br/>
+                <asp:Label ID="review" meta:resourcekey="review" runat="server"></asp:Label><br/>
+                <asp:Label ID="date" meta:resourcekey="date" runat="server"></asp:Label><br />
             </div>
             <div style="width: 40%; vertical-align:top; margin-right:40px; margin-top:-125px; float:right;">
       
             </div>
             <div style="float:none; margin-top:-125px; width:85%">
-                  <asp:Button ID="addComentario" runat="server" Text="Añadir comentario" Width="160px" OnClick="addComentario_Click" Height="34px"></asp:Button><br />  
-                  <asp:TextBox ID="introducirComentario" runat="server" Width="160px" Height="34px"></asp:TextBox>
+                  <asp:Button ID="addComentario" meta:resourcekey="addComment" runat="server" Text="Añadir comentario" Width="160px" OnClick="addComentario_Click" Height="34px"></asp:Button><br />  
+                  <asp:TextBox ID="introducirComentario" meta:resourcekey="writeComment" runat="server" Width="160px" Height="34px"></asp:TextBox>
             </div>
         </form>
 </asp:Content>

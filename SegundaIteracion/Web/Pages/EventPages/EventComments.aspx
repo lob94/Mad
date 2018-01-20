@@ -9,11 +9,11 @@
                      AutoGenerateColumns="False"
                                 ShowHeaderWhenEmpty="True" Visible="true" HorizontalAlign="Right" Width="70%">
                                 <Columns>
-                                    <asp:BoundField DataField="loginName" meta:resourcekey="loginName"/>
-                                    <asp:BoundField DataField="content" meta:resourcekey="content" />
-                                    <asp:BoundField DataField="commentDate" meta:resourcekey="commentDate" />
+                                    <asp:BoundField DataField="loginName"/>
+                                    <asp:BoundField DataField="content"/>
+                                    <asp:BoundField DataField="commentDate"/>
                                 </Columns>
             </asp:GridView>
-            <asp:Button ID="volverHome" runat="server" Width="160px" OnClick="volver_Click" Height="34px"></asp:Button><br />
+            <asp:Button ID="volverHome" meta:resourcekey="volverHome" runat="server" Width="160px" OnClick="volver_Click" Height="34px"></asp:Button><br />
     </form>
 </asp:Content>

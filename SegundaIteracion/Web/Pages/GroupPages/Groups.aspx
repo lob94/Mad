@@ -20,12 +20,12 @@
         </form>
         <div class="previousNextLinks">
             <span class="previousLink">
-                <asp:HyperLink ID="linkPrevious" Text="Previous" 
+                <asp:HyperLink ID="linkPrevious" meta:resourcekey="previous" Text="Previous" 
                     runat="server" Visible="False">
                 </asp:HyperLink>
             </span>
             <span class="nextLink">
-                <asp:HyperLink ID="linkNext" Text="Next" 
+                <asp:HyperLink ID="linkNext" meta:resourcekey="next" Text="Next" 
                     runat="server" Visible="False">
                 </asp:HyperLink>
             </span>

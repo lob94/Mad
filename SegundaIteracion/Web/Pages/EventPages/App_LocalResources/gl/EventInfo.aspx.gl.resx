@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="volverHome.Text" xml:space="preserve">
-    <value>Volver</value>
+  <data name="addComment.Text" xml:space="preserve">
+    <value>Engadir Comentario</value>
+  </data>
+  <data name="categoria.Text" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="date.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="nombre.Text" xml:space="preserve">
+    <value>Nome</value>
   </data>
   <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Comentarios de un Evento</value>
+    <value>Miniportal - Información dun Evento</value>
   </data>
-  <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>Comentarios</value>
+  <data name="review.Text" xml:space="preserve">
+    <value>Opinión</value>
+  </data>
+  <data name="writeComment.Text" xml:space="preserve">
+    <value>Escribir comentario</value>
   </data>
 </root>

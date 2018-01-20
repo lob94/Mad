@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="volverHome.Text" xml:space="preserve">
-    <value>Volver</value>
+  <data name="lclMenuExplanation.Text" xml:space="preserve">
+    <value>Meus Grupos</value>
+  </data>
+  <data name="dropout.Text" xml:space="preserve">
+    <value>Darse de baixa</value>
+  </data>
+  <data name="eventName.Text" xml:space="preserve">
+    <value>Nome do Evento</value>
+  </data>
+  <data name="nameField.Text" xml:space="preserve">
+    <value>Nome Grupo</value>
+  </data>
+  <data name="next.Text" xml:space="preserve">
+    <value>Seguinte</value>
+  </data>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Anterior</value>
   </data>
   <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Comentarios de un Evento</value>
-  </data>
-  <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>Comentarios</value>
+    <value>Miniportal - Meus grupos e Recomendaciones</value>
   </data>
 </root>

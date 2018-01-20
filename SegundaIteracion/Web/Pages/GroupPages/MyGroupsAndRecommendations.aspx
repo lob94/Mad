@@ -13,7 +13,7 @@
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/GroupPages/MyGroupsAndRecommendations.aspx?groupId={0}" />
                            <asp:TemplateField HeaderText="Darse de Baja">
                                   <ItemTemplate>
-                                    <asp:Button ID="dropoutButton" runat="server" OnClick="dropout_Click"
+                                    <asp:Button ID="dropoutButton" meta:resourcekey="dropout" runat="server" OnClick="dropout_Click"
                                       CommandName = "migrupo" 
                                       CommandArgument="<%# ((GridViewRow)Container).RowIndex %>"
                                       Text="darse de baja" Height="20" Width="50" />
@@ -25,20 +25,20 @@
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
                      <Columns>
                             <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
-                                 meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventComments.aspx?eventId={0}" />
-                            <asp:BoundField DataField="recommendationText" meta:resourcekey="recommendationText" />
+                                 meta:resourcekey="eventName" DataNavigateUrlFormatString="~/Pages/EventPages/EventComments.aspx?eventId={0}" />
+                            <asp:BoundField DataField="recommendationText" />
                      </Columns>
             </asp:GridView> 
         </form>
         </div>
         <div class="previousNextLinks">
             <span class="previousLink">
-                <asp:HyperLink ID="linkPrevious" Text="Previous" 
+                <asp:HyperLink ID="linkPrevious" meta:resourcekey="previous" Text="Previous" 
                     runat="server" Visible="False">
                 </asp:HyperLink>
             </span>
             <span class="nextLink">
-                <asp:HyperLink ID="linkNext" Text="Next" 
+                <asp:HyperLink ID="linkNext" meta:resourcekey="next" Text="Next" 
                     runat="server" Visible="False">
                 </asp:HyperLink>
             </span>

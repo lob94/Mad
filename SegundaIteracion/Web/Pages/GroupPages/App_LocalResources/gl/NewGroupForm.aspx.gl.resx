@@ -112,36 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnChangePassword.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
-  <data name="cvCreateNewPassword.ErrorMessage" xml:space="preserve">
-    <value>Os contrasinais deben ser diferentes</value>
-  </data>
-  <data name="cvPasswordCheck.Text" xml:space="preserve">
-    <value>Os contrasináis non coinciden</value>
-  </data>
-  <data name="lblOldPasswordError.Text" xml:space="preserve">
-    <value>Contrasinal incorrecto</value>
-  </data>
-  <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>Cambiar contrasinal</value>
-  </data>
-  <data name="lclNewPassword.Text" xml:space="preserve">
-    <value>Nuevo contrasinal</value>
-  </data>
-  <data name="lclOldPassword.Text" xml:space="preserve">
-    <value>Anterior contrasinal</value>
-  </data>
-  <data name="lclRetypePassword.Text" xml:space="preserve">
-    <value>Reescriba o contrasinal</value>
-  </data>
   <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Cambiar contrasinal</value>
+    <value>Miniportal - Novo Grupo</value>
   </data>
 </root>

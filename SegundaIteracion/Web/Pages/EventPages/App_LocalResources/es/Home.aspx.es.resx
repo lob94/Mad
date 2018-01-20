@@ -112,39 +112,42 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnUpdate.Text" xml:space="preserve">
-    <value>Update</value>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>Buscar</value>
   </data>
-  <data name="lclCountry.Text" xml:space="preserve">
-    <value>Country</value>
+  <data name="nameField.Text" xml:space="preserve">
+    <value>Página del Evento</value>
   </data>
-  <data name="lclEmail.Text" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="lclFirstName.Text" xml:space="preserve">
-    <value>First name</value>
-  </data>
-  <data name="lclLanguage.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>User profile details</value>
-  </data>
-  <data name="lclSurname.Text" xml:space="preserve">
-    <value>Surname</value>
-  </data>
-  <data name="lnkChangePassword.Text" xml:space="preserve">
-    <value>Change password</value>
+  <data name="next.Text" xml:space="preserve">
+    <value>Siguiente</value>
   </data>
   <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Update User Profile</value>
+    <value>Miniportal - Página Eventos</value>
   </data>
-  <data name="revEmail.ErrorMessage" xml:space="preserve">
-    <value>Incorrect email syntax</value>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="searchCategory.Text" xml:space="preserve">
+    <value>Seleccione Categpría</value>
+  </data>
+  <data name="searchEventName.Text" xml:space="preserve">
+    <value>Evento a buscar...</value>
+  </data>
+  <data name="btnGroups.Text" xml:space="preserve">
+    <value>Ver Grupos</value>
+  </data>
+  <data name="btnMyGroups.Text" xml:space="preserve">
+    <value>Mis Grupos</value>
+  </data>
+  <data name="btnNewGroup.Text" xml:space="preserve">
+    <value>Añadir nuevo grupo</value>
+  </data>
+  <data name="btnRecommendations.Text" xml:space="preserve">
+    <value>Mostrar recomendaciones</value>
   </data>
 </root>
