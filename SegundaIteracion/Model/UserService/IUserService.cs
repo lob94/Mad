@@ -130,10 +130,20 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// <sumary>
         /// List all groups
         /// </sumary>
+        /// <param startIndex="StartIndex">startIndex.</param>
+        /// <param count="Count">count.</param>
         /// <returns>All the groupsDto</returns>
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
-        ICollection<UserGroupDto> FindAllGroups();
+        ICollection<UserGroupDto> FindAllGroups(int startIndex, int count);
+
+        /// <sumary>
+        /// Number of existing groups
+        /// </sumary>
+        /// <returns>Number of total groups</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        int FindAllGroupsCount();
 
         /// <summary>
         /// Find user by Login Name

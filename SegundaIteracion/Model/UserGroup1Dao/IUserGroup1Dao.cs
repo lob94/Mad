@@ -1,6 +1,7 @@
 ﻿using System;
 using Es.Udc.DotNet.ModelUtil.Dao;
 using Es.Udc.DotNet.ModelUtil.Exceptions;
+using System.Collections.Generic;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
 {
@@ -14,6 +15,12 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
         /// <exception cref="InstanceNotFoundException"/>
         UserGroup FindByName(string name);
 
+        /// <summary>
+        /// Finds all the UserGroups
+        /// </summary>
+        /// <returns>The a list of UserGroup</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        ICollection<UserGroup> FindAllGroupsPagination(int startIndex, int count);
     }
 }
 

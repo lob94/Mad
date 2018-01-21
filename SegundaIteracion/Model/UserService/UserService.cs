@@ -196,15 +196,21 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         }
 
         [Transactional]
-        public ICollection<UserGroupDto> FindAllGroups()
+        public ICollection<UserGroupDto> FindAllGroups(int startIndex, int count)
         {
-            ICollection<UserGroup> groups = GroupDao.GetAllElements();
+            ICollection<UserGroup> groups = GroupDao.FindAllGroupsPagination(startIndex, count);
             ICollection<UserGroupDto> groupsDto = new List<UserGroupDto>();
             foreach (UserGroup group in groups)
             {
                 groupsDto.Add(new UserGroupDto(group));
             }
             return groupsDto;
+        }
+
+        public int FindAllGroupsCount()
+        {
+            int numberGroups = GroupDao.GetAllElements().Count;
+            return numberGroups;
         }
 
         /// <exception cref="InstanceNotFoundException"/>
