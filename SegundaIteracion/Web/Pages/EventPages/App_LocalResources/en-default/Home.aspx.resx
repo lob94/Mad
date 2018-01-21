@@ -132,22 +132,7 @@
   <data name="previous.Text" xml:space="preserve">
     <value>Previous</value>
   </data>
-  <data name="searchCategory.Text" xml:space="preserve">
-    <value>Select Category</value>
-  </data>
   <data name="searchEventName.Text" xml:space="preserve">
     <value>Event to search...</value>
-  </data>
-  <data name="btnGroups.Text" xml:space="preserve">
-    <value>Show Groups</value>
-  </data>
-  <data name="btnMyGroups.Text" xml:space="preserve">
-    <value>My Groups</value>
-  </data>
-  <data name="btnNewGroup.Text" xml:space="preserve">
-    <value>Add New Group</value>
-  </data>
-  <data name="btnRecommendations.Text" xml:space="preserve">
-    <value>Show Recommendations</value>
   </data>
 </root>

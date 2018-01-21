@@ -39,6 +39,22 @@
                     <asp:HyperLink ID="lnkUpdate" runat="server" 
                         NavigateUrl="~/Pages/User/UpdateUserProfile.aspx"
                         meta:resourcekey="lnkUpdate" />
+                    <asp:Label ID="lblDash4" runat="server" Text="-" />
+                    <asp:HyperLink ID="lnkGroups" runat="server"
+                        NavigateUrl="~/Pages/GroupPages/Groups.aspx" 
+                        meta:resourcekey="lnkGroups" />
+                    <asp:Label ID="lblDash5" runat="server" Text="-" />
+                    <asp:HyperLink ID="lnkNewGroup" runat="server"
+                        NavigateUrl="~/Pages/GroupPages/NewGroup.aspx" 
+                        meta:resourcekey="lnkNewGroup" />
+                    <asp:Label ID="lblDash6" runat="server" Text="-" />
+                    <asp:HyperLink ID="lnkMyGroups" runat="server"
+                        NavigateUrl="~/Pages/GroupPages/MyGroupsAndRecommendations.aspx" 
+                        meta:resourcekey="lnkMyGroups" />
+                    <asp:Label ID="lblDash7" runat="server" Text="-" />
+                    <asp:HyperLink ID="lnkRecommendations" runat="server"
+                        NavigateUrl="~/Pages/GroupPages/MyGroupsAndRecommendations.aspx" 
+                        meta:resourcekey="lnkRecommendations" />
                     <asp:Label ID="lblDash3" runat="server" Text="-" />
                     <asp:HyperLink ID="lnkLogout" runat="server"
                         NavigateUrl="~/Pages/User/Logout.aspx" 

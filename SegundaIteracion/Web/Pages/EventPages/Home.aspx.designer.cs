@@ -58,6 +58,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         protected global::System.Web.UI.WebControls.GridView eventList2;
         
         /// <summary>
+<<<<<<< HEAD
         /// myGroupsButton control.
         /// </summary>
         /// <remarks>
@@ -95,6 +96,9 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         
         /// <summary>
         /// linkPrevious control.
+=======
+        /// Control linkPrevious.
+>>>>>>> PaginaMyGroupsAndRecommendations
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

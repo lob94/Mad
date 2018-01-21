@@ -145,43 +145,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             }
         }
 
-        protected void newGroup_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                /* Do action. */
-                String url =
-                    String.Format("http://localhost:8082/Pages/GroupPages/NewGroup.aspx");
 
-                Response.Redirect(Response.ApplyAppPathModifier(url));
-
-            }
-        }
-
-        protected void myGroups_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                /* Do action. */
-                String url =
-                    String.Format("http://localhost:8082/Pages/GroupPages/MyGroupsAndRecommendations.aspx");
-
-                Response.Redirect(Response.ApplyAppPathModifier(url));
-
-            }
-        }
-
-        protected void showGroups_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                /* Do action. */
-                String url =
-                    String.Format("http://localhost:8082/Pages/GroupPages/Groups.aspx");
-
-                Response.Redirect(Response.ApplyAppPathModifier(url));
-
-            }
-        }
     }
 }
