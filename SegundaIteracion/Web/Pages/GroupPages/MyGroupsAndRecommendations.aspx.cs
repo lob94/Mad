@@ -25,9 +25,23 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         IEventService eventService;
         protected void Page_Load(object sender, EventArgs e)
         {
-            callService();
-            initFromValues();
-            initGridViewMyGroups();
+            if (!IsPostBack)
+            {
+                callService();
+                initFromValues();
+                initGridViewMyGroups();          
+            }
+            else
+            {
+                callService();
+                initFromValues();
+                initGridViewMyGroups();
+               /* 
+                String url =
+                 String.Format("./MyGroupsAndRecommendations.aspx?groupId={0}", groupId);
+                Response.Redirect(Response.ApplyAppPathModifier(url));
+                */
+            }
         }
 
         protected void callService()
@@ -75,7 +89,15 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 
         protected void dropout_Click(object sender, EventArgs e)
         {
-
+            UserProfileDetails userProfileDetails =
+                SessionManager.FindUserProfileDetails(Context);
+            String email = userProfileDetails.Email;
+            UserProfile u = userService.FindUserByEmail(email);
+            userService.UnJoinGroup(u.usrId, groupId);
+            String url =
+                   String.Format("./MyGroupsAndRecommendations.aspx?groupId={0}", groupId);
+            Response.Redirect(Response.ApplyAppPathModifier(url));
+            //Como obtener el groupId de la fila en la que estoy????
         }
     }
 }

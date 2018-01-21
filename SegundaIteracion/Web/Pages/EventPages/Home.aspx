@@ -10,24 +10,20 @@
                 <asp:DropDownList ID="dropDownList" runat="server" DataTextField="name" DataValueField="categoryId" 
                     AppendDataBoundItems="True"></asp:DropDownList>
                 <asp:Button ID="searchButton" runat="server" OnClick="search_Click" meta:resourcekey="btnSearch" Text="Search" />
-            <asp:GridView ID="eventList2" runat="server"
+                <asp:GridView ID="eventList2" runat="server"
                             AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%">
+                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 620px">
                             <Columns>
                                 <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventInfo.aspx?eventId={0}" />
                                 <asp:BoundField DataField="review" meta:resourcekey="review" />
                                 <asp:BoundField DataField="categoryName" meta:resourcekey="categoryName" />
                             </Columns>
-            </asp:GridView>
-                <asp:Button ID="myGroupsButton" runat="server" OnClick="myGroups_Click" meta:resourcekey="btnMyGroups" Text="My Groups" />
-                <asp:Button ID="newGroupButton" runat="server" OnClick="newGroup_Click" meta:resourcekey="btnNewGroup" Text="Create New Group" />
+                 </asp:GridView>
             </div>
-                <asp:Button ID="recommendationsButton" runat="server" OnClick="myGroups_Click" meta:resourcekey="btnRecommendations" Text="Show Recommendations" Width="386px" />
-                <asp:Button ID="showGroupsButton" runat="server" OnClick="showGroups_Click" meta:resourcekey="btnGroups" Text="Show Groups" />
-        </form>
+              </form>
         </div>
-        <div class="previousNextLinks">
+        <div class="previousNextLinks" style="margin-bottom: 30px;">
             <span class="previousLink">
                 <asp:HyperLink ID="linkPrevious" meta:resourcekey="previous" Text="Previous" 
                     runat="server" Visible="False">
