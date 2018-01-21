@@ -58,42 +58,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         protected global::System.Web.UI.WebControls.GridView eventList2;
         
         /// <summary>
-        /// Control myGroupsButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button myGroupsButton;
-        
-        /// <summary>
-        /// Control newGroupButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button newGroupButton;
-        
-        /// <summary>
-        /// Control recommendationsButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button recommendationsButton;
-        
-        /// <summary>
-        /// Control showGroupsButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button showGroupsButton;
-        
-        /// <summary>
         /// Control linkPrevious.
         /// </summary>
         /// <remarks>

@@ -132,8 +132,20 @@
   <data name="lnkAuthenticate.Text" xml:space="preserve">
     <value>Autenticación</value>
   </data>
+  <data name="lnkGroups.Text" xml:space="preserve">
+    <value>Todos los Grupos</value>
+  </data>
   <data name="lnkLogout.Text" xml:space="preserve">
     <value>Salir</value>
+  </data>
+  <data name="lnkMyGroups.Text" xml:space="preserve">
+    <value>Mis Grupos</value>
+  </data>
+  <data name="lnkNewGroup.Text" xml:space="preserve">
+    <value>Crear nuevo grupo</value>
+  </data>
+  <data name="lnkRecommendations.Text" xml:space="preserve">
+    <value>Mis recomendaciones</value>
   </data>
   <data name="lnkUpdate.Text" xml:space="preserve">
     <value>Actualizar información de usuario</value>
