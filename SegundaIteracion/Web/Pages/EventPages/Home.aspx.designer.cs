@@ -58,47 +58,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         protected global::System.Web.UI.WebControls.GridView eventList2;
         
         /// <summary>
-<<<<<<< HEAD
-        /// myGroupsButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button myGroupsButton;
-        
-        /// <summary>
-        /// newGroupButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button newGroupButton;
-        
-        /// <summary>
-        /// recommendationsButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button recommendationsButton;
-        
-        /// <summary>
-        /// showGroupsButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button showGroupsButton;
-        
-        /// <summary>
         /// linkPrevious control.
-=======
-        /// Control linkPrevious.
->>>>>>> PaginaMyGroupsAndRecommendations
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
