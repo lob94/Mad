@@ -29,6 +29,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 String description = TxtNewGroupDescription.Text;
                 long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
                 userService.AddGroup(name, description, usrId);
+                Response.Redirect("Groups.aspx");
 
             }
         }

@@ -35,7 +35,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 initFromsValues();
                 initGridView();
             }
-            //PreviousNextButtons();
+            PreviousNextButtons();
         }
         private void initFromsValues()
         {
@@ -57,58 +57,44 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         }
         private void initGridView()
         {
-            groups = userService.FindAllGroups();
+            groups = userService.FindAllGroups(startIndex, count);
             groupList.DataSource = groups;
             groupList.DataBind();
         }
 
         protected void subs_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-            String s = gvr.Cells[0].Text;
-            UserGroupDto userGroup = userService.FindGroupByName(s);
-            long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
-            userService.JoinGroup(usrId ,userGroup.groupId);
-            Response.Redirect("Groups.aspx");
+            if (SessionManager.IsUserAuthenticated(Context))
+            {
+                Button btn = (Button)sender;
+                GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+                String s = gvr.Cells[0].Text;
+                UserGroupDto userGroup = userService.FindGroupByName(s);
+                long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
+                userService.JoinGroup(usrId, userGroup.groupId);
+                Response.Redirect("Groups.aspx");
+            }else 
+                Response.Redirect("Authentication.aspx");
         }
 
-        /*private void PreviousNextButtons()
+        private void PreviousNextButtons()
         {
             if ((startIndex - count) >= 0)
             {
-                String url = "http://localhost:8082/Pages/EventPages/" + "Home.aspx" + "?startIndex=" + (startIndex - count);
-                if (keywords != "")
-                {
-                    url += "&keywords=" + keywords;
-                }
-                if (categoryForm)
-                {
-                    url += "&categoryId=" + categoryID;
-                }
+                String url = "http://localhost:8082/Pages/GroupPages/" + "Groups.aspx" + "?startIndex=" + (startIndex - count);
                 this.linkPrevious.NavigateUrl = Response.ApplyAppPathModifier(url);
                 this.linkPrevious.Visible = true;
             }
             int numberResult;
-            if (categoryForm)
-                numberResult = eventService.CountFindEventsByKeywordsAndCategory(keywords, categoryID);
-            else
-                numberResult = eventService.CountFindEventsByKeywords(keywords);
+            numberResult = userService.FindAllGroupsCount();
             if ((startIndex + count) < numberResult)
             {
-                String url = "http://localhost:8082/Pages/EventPages/" + "Home.aspx" + "?startIndex=" + (startIndex + count);
-                if (keywords != "")
-                {
-                    url += "&keywords=" + keywords;
-                }
-                if (categoryForm)
-                {
-                    url += "&categoryId=" + categoryID;
-                }
+                String url = "http://localhost:8082/Pages/GroupPages/" + "Groups.aspx" + "?startIndex=" + (startIndex + count);
+                
                 this.linkNext.NavigateUrl = Response.ApplyAppPathModifier(url);
                 this.linkNext.Visible = true;
             }
-        }*/
+        }
 
         protected void search_Click(object sender, EventArgs e)
         {
