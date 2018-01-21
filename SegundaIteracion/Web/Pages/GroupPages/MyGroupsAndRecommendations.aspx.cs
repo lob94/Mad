@@ -36,11 +36,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 callService();
                 initFromValues();
                 initGridViewMyGroups();
-               /* 
-                String url =
-                 String.Format("./MyGroupsAndRecommendations.aspx?groupId={0}", groupId);
-                Response.Redirect(Response.ApplyAppPathModifier(url));
-                */
             }
         }
 
@@ -89,15 +84,29 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 
         protected void dropout_Click(object sender, EventArgs e)
         {
-            UserProfileDetails userProfileDetails =
+            if (SessionManager.IsUserAuthenticated(Context))
+            {
+                /*Obtain groupId*/
+                Button btn = (Button)sender;
+                GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+                String s = gvr.Cells[0].Text;
+                UserGroupDto userGroup = userService.FindGroupByName(s);
+                /*Obtain userId*/
+                UserProfileDetails userProfileDetails =
                 SessionManager.FindUserProfileDetails(Context);
-            String email = userProfileDetails.Email;
-            UserProfile u = userService.FindUserByEmail(email);
-            userService.UnJoinGroup(u.usrId, groupId);
-            String url =
+                String email = userProfileDetails.Email;
+                UserProfile u = userService.FindUserByEmail(email);
+                /*Dropout from Group*/
+                userService.UnJoinGroup(u.usrId, userGroup.groupId);
+                Response.Redirect("MyGroupsAndRecommendations.aspx");
+               /* String url =
                    String.Format("./MyGroupsAndRecommendations.aspx?groupId={0}", groupId);
-            Response.Redirect(Response.ApplyAppPathModifier(url));
-            //Como obtener el groupId de la fila en la que estoy????
+                   Response.Redirect(Response.ApplyAppPathModifier(url));
+               */
+            }
+            else
+                Response.Redirect("Authentication.aspx");
         }
+ 
     }
 }

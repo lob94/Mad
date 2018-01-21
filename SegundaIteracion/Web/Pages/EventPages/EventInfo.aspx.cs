@@ -58,20 +58,23 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         protected void addComentario_Click(object sender, EventArgs e)
         {
             try {
-                String contentComment = introducirComentario.Text;
-                UserProfileDetails userProfileDetails =
-                    SessionManager.FindUserProfileDetails(Context);
-                String email = userProfileDetails.Email;
-                UserProfile u = userService.FindUserByEmail(email);
-                
-                DateTime commentDate = DateTime.Now;
+                if (SessionManager.IsUserAuthenticated(Context))
+                {
+                    String contentComment = introducirComentario.Text;
+                    UserProfileDetails userProfileDetails =
+                        SessionManager.FindUserProfileDetails(Context);
+                    String email = userProfileDetails.Email;
+                    UserProfile u = userService.FindUserByEmail(email);
 
-                Comment c = new Comment();
-                c.content = contentComment;
-                c.loginName = u.loginName;
-                c.commentDate = commentDate;
-                c.Event = evento;
-                eventService.AddComment(contentComment,evento.eventId,u.usrId);
+                    DateTime commentDate = DateTime.Now;
+
+                    Comment c = new Comment();
+                    c.content = contentComment;
+                    c.loginName = u.loginName;
+                    c.commentDate = commentDate;
+                    c.Event = evento;
+                    eventService.AddComment(contentComment, evento.eventId, u.usrId);
+                }
             }
             catch{
                 throw new Exception();
