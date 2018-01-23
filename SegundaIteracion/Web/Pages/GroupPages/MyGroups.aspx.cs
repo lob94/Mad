@@ -12,14 +12,11 @@ using System.Web.UI.WebControls;
 
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 {
-    public partial class MyGroupsAndRecommendationsPage : System.Web.UI.Page
+    public partial class MyGroupsPage : System.Web.UI.Page
     {
         int startIndexGroup = 0;
         int countGroup = 1;
-        int startIndexRec = 0;
-        int countRec = 1;
         long groupId=-1;
-        ICollection<Recommendation> recommendations;
         ICollection<UserGroupDto> groupList;
         IUserService userService;
         IEventService eventService;
@@ -56,7 +53,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             else
             {
                 groupId = Convert.ToInt32(groupIdString);
-                initGridViewMyRecommendations();
             }    
         }
 
@@ -69,17 +65,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             groupList = userService.FindGroupsByUserId(u.usrId);
             myGroupsList.DataSource = groupList;
             myGroupsList.DataBind();
-        }
-
-        protected void initGridViewMyRecommendations()
-        {
-            UserProfileDetails userProfileDetails =
-                 SessionManager.FindUserProfileDetails(Context);
-            String email = userProfileDetails.Email;
-            UserProfile u = userService.FindUserByEmail(email);
-            recommendations = userService.FindGroupRecommendations(groupId, u.usrId, startIndexRec, countRec);
-            recommendationList.DataSource = recommendations;
-            recommendationList.DataBind();
         }
 
         protected void dropout_Click(object sender, EventArgs e)
@@ -98,11 +83,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 UserProfile u = userService.FindUserByEmail(email);
                 /*Dropout from Group*/
                 userService.UnJoinGroup(u.usrId, userGroup.groupId);
-                Response.Redirect("MyGroupsAndRecommendations.aspx");
-               /* String url =
-                   String.Format("./MyGroupsAndRecommendations.aspx?groupId={0}", groupId);
-                   Response.Redirect(Response.ApplyAppPathModifier(url));
-               */
+                Response.Redirect("MyGroups.aspx");
             }
             else
                 Response.Redirect("Authentication.aspx");

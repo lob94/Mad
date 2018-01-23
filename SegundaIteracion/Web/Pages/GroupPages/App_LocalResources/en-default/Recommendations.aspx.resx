@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnEnter.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="Page.Title" xml:space="preserve">
+    <value>Miniportal - My Recommendations Page</value>
   </data>
-  <data name="lclNewGroupName.Text" xml:space="preserve">
-    <value>Name</value>
+  <data name="eventName.Text" xml:space="preserve">
+    <value>Event Name</value>
   </data>
   <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>Autenticación</value>
+    <value>Recommendations</value>
   </data>
-  <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Página de Autenticación</value>
+  <data name="next.Text" xml:space="preserve">
+    <value>Next</value>
   </data>
-  <data name="lclNewGroupDescription.Text" xml:space="preserve">
-    <value>Description</value>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Previous</value>
   </data>
 </root>

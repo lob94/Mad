@@ -117,37 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblWelcome.Hello.Text" xml:space="preserve">
-    <value>Hello</value>
+  <data name="eventName.Text" xml:space="preserve">
+    <value>Nome Evento</value>
   </data>
-  <data name="lblWelcome.Text" xml:space="preserve">
-    <value>Welcome to Miniportal</value>
+  <data name="lclMenuExplanation.Text" xml:space="preserve">
+    <value>Recomendacións</value>
   </data>
-  <data name="lclFooter.Text" xml:space="preserve">
-    <value>Copyright &amp;copy; Departamento TIC - Universidade da Coruña</value>
+  <data name="next.Text" xml:space="preserve">
+    <value>Seguinte</value>
   </data>
-  <data name="lclPageTitle.Text" xml:space="preserve">
-    <value>MiniPortal: A Sample MVC Web Application with .NET</value>
+  <data name="Page.Title" xml:space="preserve">
+    <value>Miniportal - Miñas Recomendacións</value>
   </data>
-  <data name="lnkAuthenticate.Text" xml:space="preserve">
-    <value>Authentication</value>
-  </data>
-  <data name="lnkGroups.Text" xml:space="preserve">
-    <value>All Groups</value>
-  </data>
-  <data name="lnkLogout.Text" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="lnkMyGroups.Text" xml:space="preserve">
-    <value>My Groups</value>
-  </data>
-  <data name="lnkNewGroup.Text" xml:space="preserve">
-    <value>Add New Group</value>
-  </data>
-  <data name="lnkRecommendations.Text" xml:space="preserve">
-    <value>Recommendations</value>
-  </data>
-  <data name="lnkUpdate.Text" xml:space="preserve">
-    <value>Update Profile</value>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Anterior</value>
   </data>
 </root>

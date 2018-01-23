@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Miniportal.Master" AutoEventWireup="true" CodeBehind="MyGroupsAndRecommendations.aspx.cs" 
-    Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages.MyGroupsAndRecommendationsPage" meta:resourcekey="Page"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/Miniportal.Master" AutoEventWireup="true" CodeBehind="MyGroups.aspx.cs" 
+    Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages.MyGroupsPage" meta:resourcekey="Page"%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
@@ -11,7 +11,7 @@
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="18%" Height="171px">
                       <Columns>
                            <asp:HyperLinkField DataNavigateUrlFields="groupId" DataTextField="name" 
-                                    meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/GroupPages/MyGroupsAndRecommendations.aspx?groupId={0}" />
+                                    meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/GroupPages/Recommendations.aspx?groupId={0}" />
                            <asp:TemplateField HeaderText="Darse de Baja">
                                   <ItemTemplate>
                                     <asp:Button ID="dropoutButton" meta:resourcekey="dropout" runat="server" OnClick="dropout_Click"
@@ -23,17 +23,6 @@
                      </Columns>
             </asp:GridView>
                 </div>
-            <div id="recomGrid" style="margin-right: 100px; margin-top: 20px; float: right; height: 198px;">
-            <asp:GridView ID="recommendationList" runat="server" AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Left" Width="402%" Height="170px" style="margin-left: 0px">
-                     <Columns>
-                            <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
-                                 meta:resourcekey="eventName" DataNavigateUrlFormatString="~/Pages/EventPages/EventComments.aspx?eventId={0}" />
-                            <asp:BoundField DataField="recommendationText" />
-                     </Columns>
-            </asp:GridView> 
-                </div>
-              
         </form>
         </div>
         <div class="previousNextLinks" style="margin-top: 10px;">

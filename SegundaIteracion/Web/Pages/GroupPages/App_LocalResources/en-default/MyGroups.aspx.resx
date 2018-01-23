@@ -117,31 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnLogin.Text" xml:space="preserve">
-    <value>Aceptar</value>
+  <data name="lclMenuExplanation.text" xml:space="preserve">
+    <value>My Groups</value>
   </data>
-  <data name="checkRememberPassword.Text" xml:space="preserve">
-    <value>Recordar mi contraseña (las cookies deben estar habilitadas)</value>
+  <data name="dropout.text" xml:space="preserve">
+    <value>Dropout Group</value>
   </data>
-  <data name="lblLoginError.Text" xml:space="preserve">
-    <value>Usuario no encontrado</value>
+  <data name="nameField.text" xml:space="preserve">
+    <value>Group Name</value>
   </data>
-  <data name="lblPasswordError.Text" xml:space="preserve">
-    <value>Contraseña incorrecta</value>
+  <data name="next.Text" xml:space="preserve">
+    <value>Next</value>
   </data>
-  <data name="lclNewGroupName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="lclMenuExplanation.Text" xml:space="preserve">
-    <value>Autenticación</value>
-  </data>
-  <data name="lclPassword.Text" xml:space="preserve">
-    <value>Contraseña</value>
-  </data>
-  <data name="lnkRegister.Text" xml:space="preserve">
-    <value>Registrarme (usuario no registrado)</value>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Previous</value>
   </data>
   <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Página de Autenticación</value>
+    <value>Miniportal - MyGroupsAndRecommendations Page</value>
   </data>
 </root>

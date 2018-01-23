@@ -123,9 +123,6 @@
   <data name="dropout.Text" xml:space="preserve">
     <value>Darse de baja</value>
   </data>
-  <data name="eventName.Text" xml:space="preserve">
-    <value>Nombre del Evento</value>
-  </data>
   <data name="nameField.Text" xml:space="preserve">
     <value>Nombre del grupo</value>
   </data>

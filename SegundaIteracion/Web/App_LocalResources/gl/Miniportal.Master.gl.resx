@@ -145,7 +145,7 @@
     <value>Engadir novo grupo</value>
   </data>
   <data name="lnkRecommendations.Text" xml:space="preserve">
-    <value>Miñas recomendacións</value>
+    <value>Recomendacións</value>
   </data>
   <data name="lnkUpdate.Text" xml:space="preserve">
     <value>Actualizar información de usuario</value>
