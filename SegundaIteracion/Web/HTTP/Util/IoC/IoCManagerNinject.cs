@@ -54,6 +54,9 @@ namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
             kernel.Bind<IRecommendationDao>().
                 To<RecommendationDaoEntityFramework>();
 
+            kernel.Bind<ICachingProvider>().
+                To<CachingProvider>();
+
             /* DbContext */
             string connectionString =
                 ConfigurationManager.ConnectionStrings["MiniPortalEntities"].ConnectionString;
