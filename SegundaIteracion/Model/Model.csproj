@@ -108,6 +108,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\CachingProvider.cs" />
+    <Compile Include="Caching\ICachingProvider.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>MiniPortal.tt</DependentUpon>
     </Compile>

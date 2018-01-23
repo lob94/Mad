@@ -10,30 +10,60 @@ namespace Es.Udc.DotNet.MiniPortal.Model.Caching
 {
     public class CachingProvider : ICachingProvider
     {
+        protected MemoryCache cache = new MemoryCache("CachingProvider");
 
-        public CachingProvider() { }
+        static readonly object padlock = new object();
 
-        public void addItem()
+        public void AddItem(string key, object value)
         {
+            lock (padlock)
+            {
+                byte cacheLimit = Settings.Default.cacheLimit;
 
+                if (cache.Count() >= cacheLimit) // last queries
+                {
+                    cache.Remove(cache.FirstOrDefault().Key);
+                }
+                cache.Add(key, value, DateTimeOffset.MaxValue);
+            }
         }
 
-
-        public CacheItem getItem(string key)
+        public void RemoveItem(string key)
         {
-
+            lock (padlock)
+            {
+                cache.Remove(key);
+            }
         }
 
-        public CacheItem getItem(string key, bool remove)
+        public object GetItem(string key, bool remove)
         {
+            lock (padlock)
+            {
+                var res = cache[key];
 
+                if (res != null)
+                {
+                    if (remove == true)
+                        cache.Remove(key);
+                }
+                return res;
+            }
         }
 
-        public void clean()
+        public object GetItem(string key)
         {
-
+            lock (padlock)
+            {
+                var res = cache[key];
+                return res;
+            }
         }
 
+        public void Clean()
+        {
+            cache = new MemoryCache("CachingProvider");
+        }
     }
 }
 

@@ -12,24 +12,29 @@ namespace Es.Udc.DotNet.MiniPortal.Model.Caching
         /// <summary>
         /// Adds CacheItem to Cache
         /// </summary>
-        void addItem();
+        void AddItem(string key, object value);
         /// <summary>
         /// Finds CacheItem by key
         /// </summary>
         /// <param key="key">key</param>
         /// <returns>CacheItem</returns>
-        CacheItem getItem(string key);
+        Object GetItem(string key);
         /// <summary>
         /// Finds CacheItem by key
         /// </summary>
         /// <param key="key">key</param>
         /// <param remove="remove">remove</param>
         /// <returns>CacheItem</returns>
-        CacheItem getItem(string key, bool remove);
+        Object GetItem(string key, bool remove);
+        /// <summary>
+        /// Removes CacheItem by key
+        /// </summary>
+        /// <param key="key">key</param>
+        void RemoveItem(string key)
         /// <summary>
         /// Clean cache
         /// </summary>
-        void clean();
+        void Clean();
     }
 }
 
