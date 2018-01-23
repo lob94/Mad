@@ -15,63 +15,47 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
 
         #region IUserGroup1Dao Members
 
-        public UserGroup FindByName(string name)
+        public ICollection<UserGroup> FindByName(string[] name, int startIndex, int count)
         {
-            UserGroup UserGroup = null;
+            int i=0;
+            ICollection<UserGroup> UserGroups = new List<UserGroup>();
 
             #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
 
             String sqlQuery =
-                "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u " +
-                "WHERE u.name=@name";
+                "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u ";
 
-            ObjectParameter param = new ObjectParameter("name", name);
+            foreach (String s in name)
+            {
+                if (i == 0)
+                {
+                    sqlQuery += "WHERE u.name LIKE '%" + s + "%' ";
+                    i++;
+                }
+                else
+                {
+                    sqlQuery += "AND u.name LIKE '%" + s + "%' ";
+                }
+            }
+
+            sqlQuery += "ORDER BY u.groupId";
 
             ObjectQuery<UserGroup> query =
-              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery, param);
-
-            var result = query.Execute(MergeOption.AppendOnly);
-
-            try
-            {
-                UserGroup = result.First<UserGroup>();
-            }
-            catch (Exception)
-            {
-                UserGroup = null;
-            }
-
-            #endregion
-
-            if (UserGroup == null)
-                throw new InstanceNotFoundException(name,
-                    typeof(UserGroup).ToString()); //FullName ??????????????????????????
-
-            return UserGroup;
-        }
-
-        public ICollection<UserGroup> FindAllGroupsPagination(int startIndex, int count)
-        {
-
-            ICollection<UserGroup> events = new List<UserGroup>();
-
-            String sqlQuery =
-               "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u " + "ORDER BY u.groupId"; ;
-            ObjectQuery<UserGroup> queryI =
-             ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery);
-            ObjectQuery<UserGroup> query = queryI;
+            ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery);
 
             var result = query.Skip(startIndex).Take(count).ToList<UserGroup>();
 
             try
             {
-                events = result.ToList<UserGroup>();
+                UserGroups = result.ToList<UserGroup>();
             }
             catch (Exception)
             {
             }
 
-            return events;
+            #endregion
+
+            return UserGroups;
         }
 
         #endregion

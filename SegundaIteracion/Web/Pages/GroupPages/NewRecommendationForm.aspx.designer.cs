@@ -10,7 +10,7 @@
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
     
     
-    public partial class NewGroupForm {
+    public partial class NewRecommendationForm {
         
         /// <summary>
         /// form1 control.

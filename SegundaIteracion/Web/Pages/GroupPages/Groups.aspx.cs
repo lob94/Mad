@@ -57,7 +57,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         }
         private void initGridView()
         {
-            groups = userService.FindAllGroups(startIndex, count);
+            groups = userService.FindGroupByName(keywords,startIndex, count);
             groupList.DataSource = groups;
             groupList.DataBind();
         }
@@ -69,9 +69,9 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
                 String s = gvr.Cells[0].Text;
-                UserGroupDto userGroup = userService.FindGroupByName(s);
+                ICollection<UserGroupDto> userGroup = userService.FindGroupByName(s,0,1);
                 long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
-                userService.JoinGroup(usrId, userGroup.groupId);
+                userService.JoinGroup(usrId, userGroup.First<UserGroupDto>().groupId);
                 Response.Redirect("Groups.aspx");
             }else 
                 Response.Redirect("Authentication.aspx");
@@ -82,6 +82,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             if ((startIndex - count) >= 0)
             {
                 String url = "http://localhost:8082/Pages/GroupPages/" + "Groups.aspx" + "?startIndex=" + (startIndex - count);
+                if (keywords != "")
+                {
+                    url += "&keywords=" + keywords;
+                }
                 this.linkPrevious.NavigateUrl = Response.ApplyAppPathModifier(url);
                 this.linkPrevious.Visible = true;
             }
@@ -90,7 +94,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             if ((startIndex + count) < numberResult)
             {
                 String url = "http://localhost:8082/Pages/GroupPages/" + "Groups.aspx" + "?startIndex=" + (startIndex + count);
-                
+                if (keywords != "")
+                {
+                    url += "&keywords=" + keywords;
+                }
                 this.linkNext.NavigateUrl = Response.ApplyAppPathModifier(url);
                 this.linkNext.Visible = true;
             }
@@ -98,19 +105,18 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 
         protected void search_Click(object sender, EventArgs e)
         {
-            /*if (Page.IsValid)
-            {*/
+            if (Page.IsValid)
+            {
                 /* Get data. */
 
-               /* String keywords = textEntry.Text;
-                String categoryId = dropDownList.SelectedItem.Value;*/
+                String keywords = textEntry.Text;
                 /* Do action. */
-               /* String url =
-                    String.Format("./Home.aspx?keywords={0}&categoryId={1}", keywords, categoryId);
+                String url =
+                    String.Format("./Groups.aspx?keywords={0}", keywords);
 
                 Response.Redirect(Response.ApplyAppPathModifier(url));
 
-            }*/
+            }
         }
     }
 }

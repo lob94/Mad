@@ -179,12 +179,16 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         }
 
         [Transactional]
-        public UserGroupDto FindGroupByName(string name)
+        public ICollection<UserGroupDto> FindGroupByName(string name, int startIndex, int count)
         {
-            UserGroup group = GroupDao.FindByName(name);
-            UserGroupDto groupDto = new UserGroupDto(group);
-
-            return groupDto;
+            String[] keywords = name.Split(' ');
+            ICollection<UserGroup> groups = GroupDao.FindByName(keywords, startIndex, count);
+            ICollection<UserGroupDto> groupsDto = new List<UserGroupDto>();
+            foreach (UserGroup group in groups)
+            {
+                groupsDto.Add(new UserGroupDto(group));
+            }
+            return groupsDto;
         }
 
         [Transactional]
@@ -196,9 +200,9 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         }
 
         [Transactional]
-        public ICollection<UserGroupDto> FindAllGroups(int startIndex, int count)
+        public ICollection<UserGroupDto> FindAllGroups()
         {
-            ICollection<UserGroup> groups = GroupDao.FindAllGroupsPagination(startIndex, count);
+            ICollection<UserGroup> groups = GroupDao.GetAllElements();
             ICollection<UserGroupDto> groupsDto = new List<UserGroupDto>();
             foreach (UserGroup group in groups)
             {

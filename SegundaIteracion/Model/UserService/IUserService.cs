@@ -113,10 +113,12 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// Finds group by name.
         /// </summary>
         /// <param name="Name">The group name.</param>
+        /// <param startIndex="StartIndex">The startIndex.</param>
+        /// <param count="Count">The count.</param>
         /// <returns>The groupDto</returns> 
         /// <exception cref="InstanceNotFoundException"/>  
         [Transactional]
-        UserGroupDto FindGroupByName(string name);
+        ICollection<UserGroupDto> FindGroupByName(string name, int startIndex, int count);
 
         /// <summary>
         /// Finds group by id.
@@ -130,12 +132,10 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// <sumary>
         /// List all groups
         /// </sumary>
-        /// <param startIndex="StartIndex">startIndex.</param>
-        /// <param count="Count">count.</param>
         /// <returns>All the groupsDto</returns>
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
-        ICollection<UserGroupDto> FindAllGroups(int startIndex, int count);
+        ICollection<UserGroupDto> FindAllGroups();
 
         /// <sumary>
         /// Number of existing groups

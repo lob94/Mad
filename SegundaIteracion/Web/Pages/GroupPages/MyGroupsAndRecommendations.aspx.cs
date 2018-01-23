@@ -90,14 +90,14 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
                 String s = gvr.Cells[0].Text;
-                UserGroupDto userGroup = userService.FindGroupByName(s);
+                ICollection<UserGroupDto> userGroup = userService.FindGroupByName(s, 0, 1);
                 /*Obtain userId*/
                 UserProfileDetails userProfileDetails =
                 SessionManager.FindUserProfileDetails(Context);
                 String email = userProfileDetails.Email;
                 UserProfile u = userService.FindUserByEmail(email);
                 /*Dropout from Group*/
-                userService.UnJoinGroup(u.usrId, userGroup.groupId);
+                userService.UnJoinGroup(u.usrId, userGroup.First<UserGroupDto>().groupId);
                 Response.Redirect("MyGroupsAndRecommendations.aspx");
                /* String url =
                    String.Format("./MyGroupsAndRecommendations.aspx?groupId={0}", groupId);
