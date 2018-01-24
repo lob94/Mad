@@ -12,7 +12,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 {
     public partial class NewRecommendationForm : System.Web.UI.Page
     {
-        long eventId;
+        long eventId = -1;
+        long usrId = -1;
         ICollection<UserGroupDto> groups;
         IUserService userService;
         protected void Page_Load(object sender, EventArgs e)
@@ -34,12 +35,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 
         private void initGridView()
         {
-            groups = userService.FindAllGroups();
+            usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
+            groups = userService.FindGroupsByUserId(usrId);
             groupsList.DataSource = groups;
             groupsList.DataBind();
         }
 
-        protected void subs_Click(object sender, EventArgs e)
+        protected void AddRecommendation_Click(object sender, EventArgs e)
         {
             if (SessionManager.IsUserAuthenticated(Context))
             {
@@ -52,11 +54,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                     {
                         
                         String s = row.Cells[0].Text;
-                        ICollection<UserGroupDto> userGroup = userService.FindGroupByName(s, 0, 1);
+                        ICollection<UserGroupDto> userGroup = userService.FindGroupsByKeywords(s, 0, 1);
                         groupsIds.Add(userGroup.First<UserGroupDto>().groupId);
                     }
                 }
-                long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
+               
                 userService.AddRecommendation(eventId, groupsIds, usrId, comment);
             }
             else

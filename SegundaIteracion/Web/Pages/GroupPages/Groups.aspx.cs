@@ -34,6 +34,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             {
                 initFromsValues();
                 initGridView();
+                modGridView();
             }
             PreviousNextButtons();
         }
@@ -55,11 +56,35 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 startIndex = Convert.ToInt16(startString);
             }
         }
+
         private void initGridView()
         {
-            groups = userService.FindGroupByName(keywords,startIndex, count);
+            groups = userService.FindGroupsByKeywords(keywords,startIndex, count);
             groupList.DataSource = groups;
             groupList.DataBind();
+        }
+
+        private void modGridView()
+        {
+            if (SessionManager.IsUserAuthenticated(Context))
+            {
+                long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
+                ICollection<UserGroupDto> groupsU = userService.FindGroupsByUserId(usrId);
+                foreach (GridViewRow row in groupList.Rows)
+                {
+                    String s = row.Cells[0].Text;
+                    UserGroupDto userGroup = userService.FindGroupsByName(s);
+                    Boolean b = containGroup(groupsU, userGroup);
+                    if (containGroup(groupsU, userGroup))
+                    {
+                        row.Cells[1].Visible = false;
+                        Button button = (Button)row.FindControl("subs");
+
+                        button.Visible = false;
+                        groupList.UpdateRow(row.RowIndex, false);
+                    }
+                }
+            }
         }
 
         protected void subs_Click(object sender, EventArgs e)
@@ -69,12 +94,30 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
                 String s = gvr.Cells[0].Text;
-                ICollection<UserGroupDto> userGroup = userService.FindGroupByName(s,0,1);
+                UserGroupDto userGroup = userService.FindGroupsByName(s);
                 long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
-                userService.JoinGroup(usrId, userGroup.First<UserGroupDto>().groupId);
+                userService.JoinGroup(usrId, userGroup.groupId);
                 Response.Redirect("Groups.aspx");
-            }else 
-                Response.Redirect("Authentication.aspx");
+            }
+            else
+            {
+                String url = "http://localhost:8082/Pages/User/" + "Authentication.aspx";
+                Response.Redirect(url);
+            }
+        }
+
+        private Boolean containGroup(ICollection<UserGroupDto> groups, UserGroupDto group)
+        {
+            Boolean b = false;
+            foreach(UserGroupDto gDto in groups)
+            {
+                if(gDto.name == group.name)
+                {
+                    b = true;
+                    break;
+                }
+            }
+            return b;
         }
 
         private void PreviousNextButtons()
@@ -90,7 +133,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 this.linkPrevious.Visible = true;
             }
             int numberResult;
-            numberResult = userService.FindAllGroupsCount();
+            numberResult = userService.CountFindGroupsByKeywords(keywords);
             if ((startIndex + count) < numberResult)
             {
                 String url = "http://localhost:8082/Pages/GroupPages/" + "Groups.aspx" + "?startIndex=" + (startIndex + count);

@@ -110,15 +110,32 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         ICollection<UserGroupDto> FindGroupsByUserId(long userId);
 
         /// <summary>
-        /// Finds group by name.
+        /// Finds a list of groups by name.
         /// </summary>
         /// <param name="Name">The group name.</param>
         /// <param startIndex="StartIndex">The startIndex.</param>
         /// <param count="Count">The count.</param>
+        /// <returns>The list of groupDtos</returns> />  
+        [Transactional]
+        ICollection<UserGroupDto> FindGroupsByKeywords(string name, int startIndex, int count);
+
+        /// <summary>
+        /// Finds group by name.
+        /// </summary>
+        /// <param name="Name">The group name.</param>
         /// <returns>The groupDto</returns> 
         /// <exception cref="InstanceNotFoundException"/>  
         [Transactional]
-        ICollection<UserGroupDto> FindGroupByName(string name, int startIndex, int count);
+        UserGroupDto FindGroupsByName(string name);
+
+        /// <summary>
+        /// Finds number of groups by name.
+        /// </summary>
+        /// <param name="Name">The group name.</param>
+        /// <returns>The number of groups that matches the keywords</returns> 
+        /// <exception cref="InstanceNotFoundException"/>  
+        [Transactional]
+        int CountFindGroupsByKeywords(string name);
 
         /// <summary>
         /// Finds group by id.
@@ -136,14 +153,6 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
         ICollection<UserGroupDto> FindAllGroups();
-
-        /// <sumary>
-        /// Number of existing groups
-        /// </sumary>
-        /// <returns>Number of total groups</returns>
-        /// <exception cref="InstanceNotFoundException"/>
-        [Transactional]
-        int FindAllGroupsCount();
 
         /// <summary>
         /// Find user by Login Name

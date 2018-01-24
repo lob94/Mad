@@ -15,13 +15,66 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
 
         #region IUserGroup1Dao Members
 
-        public ICollection<UserGroup> FindByName(string[] name, int startIndex, int count)
+        public ICollection<UserGroup> FindByKeywords(string[] name, int startIndex, int count)
         {
             int i=0;
             ICollection<UserGroup> UserGroups = new List<UserGroup>();
 
             #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
 
+            ObjectQuery<UserGroup> query = getFindQuery(name);
+
+            var result = query.Skip(startIndex).Take(count).ToList<UserGroup>();
+
+            try
+            {
+                UserGroups = result.ToList<UserGroup>();
+            }
+            catch (Exception)
+            {
+            }
+
+            #endregion
+
+            return UserGroups;
+        }
+        public UserGroup FindByName(string name)
+        {
+            UserGroup UserGroup = null;
+
+            #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
+
+            String sqlQuery =
+                "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u " +
+                "WHERE u.name=@name";
+
+            ObjectParameter param = new ObjectParameter("name", name);
+
+            ObjectQuery<UserGroup> query =
+              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery, param);
+
+            var result = query.Execute(MergeOption.AppendOnly);
+
+            try
+            {
+                UserGroup = result.First<UserGroup>();
+            }
+            catch (Exception)
+            {
+                UserGroup = null;
+            }
+
+            #endregion
+
+            if (UserGroup == null)
+                throw new InstanceNotFoundException(name,
+                    typeof(UserGroup).ToString()); //FullName ??????????????????????????
+
+            return UserGroup;
+        }
+        private System.Data.Entity.Core.Objects.ObjectQuery<UserGroup> getFindQuery(string[] name)
+        {
+            int i = 0;
             String sqlQuery =
                 "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u ";
 
@@ -41,21 +94,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
             sqlQuery += "ORDER BY u.groupId";
 
             ObjectQuery<UserGroup> query =
-            ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery);
+              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery);
+            return query;
+        }
 
-            var result = query.Skip(startIndex).Take(count).ToList<UserGroup>();
-
-            try
-            {
-                UserGroups = result.ToList<UserGroup>();
-            }
-            catch (Exception)
-            {
-            }
-
-            #endregion
-
-            return UserGroups;
+        public int CountFindGroupsByName(String[] name)
+        {
+            int result = getFindQuery(name).Count();
+            return result;
         }
 
         #endregion

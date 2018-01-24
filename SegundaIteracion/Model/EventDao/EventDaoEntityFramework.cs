@@ -70,11 +70,20 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
 
             sqlQuery += "ORDER BY u.eventId";
 
-            ObjectParameter pCategoryId = new ObjectParameter("categoryId", categoryId);
+            if(categoryId != -1)
+            {
+                ObjectParameter pCategoryId = new ObjectParameter("categoryId", categoryId);
 
-            ObjectQuery<Event> query =
-              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Event>(sqlQuery, pCategoryId);
-            return query;
+                ObjectQuery<Event> query =
+                  ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Event>(sqlQuery, pCategoryId);
+                return query;
+            }
+            else
+            {
+                ObjectQuery<Event> query =
+                  ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Event>(sqlQuery);
+                return query;
+            }
         }
 
         public int CountFindEvents(String[] name, long categoryId)

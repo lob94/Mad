@@ -18,7 +18,7 @@
                             </Columns>
             </asp:GridView>
         <asp:TextBox ID="textEntry" runat="server" Width="500px" Height="100px" TextMode="MultiLine" MaxLength="50"/>
-        <asp:Button ID="addRecommendation" runat="server" OnClick="AddRecommendation" Text="Añadir"/>
+        <asp:Button ID="addRecommendation" runat="server" OnClick="AddRecommendation_Click" Text="Añadir"/>
     </form>
     
 </asp:Content>

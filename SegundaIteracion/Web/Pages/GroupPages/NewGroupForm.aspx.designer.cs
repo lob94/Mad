@@ -22,30 +22,48 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// groupsList control.
+        /// lclNewGroupName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView groupsList;
+        protected global::System.Web.UI.WebControls.Localize lclNewGroupName;
         
         /// <summary>
-        /// textEntry control.
+        /// txtNewGroupName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textEntry;
+        protected global::System.Web.UI.WebControls.TextBox txtNewGroupName;
         
         /// <summary>
-        /// addRecommendation control.
+        /// lclNewGroupDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addRecommendation;
+        protected global::System.Web.UI.WebControls.Localize lclNewGroupDescription;
+        
+        /// <summary>
+        /// TxtNewGroupDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNewGroupDescription;
+        
+        /// <summary>
+        /// btnEnter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnter;
     }
 }

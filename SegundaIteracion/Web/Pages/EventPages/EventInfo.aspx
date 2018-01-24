@@ -10,6 +10,7 @@
                 <asp:Label ID="review" meta:resourcekey="review" runat="server"></asp:Label><br/>
                 <asp:Label ID="date" meta:resourcekey="date" runat="server"></asp:Label><br/>
             </div>
+            <asp:Button ID="AddRecommendation" Text="Recomendar" runat="server" Width="160px" OnClick="addRecommendation_Click" Height="34px"></asp:Button>
             <div id="addCommentDiv" style="margin-left:-200px;  margin-top:-125px; margin-bottom:33px; width:39%; float: right;">
                   <asp:Button ID="addComentario" meta:resourcekey="addComment" runat="server" Text="Añadir comentario" Width="160px" OnClick="addComentario_Click" Height="34px"></asp:Button><br />  
                   <asp:TextBox ID="introducirComentario" meta:resourcekey="writeComment" runat="server" Width="160px" Height="34px"></asp:TextBox>
