@@ -12,6 +12,8 @@ using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
 using Es.Udc.DotNet.MiniPortal.Model.Caching;
 
+using Microsoft.Practices.EnterpriseLibrary.Caching;
+
 namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 {
     public interface IEventService

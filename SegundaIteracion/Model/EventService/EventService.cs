@@ -15,6 +15,8 @@ using Es.Udc.DotNet.MiniPortal.Model;
 using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
 using Es.Udc.DotNet.MiniPortal.Model.Caching;
 
+using Microsoft.Practices.EnterpriseLibrary.Caching;
+
 namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 {
     public class EventService : IEventService
@@ -32,7 +34,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         [Inject]
         public ICachingProvider cachingProvider { private get; set; }
 
-       
+
         #region IEventService Members
 
         /// <exception cref="InstanceNotFoundException"/>

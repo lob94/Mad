@@ -4,6 +4,7 @@ using Es.Udc.DotNet.ModelUtil.Exceptions;
 using System.Collections.Generic;
 using Es.Udc.DotNet.MiniPortal.Model.Caching;
 using Ninject;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
 {
