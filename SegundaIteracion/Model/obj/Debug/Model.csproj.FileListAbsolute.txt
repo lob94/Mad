@@ -131,25 +131,6 @@ C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Exte
 C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
 C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll.config
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.pdb
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\ModelUtil.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll.config
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.pdb
@@ -169,3 +150,21 @@ C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteraci
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll.config
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.pdb
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\ModelUtil.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb

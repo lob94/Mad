@@ -1,10 +1,10 @@
-﻿using System;
-using Es.Udc.DotNet.ModelUtil.Dao;
+﻿using Es.Udc.DotNet.MiniPortal.Model.Properties;
+using System;
 using System.Linq;
-using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
+using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Caching;
+using System.Threading.Tasks;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.Caching
 {

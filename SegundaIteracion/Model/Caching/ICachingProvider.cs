@@ -1,8 +1,8 @@
 ﻿using System;
-using Es.Udc.DotNet.ModelUtil.Dao;
 using Es.Udc.DotNet.ModelUtil.Exceptions;
 using System.Collections.Generic;
 using System.Runtime.Caching;
+using System.Threading.Tasks;
 
 
 namespace Es.Udc.DotNet.MiniPortal.Model.Caching
@@ -30,7 +30,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.Caching
         /// Removes CacheItem by key
         /// </summary>
         /// <param key="key">key</param>
-        void RemoveItem(string key)
+        void RemoveItem(string key);
         /// <summary>
         /// Clean cache
         /// </summary>

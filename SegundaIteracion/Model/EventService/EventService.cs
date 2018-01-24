@@ -13,6 +13,7 @@ using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 using Es.Udc.DotNet.MiniPortal.Model.UserService;
 using Es.Udc.DotNet.MiniPortal.Model;
 using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
+using Es.Udc.DotNet.MiniPortal.Model.Caching;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 {
@@ -28,10 +29,10 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         public ILabelDao LabelDao { private get; set; }
         [Inject]
         public ICategoryDao CategoryDao { private get; set; }
+        [Inject]
+        public ICachingProvider cachingProvider { private get; set; }
 
-        private ObjectCache cache = MemoryCache.Default;
-
-
+       
         #region IEventService Members
 
         /// <exception cref="InstanceNotFoundException"/>
@@ -196,70 +197,34 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 
         public int CountFindEventsByKeywords(string name)
         {
-            String clave = "CountFindProducts" + name;
-            CacheItemPolicy policy = new CacheItemPolicy();
-            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
-            object cacheCountProducts = (object)cache.Get(clave);
             int countProducts;
-            if (cacheCountProducts == null)
-            {
+         
                 String[] keywords = name.Split(' ');
                 countProducts = EventDao.CountFindEvents(keywords, -1);
-                cache.Add(clave, countProducts, policy);
-            }
-            else
-            {
-                countProducts = (int)cacheCountProducts;
-            }
-
-            return (int)countProducts;
+             
+                return (int)countProducts;
         }
 
         public int CountFindEventsByCategory(long categoryId)
-        {
-            String clave = "CountFindProducts" + categoryId;
-            CacheItemPolicy policy = new CacheItemPolicy();
-            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
-            object cacheCountProducts = (object)cache.Get(clave);
+        { 
             int countProducts;
-            if (cacheCountProducts == null)
-            {
                 String keywords = "";
                 String[] name = keywords.Split(' ');
                 countProducts = EventDao.CountFindEvents(name, categoryId);
-                cache.Add(clave, countProducts, policy);
-            }
-            else
-            {
-                countProducts = (int)cacheCountProducts;
-            }
-
             return (int)countProducts;
         }
 
 
         public int CountFindEventsByKeywordsAndCategory(string name, long categoryId)
         {
-            String clave = "CountFindProductsByKeywordsAndCategory" + name + "categoryId" + categoryId;
-            CacheItemPolicy policy = new CacheItemPolicy();
-            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
-            object cacheCountProducts = (object)cache.Get(clave);
             if (name == null)
             {
                 name = "";
             }
             int countProducts;
-            if (cacheCountProducts == null)
-            {
+          
                 String[] keywords = name.Split(' ');
                 countProducts = EventDao.CountFindEvents(keywords, categoryId);
-                cache.Add(clave, countProducts, policy);
-            }
-            else
-            {
-                countProducts = (int)cacheCountProducts;
-            }
-
             return (int)countProducts;
         }
 

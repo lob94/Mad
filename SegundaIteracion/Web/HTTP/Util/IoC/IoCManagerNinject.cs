@@ -13,6 +13,7 @@ using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
 using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 using Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao;
 using Es.Udc.DotNet.MiniPortal.Model.RecommendationDao;
+using Es.Udc.DotNet.MiniPortal.Model.Caching;
 
 namespace Es.Udc.DotNet.MiniPortal.HTTP.Util.IoC
 {

@@ -2,11 +2,17 @@
 using Es.Udc.DotNet.ModelUtil.Dao;
 using Es.Udc.DotNet.ModelUtil.Exceptions;
 using System.Collections.Generic;
+using Es.Udc.DotNet.MiniPortal.Model.Caching;
+using Ninject;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
 {
     public interface IEventDao : IGenericDao<Event, Int64>
     {
+        [Inject]
+        ICachingProvider cachingProvider { set; }
+
+
         /// <summary>
         /// Finds a Event by name
         /// </summary>
@@ -23,6 +29,11 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
         /// <param categoryId="categoryId">categoryId</param>
         /// <returns>Total events od this search</returns>
         int CountFindEvents(String[] name, long categoryId);
+
+        /// <summary>
+        /// Removes all elements from cache
+        /// </summary>
+        void CleanCache();
 
     }
 }

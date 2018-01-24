@@ -28,13 +28,25 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
-            eventService = container.Resolve<IEventService>();
-            ICollection<EventDto> eventDto = eventService.FindAllEvents();
-            initFromsValues();
-            initDropDownListView();
-            initGridView();
-            PreviousNextButtons();
+            if (!IsPostBack)
+            {
+                IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
+                eventService = container.Resolve<IEventService>();
+                ICollection<EventDto> eventDto = eventService.FindAllEvents();
+                initFromsValues();
+                initDropDownListView();
+                initGridView();
+                PreviousNextButtons();
+            }
+            else
+            {
+                IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
+                eventService = container.Resolve<IEventService>();
+                ICollection<EventDto> eventDto = eventService.FindAllEvents();
+                initFromsValues();
+                initGridView();
+                PreviousNextButtons();
+            }
         }
         private void initDropDownListView()
         {

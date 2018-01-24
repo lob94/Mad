@@ -10,6 +10,7 @@ using Es.Udc.DotNet.MiniPortal.Model.RecommendationDao;
 using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
 using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
+using Es.Udc.DotNet.MiniPortal.Model.Caching;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 {
@@ -23,6 +24,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         ILabelDao LabelDao { set; }
         [Inject]
         ICategoryDao CategoryDao { set; }
+        [Inject]
+        ICachingProvider cachingProvider { set; }
 
         /// <summary>
         /// Finds event by id.
