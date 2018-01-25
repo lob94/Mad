@@ -12,7 +12,8 @@
                      <Columns>
                             <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
                                  meta:resourcekey="eventName" DataNavigateUrlFormatString="~/Pages/EventPages/EventComments.aspx?eventId={0}" />
-                            <asp:BoundField DataField="recommendationText" />
+                            <asp:BoundField DataField="reason" />
+                            <asp:BoundField DataField="groupId" />
                      </Columns>
             </asp:GridView> 
             </div>

@@ -80,5 +80,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
                 throw new Exception();
             }
         }
+        protected void addRecommendation_Click(object sender, EventArgs e)
+        {
+            String url = "http://localhost:8082/Pages/GroupPages/" + "NewRecommendationForm.aspx" + "?eventId=" + evId;
+            Response.Redirect(url);
+        }
     }
 }

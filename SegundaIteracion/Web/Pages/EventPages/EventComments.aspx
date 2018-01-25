@@ -16,13 +16,11 @@
                                         <asp:BoundField DataField="commentDate"/>
                                     </Columns>
                 </asp:GridView>
-          </form>
-        </div>
-        <div id="botonVolver" align="right" style="width: 916px" >
-            <asp:Button ID="volverHome" meta:resourcekey="volverHome" runat="server" Width="194px" OnClick="volver_Click" Height="34px">
+            <asp:Button ID="volverHome" meta:resourcekey="volverHome" runat="server" Width="194px" OnClick="volver_Click" Height="34px"
+                style=" margin-left: 0px; ">
             </asp:Button>
             <br />
+          </form>
         </div>
     </div>
-   
 </asp:Content>

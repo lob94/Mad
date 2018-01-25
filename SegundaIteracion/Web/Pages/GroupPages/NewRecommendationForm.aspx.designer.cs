@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
+namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
     
     
-    public partial class Home {
+    public partial class NewRecommendationForm {
         
         /// <summary>
         /// Control form1.
@@ -22,6 +22,15 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control groupsList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView groupsList;
+        
+        /// <summary>
         /// Control textEntry.
         /// </summary>
         /// <remarks>
@@ -31,48 +40,12 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
         protected global::System.Web.UI.WebControls.TextBox textEntry;
         
         /// <summary>
-        /// Control dropDownList.
+        /// Control addRecommendation.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropDownList;
-        
-        /// <summary>
-        /// Control searchButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchButton;
-        
-        /// <summary>
-        /// Control eventList2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView eventList2;
-        
-        /// <summary>
-        /// Control linkPrevious.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkPrevious;
-        
-        /// <summary>
-        /// Control linkNext.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkNext;
+        protected global::System.Web.UI.WebControls.Button addRecommendation;
     }
 }

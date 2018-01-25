@@ -175,6 +175,24 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         protected global::System.Web.UI.WebControls.HyperLink lnkRecommendations;
         
         /// <summary>
+        /// Control lblDash8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDash8;
+        
+        /// <summary>
+        /// Control lnkEvents.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkEvents;
+        
+        /// <summary>
         /// Control lblDash3.
         /// </summary>
         /// <remarks>

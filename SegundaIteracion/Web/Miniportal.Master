@@ -55,6 +55,10 @@
                     <asp:HyperLink ID="lnkRecommendations" runat="server"
                         NavigateUrl="~/Pages/GroupPages/Recommendations.aspx" 
                         meta:resourcekey="lnkRecommendations" />
+                     <asp:Label ID="lblDash8" runat="server" Text="-" />
+                    <asp:HyperLink ID="lnkEvents" runat="server"
+                        NavigateUrl="~/Pages/EventPages/Home.aspx" 
+                        meta:resourcekey="lnkGroups" />
                     <asp:Label ID="lblDash3" runat="server" Text="-" />
                     <asp:HyperLink ID="lnkLogout" runat="server"
                         NavigateUrl="~/Pages/User/Logout.aspx" 

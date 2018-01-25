@@ -132,6 +132,9 @@
   <data name="lnkAuthenticate.Text" xml:space="preserve">
     <value>Autenticación</value>
   </data>
+  <data name="lnkEvents.Text" xml:space="preserve">
+    <value>Todos los Eventos</value>
+  </data>
   <data name="lnkGroups.Text" xml:space="preserve">
     <value>Todos los Grupos</value>
   </data>
