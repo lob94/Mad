@@ -8,6 +8,15 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
     public interface IUserGroup1Dao : IGenericDao<UserGroup, Int64>
     {
         /// <summary>
+        /// Finds a list of UserGroup1 by name
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <param startIndex="StartIndex">name</param>
+        /// <param count="Count">name</param>
+        /// <returns>A list of UserGroups that matches the keywords</returns>/>
+        ICollection<UserGroup> FindByKeywords(string[] name, int startIndex, int count);
+
+        /// <summary>
         /// Finds a UserGroup1 by name
         /// </summary>
         /// <param name="name">name</param>
@@ -16,11 +25,11 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
         UserGroup FindByName(string name);
 
         /// <summary>
-        /// Finds all the UserGroups
+        /// Finds a list of UserGroup1 by name
         /// </summary>
-        /// <returns>The a list of UserGroup</returns>
-        /// <exception cref="InstanceNotFoundException"/>
-        ICollection<UserGroup> FindAllGroupsPagination(int startIndex, int count);
+        /// <param name="name">name</param>
+        /// <returns>A list of UserGroups that matches the keywords</returns>/>
+        int CountFindGroupsByName(String[] name);
     }
 }
 

@@ -15,6 +15,29 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
 
         #region IUserGroup1Dao Members
 
+        public ICollection<UserGroup> FindByKeywords(string[] name, int startIndex, int count)
+        {
+            int i=0;
+            ICollection<UserGroup> UserGroups = new List<UserGroup>();
+
+            #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
+
+            ObjectQuery<UserGroup> query = getFindQuery(name);
+
+            var result = query.Skip(startIndex).Take(count).ToList<UserGroup>();
+
+            try
+            {
+                UserGroups = result.ToList<UserGroup>();
+            }
+            catch (Exception)
+            {
+            }
+
+            #endregion
+
+            return UserGroups;
+        }
         public UserGroup FindByName(string name)
         {
             UserGroup UserGroup = null;
@@ -49,29 +72,36 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao
 
             return UserGroup;
         }
-
-        public ICollection<UserGroup> FindAllGroupsPagination(int startIndex, int count)
+        private System.Data.Entity.Core.Objects.ObjectQuery<UserGroup> getFindQuery(string[] name)
         {
-
-            ICollection<UserGroup> events = new List<UserGroup>();
-
+            int i = 0;
             String sqlQuery =
-               "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u " + "ORDER BY u.groupId"; ;
-            ObjectQuery<UserGroup> queryI =
-             ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery);
-            ObjectQuery<UserGroup> query = queryI;
+                "SELECT VALUE u FROM MiniPortalEntities.UserGroups AS u ";
 
-            var result = query.Skip(startIndex).Take(count).ToList<UserGroup>();
-
-            try
+            foreach (String s in name)
             {
-                events = result.ToList<UserGroup>();
-            }
-            catch (Exception)
-            {
+                if (i == 0)
+                {
+                    sqlQuery += "WHERE u.name LIKE '%" + s + "%' ";
+                    i++;
+                }
+                else
+                {
+                    sqlQuery += "AND u.name LIKE '%" + s + "%' ";
+                }
             }
 
-            return events;
+            sqlQuery += "ORDER BY u.groupId";
+
+            ObjectQuery<UserGroup> query =
+              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<UserGroup>(sqlQuery);
+            return query;
+        }
+
+        public int CountFindGroupsByName(String[] name)
+        {
+            int result = getFindQuery(name).Count();
+            return result;
         }
 
         #endregion

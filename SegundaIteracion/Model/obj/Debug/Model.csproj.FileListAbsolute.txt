@@ -171,3 +171,5 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Ext
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml

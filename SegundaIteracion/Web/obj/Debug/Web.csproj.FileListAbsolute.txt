@@ -1,4 +1,4 @@
-C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.dll.config
+﻿C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.dll.config
 C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.dll
 C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.pdb
 C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\Castle.Core.dll
@@ -243,3 +243,5 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Es.Udc.DotNet
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csproj.GenerateResource.Cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.pdb
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml

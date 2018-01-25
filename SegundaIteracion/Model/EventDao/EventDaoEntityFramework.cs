@@ -65,8 +65,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
             }
 
             sqlQuery += "ORDER BY u.eventId";
-
-            if (categoryId != -1)
+            
+            if(categoryId != -1)
             {
                 ObjectParameter pCategoryId = new ObjectParameter("categoryId", categoryId);
 

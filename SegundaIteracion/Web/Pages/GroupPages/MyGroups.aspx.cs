@@ -75,7 +75,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
                 String s = gvr.Cells[0].Text;
-                UserGroupDto userGroup = userService.FindGroupByName(s);
+                UserGroupDto userGroup = userService.FindGroupsByName(s);
                 /*Obtain userId*/
                 UserProfileDetails userProfileDetails =
                 SessionManager.FindUserProfileDetails(Context);

@@ -110,13 +110,32 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         ICollection<UserGroupDto> FindGroupsByUserId(long userId);
 
         /// <summary>
+        /// Finds a list of groups by name.
+        /// </summary>
+        /// <param name="Name">The group name.</param>
+        /// <param startIndex="StartIndex">The startIndex.</param>
+        /// <param count="Count">The count.</param>
+        /// <returns>The list of groupDtos</returns> />  
+        [Transactional]
+        ICollection<UserGroupDto> FindGroupsByKeywords(string name, int startIndex, int count);
+
+        /// <summary>
         /// Finds group by name.
         /// </summary>
         /// <param name="Name">The group name.</param>
         /// <returns>The groupDto</returns> 
         /// <exception cref="InstanceNotFoundException"/>  
         [Transactional]
-        UserGroupDto FindGroupByName(string name);
+        UserGroupDto FindGroupsByName(string name);
+
+        /// <summary>
+        /// Finds number of groups by name.
+        /// </summary>
+        /// <param name="Name">The group name.</param>
+        /// <returns>The number of groups that matches the keywords</returns> 
+        /// <exception cref="InstanceNotFoundException"/>  
+        [Transactional]
+        int CountFindGroupsByKeywords(string name);
 
         /// <summary>
         /// Finds group by id.
@@ -130,20 +149,10 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// <sumary>
         /// List all groups
         /// </sumary>
-        /// <param startIndex="StartIndex">startIndex.</param>
-        /// <param count="Count">count.</param>
         /// <returns>All the groupsDto</returns>
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
-        ICollection<UserGroupDto> FindAllGroups(int startIndex, int count);
-
-        /// <sumary>
-        /// Number of existing groups
-        /// </sumary>
-        /// <returns>Number of total groups</returns>
-        /// <exception cref="InstanceNotFoundException"/>
-        [Transactional]
-        int FindAllGroupsCount();
+        ICollection<UserGroupDto> FindAllGroups();
 
         /// <summary>
         /// Find user by Login Name

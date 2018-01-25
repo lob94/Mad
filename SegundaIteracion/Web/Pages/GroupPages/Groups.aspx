@@ -6,7 +6,7 @@
     <div id="form" style="margin-right: auto; margin-left: auto; margin-bottom: 10px;">
         <form id="form1" runat="server">
             <div class="form-group" style="width: 1374px; margin-left: 0px">
-                <asp:TextBox ID="textEntry" runat="server" style="margin-left: 400px;" AutoPostBack="True" Width="311px"></asp:TextBox>
+                <asp:TextBox ID="textEntry" runat="server" style="margin-left: 400px;" AutoPostBack="false" Width="311px"></asp:TextBox>
                 <asp:Button ID="searchButton" class="btn btn-primary" runat="server" OnClick="search_Click" meta:resourcekey="btnLogin" Text="Search"
                      Height="55px" Width="159px" style="margin-top: 10px; margin-bottom: 10px; margin-left: 50px;"/>
             </div>
@@ -20,7 +20,7 @@
                                 <asp:BoundField DataField="recommendationsCount" meta:resourcekey="recommendationCount" />
                                 <asp:TemplateField  HeaderText="Seleccionar">
                                   <ItemTemplate>
-                                    <asp:Button ID="subs" runat="server" OnClick="subs_Click" Text="Inscribirse"/>
+                                    <asp:Button ID="subs" runat="server" OnClick="subs_Click" Text="Inscribirse" Visible='<%# UpdateRow((String)Eval("name")) %>'/>
                                   </ItemTemplate> 
                                 </asp:TemplateField>
                             </Columns>

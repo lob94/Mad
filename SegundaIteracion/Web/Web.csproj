@@ -111,9 +111,8 @@
     <Content Include="Pages\EventPages\EventInfo.aspx" />
     <Content Include="Pages\EventPages\Home.aspx" />
     <Content Include="Pages\GroupPages\Groups.aspx" />
-    <Content Include="Pages\GroupPages\Recommendations.aspx" />
-    <Content Include="Pages\GroupPages\MyGroups.aspx" />
     <Content Include="Pages\GroupPages\NewGroupForm.aspx" />
+    <Content Include="Pages\GroupPages\NewRecommendationForm.aspx" />
     <Content Include="Pages\User\UpdateUserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -191,26 +190,19 @@
     <Compile Include="Pages\GroupPages\Groups.aspx.designer.cs">
       <DependentUpon>Groups.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\GroupPages\Recommendations.aspx.cs">
-      <DependentUpon>Recommendations.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\GroupPages\Recommendations.aspx.designer.cs">
-      <DependentUpon>Recommendations.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\GroupPages\MyGroups.aspx.cs">
-      <DependentUpon>MyGroups.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\GroupPages\MyGroups.aspx.designer.cs">
-      <DependentUpon>MyGroups.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\GroupPages\NewGroupForm.aspx.cs">
       <DependentUpon>NewGroupForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\GroupPages\NewGroupForm.aspx.designer.cs">
       <DependentUpon>NewGroupForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupPages\NewRecommendationForm.aspx.cs">
+      <DependentUpon>NewRecommendationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupPages\NewRecommendationForm.aspx.designer.cs">
+      <DependentUpon>NewRecommendationForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
@@ -292,9 +284,9 @@
     <Content Include="Pages\EventPages\App_LocalResources\en-default\EventComments.aspx.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\es\EventComments.aspx.es.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\gl\EventComments.aspx.gl.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\en-default\MyGroups.aspx.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\es\MyGroups.aspx.es.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\gl\MyGroups.aspx.gl.resx" />
+    <Content Include="Pages\GroupPages\App_LocalResources\en-default\MyGroupsAndRecommendations.aspx.resx" />
+    <Content Include="Pages\GroupPages\App_LocalResources\es\MyGroupsAndRecommendations.aspx.es.resx" />
+    <Content Include="Pages\GroupPages\App_LocalResources\gl\MyGroupsAndRecommendations.aspx.gl.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\Groups.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\Groups.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\Groups.aspx.gl.resx" />
@@ -307,9 +299,6 @@
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\NewGroupForm.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\NewGroupForm.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\NewGroupForm.aspx.gl.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\en-default\Recommendations.aspx.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\es\Recommendations.aspx.es.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\gl\Recommendations.aspx.gl.resx" />
     <EmbeddedResource Include="Pages\User\App_LocalResources\en-default\Register.aspx.resx" />
     <Content Include="Pages\User\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
   </ItemGroup>

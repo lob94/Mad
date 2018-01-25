@@ -11,6 +11,7 @@ using System.Collections;
 using System.Web.UI.MobileControls;
 using Es.Udc.DotNet.MiniPortal.Model.RecommendationDao;
 using Es.Udc.DotNet.MiniPortal.Model.EventDao;
+using System.Runtime.Caching;
 
 namespace Es.Udc.DotNet.MiniPortal.Model.UserService
 {
@@ -24,6 +25,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         public IRecommendationDao RecommendationDao { private get; set; }
         [Inject]
         public IEventDao EventDao { private get; set; }
+
+        private ObjectCache cache = MemoryCache.Default;
 
         #region IUserService Members
 
@@ -179,12 +182,45 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         }
 
         [Transactional]
-        public UserGroupDto FindGroupByName(string name)
+        public ICollection<UserGroupDto> FindGroupsByKeywords(string name, int startIndex, int count)
+        {
+            String[] keywords = name.Split(' ');
+            ICollection<UserGroup> groups = GroupDao.FindByKeywords(keywords, startIndex, count);
+            ICollection<UserGroupDto> groupsDto = new List<UserGroupDto>();
+            foreach (UserGroup group in groups)
+            {
+                groupsDto.Add(new UserGroupDto(group));
+            }
+            return groupsDto;
+        }
+
+        [Transactional]
+        public UserGroupDto FindGroupsByName(string name)
         {
             UserGroup group = GroupDao.FindByName(name);
             UserGroupDto groupDto = new UserGroupDto(group);
-
             return groupDto;
+        }
+
+        public int CountFindGroupsByKeywords(string name)
+        {
+            String clave = "CountFindGroup" + name;
+            CacheItemPolicy policy = new CacheItemPolicy();
+            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
+            object cacheCountGroups = (object)cache.Get(clave);
+            int countGroups;
+            if (cacheCountGroups == null)
+            {
+                String[] keywords = name.Split(' ');
+                countGroups = GroupDao.CountFindGroupsByName(keywords);
+                cache.Add(clave, countGroups, policy);
+            }
+            else
+            {
+                countGroups = (int)cacheCountGroups;
+            }
+
+            return (int)countGroups;
         }
 
         [Transactional]
@@ -196,21 +232,15 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         }
 
         [Transactional]
-        public ICollection<UserGroupDto> FindAllGroups(int startIndex, int count)
+        public ICollection<UserGroupDto> FindAllGroups()
         {
-            ICollection<UserGroup> groups = GroupDao.FindAllGroupsPagination(startIndex, count);
+            ICollection<UserGroup> groups = GroupDao.GetAllElements();
             ICollection<UserGroupDto> groupsDto = new List<UserGroupDto>();
             foreach (UserGroup group in groups)
             {
                 groupsDto.Add(new UserGroupDto(group));
             }
             return groupsDto;
-        }
-
-        public int FindAllGroupsCount()
-        {
-            int numberGroups = GroupDao.GetAllElements().Count;
-            return numberGroups;
         }
 
         /// <exception cref="InstanceNotFoundException"/>
