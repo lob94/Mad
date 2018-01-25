@@ -12,10 +12,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
 {
     public class EventDaoEntityFramework :
         GenericDaoEntityFramework<Event, Int64>, IEventDao
-    {
-        [Inject]
-        public ICachingProvider cachingProvider { get; set; }
-
+    { 
         public EventDaoEntityFramework() { }
 
 
@@ -24,28 +21,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
         public ICollection<Event> FindByKeywordsAndCategory(String[] name, long categoryId, int startIndex, int count)
         {
             ICollection<Event> events = new List<Event>();
-
-            /*Necesario para el caching*/
-            String items = "";
-            /*Para caching*/
-            foreach (var item in name)
-            {
-                items += " " + item.ToLower();
-            }
-            /*Resultado lista de cache*/
-            List<Event> cacheResult = (List<Event>)cachingProvider.GetItem(items, false);
-            /*Si la llamada está en caché, devolvemos esa*/
-            if (cacheResult != null)
-            {
-                events = cacheResult
-                    .Skip(startIndex)
-                    .Take(count)
-                    .ToList();
-                cachingProvider.AddItem(items, events);
-                return events;
-            }
-                /*En caso de que no esté cacheada, hacemos la llamada*/
-                ObjectQuery<Event> query = getFindQuery(name, categoryId);
+              ObjectQuery<Event> query = getFindQuery(name, categoryId);
 
                 var result = query.Skip(startIndex).Take(count).ToList<Event>();
 
@@ -54,9 +30,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
                     events = result.ToList<Event>();
                 }
                 catch (Exception) {    }
-               /*Añadimos el resultado de la nueva llamada a cache*/
-                cachingProvider.AddItem(items, events);
-            /*Devolvemos la nueva llamada*/
+             
             return events;
         }
 
@@ -112,11 +86,6 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
         {
             int result = getFindQuery(name, categoryId).Count();
             return result;
-        }
-
-        public void CleanCache()
-        {
-            cachingProvider.Clean();
         }
 
         #endregion

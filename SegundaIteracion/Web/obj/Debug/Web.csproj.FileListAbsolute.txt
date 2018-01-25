@@ -220,6 +220,7 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.pdb
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Castle.Core.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\EntityFramework.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\MiniPortal.Model.dll
@@ -231,6 +232,7 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\MiniPortal.Model.pd
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Castle.Core.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\EntityFramework.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Logging.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Ninject.xml
@@ -241,5 +243,3 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Es.Udc.DotNet
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csproj.GenerateResource.Cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.pdb
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml

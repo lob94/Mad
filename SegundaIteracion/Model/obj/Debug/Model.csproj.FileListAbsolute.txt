@@ -155,6 +155,7 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\MiniPortal.Model.pdb
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\ModelUtil.dll
@@ -162,6 +163,7 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Extensions.Interception.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.xml
@@ -169,5 +171,3 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Ninject.Ext
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml

@@ -78,15 +78,32 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         [Transactional]
         public ICollection<EventDto> FindEventsByKeywordsAndCategory(String name, long categoryId, int startIndex, int count)
         {
-            String[] keywords = name.Split(' ');
-            ICollection<Event> events = EventDao.FindByKeywordsAndCategory(keywords, categoryId, startIndex, count);
-            ICollection<EventDto> eventsDto = new HashSet<EventDto>();
-            foreach (Event e in events)
+            if (cachingProvider.GetItem(name,false) != null)
             {
-                eventsDto.Add(new EventDto(e));
+                ICollection<Event> events = (ICollection<Event>)cachingProvider.GetItem(name, false);
+                cachingProvider.AddItem(name, events);
+                ICollection<EventDto> eventsDto = new HashSet<EventDto>();
+                foreach (Event e in events)
+                {
+                    eventsDto.Add(new EventDto(e));
+                }
+                return eventsDto;
             }
-            return eventsDto;
-        }
+            else
+            {
+
+                String[] keywords = name.Split(' ');
+                ICollection<Event> events = EventDao.FindByKeywordsAndCategory(keywords, categoryId, startIndex, count);
+                cachingProvider.AddItem(name, events);
+                ICollection<EventDto> eventsDto = new HashSet<EventDto>();
+                foreach (Event e in events)
+                {
+                    eventsDto.Add(new EventDto(e));
+                }
+                return eventsDto;
+            }
+        
+    }
 
         public ICollection<EventDto> FindAllEvents()
         {
@@ -228,6 +245,11 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
                 String[] keywords = name.Split(' ');
                 countProducts = EventDao.CountFindEvents(keywords, categoryId);
             return (int)countProducts;
+        }
+
+        public void cleanCache()
+        {
+            cachingProvider.Clean();
         }
 
         #endregion

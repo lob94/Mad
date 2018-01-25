@@ -153,5 +153,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         int CountFindEventsByCategory(long categoryId);
 
         int CountFindEventsByKeywordsAndCategory(string name, long categoryId);
+
+        void cleanCache();
     }
 }

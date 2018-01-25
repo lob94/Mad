@@ -10,7 +10,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.Caching
 {
     public class CachingProvider : ICachingProvider
     {
-        protected MemoryCache cache = new MemoryCache("CachingProvider");
+        public static MemoryCache cache = new MemoryCache("CachingProvider");
 
         static readonly object padlock = new object();
 

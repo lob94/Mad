@@ -188,6 +188,7 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.T
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Castle.Core.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
@@ -201,6 +202,7 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.M
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Castle.Core.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\Ninject.xml
