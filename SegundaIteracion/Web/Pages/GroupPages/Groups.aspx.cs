@@ -22,7 +22,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         Boolean categoryForm = false;
         long categoryID = -1;
         int startIndex = 0;
-        int count = 1;
+        int count = 5;
         ICollection<UserGroupDto> groups;
         IUserService userService;
 
@@ -34,7 +34,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             {
                 initFromsValues();
                 initGridView();
-                modGridView();
             }
             PreviousNextButtons();
         }
@@ -64,27 +63,20 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             groupList.DataBind();
         }
 
-        private void modGridView()
+        protected Boolean UpdateRow(String name)
         {
+            Boolean b = true;
             if (SessionManager.IsUserAuthenticated(Context))
             {
                 long usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
                 ICollection<UserGroupDto> groupsU = userService.FindGroupsByUserId(usrId);
-                foreach (GridViewRow row in groupList.Rows)
+                UserGroupDto userGroup = userService.FindGroupsByName(name);
+                if (containGroup(groupsU, userGroup))
                 {
-                    String s = row.Cells[0].Text;
-                    UserGroupDto userGroup = userService.FindGroupsByName(s);
-                    Boolean b = containGroup(groupsU, userGroup);
-                    if (containGroup(groupsU, userGroup))
-                    {
-                        row.Cells[1].Visible = false;
-                        Button button = (Button)row.FindControl("subs");
-
-                        button.Visible = false;
-                        groupList.UpdateRow(row.RowIndex, false);
-                    }
+                    b = false;
                 }
             }
+            return b;
         }
 
         protected void subs_Click(object sender, EventArgs e)

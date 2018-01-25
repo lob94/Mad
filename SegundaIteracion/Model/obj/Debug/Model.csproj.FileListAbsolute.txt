@@ -169,3 +169,5 @@ C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteraci
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.dll
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Model\obj\Debug\MiniPortal.Model.pdb
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml

@@ -241,3 +241,5 @@ C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteraci
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.xml
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.xml
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.DynamicProxy.xml
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml
