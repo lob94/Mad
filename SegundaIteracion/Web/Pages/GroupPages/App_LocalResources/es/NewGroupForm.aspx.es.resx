@@ -129,4 +129,10 @@
   <data name="Page.Title" xml:space="preserve">
     <value>Miniportal - Nuevo Grupo</value>
   </data>
+  <data name="rfvDescription.Text" xml:space="preserve">
+    <value>Campo requerido</value>
+  </data>
+  <data name="rfvName.Text" xml:space="preserve">
+    <value>Campo requerido</value>
+  </data>
 </root>

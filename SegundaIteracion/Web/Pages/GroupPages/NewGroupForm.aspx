@@ -10,6 +10,9 @@
                 <asp:Localize ID="lclNewGroupName" runat="server" meta:resourcekey="lclNewGroupName" /></span><span
                     class="entry">
                     <asp:TextBox ID="txtNewGroupName" runat="server" Width="100" Columns="16"></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtNewGroupName"
+                    Display="Dynamic" meta:resourcekey="rfvName">
+                  </asp:RequiredFieldValidator>
              </span>
         </div>
         <div class="field">
@@ -17,6 +20,9 @@
                 <asp:Localize ID="lclNewGroupDescription" runat="server" meta:resourcekey="lclNewGroupDescription" /></span><span
                     class="entry">
                     <asp:TextBox ID="TxtNewGroupDescription" runat="server" Width="100" Columns="16"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="rfvDescription" runat="server" ControlToValidate="txtNewGroupDescription"
+                    Display="Dynamic" meta:resourcekey="rfvDescription">
+                     </asp:RequiredFieldValidator>
              </span>
         </div>
         <div class="field">
