@@ -272,9 +272,11 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             {
                 ICollection<Recommendation> recs = RecommendationDao.FindByGroupId(groupId, startIndex, count);
                 ICollection<RecommendationDto> recsDto = new List<RecommendationDto>();
+
                 foreach (Recommendation r in recs)
                 {
-                    recsDto.Add(new RecommendationDto(r));
+                    Event e = EventDao.Find(r.eventId);
+                    recsDto.Add(new RecommendationDto(r, e.name));
                 }
                 return recsDto;
             }
@@ -289,7 +291,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             ICollection<RecommendationDto> recsDto = new List<RecommendationDto>();
             foreach (Recommendation r in rs)
             {
-                recsDto.Add(new RecommendationDto(r));
+                recsDto.Add(new RecommendationDto(r, EventDao.Find(r.eventId).name));
             }
             return recsDto;
         }

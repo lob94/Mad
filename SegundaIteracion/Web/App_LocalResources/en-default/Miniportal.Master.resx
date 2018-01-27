@@ -138,6 +138,9 @@
   <data name="lnkGroups.Text" xml:space="preserve">
     <value>All Groups</value>
   </data>
+  <data name="lnkHome.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="lnkLogout.Text" xml:space="preserve">
     <value>Logout</value>
   </data>

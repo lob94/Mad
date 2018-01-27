@@ -15,7 +15,7 @@
             </div>
             </div>
             <div>
-                <asp:Button ID="AddRecommendation" Text="Recomendar" runat="server" Width="160px" OnClick="addRecommendation_Click" Height="34px">
+                <asp:Button ID="AddRecommendation" Text="Recomendar" runat="server" Width="160px" OnClick="addRecommendation_Click" Visible="false" Height="34px">
                 </asp:Button>
             </div>
         </form>

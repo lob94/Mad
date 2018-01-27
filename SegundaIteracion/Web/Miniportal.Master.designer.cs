@@ -112,13 +112,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         protected global::System.Web.UI.WebControls.Label lblDash4;
         
         /// <summary>
-        /// Control lnkGroups.
+        /// Control lnkEvents.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkGroups;
+        protected global::System.Web.UI.WebControls.HyperLink lnkEvents;
         
         /// <summary>
         /// Control lblDash5.
@@ -148,13 +148,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         protected global::System.Web.UI.WebControls.Label lblDash6;
         
         /// <summary>
-        /// Control lnkMyGroups.
+        /// Control lnkGroups.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkMyGroups;
+        protected global::System.Web.UI.WebControls.HyperLink lnkGroups;
         
         /// <summary>
         /// Control lblDash7.
@@ -166,31 +166,13 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         protected global::System.Web.UI.WebControls.Label lblDash7;
         
         /// <summary>
-        /// Control lnkRecommendations.
+        /// Control lnkMyGroups.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkRecommendations;
-        
-        /// <summary>
-        /// Control lblDash8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDash8;
-        
-        /// <summary>
-        /// Control lnkEvents.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkEvents;
+        protected global::System.Web.UI.WebControls.HyperLink lnkMyGroups;
         
         /// <summary>
         /// Control lblDash3.

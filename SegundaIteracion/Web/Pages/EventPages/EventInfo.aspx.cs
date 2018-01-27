@@ -52,7 +52,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             categoria.Text = evento.Category.name;
             review.Text = evento.review;
             date.Text = evento.eventDate.ToString();
-           
+
+            if (SessionManager.IsUserAuthenticated(Context))
+            {
+                this.AddRecommendation.Visible = true;
+            }
         }
 
         protected void addComentario_Click(object sender, EventArgs e)
