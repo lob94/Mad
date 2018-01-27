@@ -42,6 +42,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web
                     lnkRecommendations.Visible = false;
                 if (lblDash8 != null)
                     lblDash8.Visible = false;
+                if (lnkEvents != null)
+                    lnkEvents.Visible = false;
 
             }
             else
