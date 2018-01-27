@@ -21,6 +21,7 @@
                                   </ItemTemplate> 
                            </asp:TemplateField>
                      </Columns>
+                  <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
             </asp:GridView>
                 </div>
         </form>
@@ -38,4 +39,3 @@
             </span>
         </div>
 </asp:Content>
-

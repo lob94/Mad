@@ -132,4 +132,7 @@
   <data name="previous.Text" xml:space="preserve">
     <value>Anterior</value>
   </data>
+  <data name="gridVacio.Text" xml:space="preserve">
+    <value>Non hai recomendacións neste grupo</value>
+  </data>
 </root>

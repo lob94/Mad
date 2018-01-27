@@ -135,4 +135,7 @@
   <data name="Page.Title" xml:space="preserve">
     <value>Miniportal - Meus grupos e Recomendaciones</value>
   </data>
+  <data name="gridVacio.Text" xml:space="preserve">
+    <value>Vostede non está en ningún grupo!</value>
+  </data>
 </root>

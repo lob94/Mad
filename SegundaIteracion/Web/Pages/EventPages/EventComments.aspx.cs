@@ -31,9 +31,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             try
             {
                 ICollection<CommentDto> comentarios = eventService.FindAllComments(evento.eventId, 0, 10);
-                comentariosList.DataSource = comentarios;
-                comentariosList.DataBind();
-
+              
+                    comentariosList.DataSource = comentarios;
+                    comentariosList.DataBind();
+                
             }
             catch { }
         }

@@ -284,9 +284,6 @@
     <Content Include="Pages\EventPages\App_LocalResources\en-default\EventComments.aspx.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\es\EventComments.aspx.es.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\gl\EventComments.aspx.gl.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\en-default\MyGroupsAndRecommendations.aspx.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\es\MyGroupsAndRecommendations.aspx.es.resx" />
-    <Content Include="Pages\GroupPages\App_LocalResources\gl\MyGroupsAndRecommendations.aspx.gl.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\Groups.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\Groups.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\Groups.aspx.gl.resx" />

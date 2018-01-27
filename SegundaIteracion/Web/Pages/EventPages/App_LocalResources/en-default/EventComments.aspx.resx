@@ -126,4 +126,7 @@
   <data name="lclMenuExplanation.Text" xml:space="preserve">
     <value>Comments</value>
   </data>
+  <data name="gridVacio.Text" xml:space="preserve">
+    <value>No Comments for this Event</value>
+  </data>
 </root>

@@ -14,6 +14,7 @@
                                         <asp:BoundField DataField="content"/>
                                         <asp:BoundField DataField="commentDate"/>
                                     </Columns>
+                  <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
                 </asp:GridView>
                 <asp:Button ID="volverHome" meta:resourcekey="volverHome" runat="server" Width="194px" OnClick="volver_Click" Height="34px"
                  style=" margin-left: 20px; margin-top: 100px;">

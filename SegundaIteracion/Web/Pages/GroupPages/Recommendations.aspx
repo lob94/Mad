@@ -15,6 +15,7 @@
                             <asp:BoundField DataField="reason" />
                             <asp:BoundField DataField="groupId" />
                      </Columns>
+                 <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
             </asp:GridView> 
             </div>
               

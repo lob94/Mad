@@ -24,6 +24,7 @@
                                   </ItemTemplate> 
                                 </asp:TemplateField>
                             </Columns>
+                 <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
             </asp:GridView>
         </form>
         <div class="previousNextLinks" style="margin-bottom: 15px;">
