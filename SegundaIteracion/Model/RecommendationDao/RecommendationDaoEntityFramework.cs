@@ -47,6 +47,39 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
             return lista;
         }
 
+        public Recommendation FindByGroupIdAndEventIdAndUsrId(long groupId, long usrId, long eventId)
+        {
+            Recommendation recommendation = null;
+
+            #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
+
+            String sqlQuery =
+                "SELECT VALUE u FROM MiniPortalEntities.Recommendations AS u " +
+                "WHERE u.UserGroup.groupId = @groupId AND u.Event.eventId = @eventId AND u.UserProfile.usrId = @usrId";
+
+            ObjectParameter param1 = new ObjectParameter("groupId", groupId);
+            ObjectParameter param2 = new ObjectParameter("eventId", eventId);
+            ObjectParameter param3 = new ObjectParameter("usrId", usrId);
+
+            ObjectQuery<Recommendation> query =
+              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Recommendation>(sqlQuery, param1, param2, param3);
+
+            var result = query.Execute(MergeOption.AppendOnly);
+
+            try
+            {
+                recommendation = result.First<Recommendation>();
+            }
+            catch (Exception)
+            {
+                recommendation = null;
+            }
+
+            #endregion
+
+
+            return recommendation;
+        }
 
         #endregion
     }

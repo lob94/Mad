@@ -293,7 +293,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
 
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
-        public ICollection<Recommendation> FindGroupRecommendations(long groupId, long userId, int startIndex, int count)
+        public ICollection<RecommendationDto> FindGroupRecommendations(long groupId, long userId, int startIndex, int count)
         {
 
             UserProfile u = UserProfileDao.Find(userId);
@@ -301,20 +301,29 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             if (g.UserProfiles.Contains(u))
             {
                 ICollection<Recommendation> recs = RecommendationDao.FindByGroupId(groupId, startIndex, count);
-                return recs;
+                ICollection<RecommendationDto> recsDto = new List<RecommendationDto>();
+
+                foreach (Recommendation r in recs)
+                {
+                    Event e = EventDao.Find(r.eventId);
+                    recsDto.Add(new RecommendationDto(r, e.name));
+                }
+                return recsDto;
             }
             else throw new Exception();
-            //FILTRAR RECOMENDACIONES POR EVENTOS
-            //Y SOLO DEBEN APARECER AQUELLAS DE LOS GRUPOS A LOS Q PERTENECE UN USUARIO
         }
 
 
         [Transactional]
-        public ICollection<Recommendation> FindAllRecommendations()
+        public ICollection<RecommendationDto> FindAllRecommendations()
         {
             ICollection<Recommendation> rs = RecommendationDao.GetAllElements();
-           
-            return rs;
+            ICollection<RecommendationDto> recsDto = new List<RecommendationDto>();
+            foreach (Recommendation r in rs)
+            {
+                recsDto.Add(new RecommendationDto(r, EventDao.Find(r.eventId).name));
+            }
+            return recsDto;
         }
 
         #endregion

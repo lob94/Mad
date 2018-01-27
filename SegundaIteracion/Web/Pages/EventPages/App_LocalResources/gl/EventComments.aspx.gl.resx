@@ -126,4 +126,7 @@
   <data name="lclMenuExplanation.Text" xml:space="preserve">
     <value>Comentarios</value>
   </data>
+  <data name="addRecommendation.Text" xml:space="preserve">
+    <value>Recomendar</value>
+  </data>
 </root>

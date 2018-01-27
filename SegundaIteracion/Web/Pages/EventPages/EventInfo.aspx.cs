@@ -52,7 +52,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             categoria.Text = evento.Category.name;
             review.Text = evento.review;
             date.Text = evento.eventDate.ToString();
-           
+
+            if (SessionManager.IsUserAuthenticated(Context))
+            {
+                this.addRecommendation.Visible = true;
+            }
         }
 
         protected void addComentario_Click(object sender, EventArgs e)
@@ -83,6 +87,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         protected void addRecommendation_Click(object sender, EventArgs e)
         {
             String url = "http://localhost:8082/Pages/GroupPages/" + "NewRecommendationForm.aspx" + "?eventId=" + evId;
+            Response.Redirect(url);
+        }
+        protected void comments_Click(object sender, EventArgs e)
+        {
+            String url = "http://localhost:8082/Pages/EventPages/" + "EventComments.aspx" + "?eventId=" + evId;
             Response.Redirect(url);
         }
     }

@@ -203,7 +203,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// <param count="Count">integer</param>
         /// <exception cref="InstanceNotFoundException" />
         [Transactional]
-        ICollection<Recommendation> FindGroupRecommendations(long groupId, long userId, int startIndex, int count);
+        ICollection<RecommendationDto> FindGroupRecommendations(long groupId, long userId, int startIndex, int count);
 
 
     }

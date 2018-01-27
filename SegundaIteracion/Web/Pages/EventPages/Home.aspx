@@ -6,13 +6,16 @@
     <div id="form" style="margin-right: auto; margin-left: auto;">
         <form id="form1" runat="server">
             <div class="form-group">
-                <asp:TextBox ID="textEntry" meta:resourcekey="searchEventName" runat="server" AutoPostBack="False"> </asp:TextBox>
+                <asp:TextBox ID="textEntry" meta:resourcekey="searchEventName" runat="server" AutoPostBack="True"
+                    style="margin-left: 0px;">
+                </asp:TextBox>
                 <asp:DropDownList ID="dropDownList" runat="server" DataTextField="name" DataValueField="categoryId" 
-                    AppendDataBoundItems="True"></asp:DropDownList>
-                <asp:Button ID="searchButton" runat="server" OnClick="search_Click" meta:resourcekey="btnSearch" Text="Search" />
+                    AppendDataBoundItems="True" style="margin-left: 10px;"></asp:DropDownList>
+                <asp:Button ID="searchButton" runat="server" OnClick="search_Click" meta:resourcekey="btnSearch" Text="Search"
+                    style=" margin-left: 10px;" />
                 <asp:GridView ID="eventList2" runat="server"
                             AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 620px">
+                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 500px">
                             <Columns>
                                 <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventInfo.aspx?eventId={0}" />
@@ -21,7 +24,7 @@
                             </Columns>
                  </asp:GridView>
             </div>
-              </form>
+          </form>
         </div>
         <div class="previousNextLinks" style="margin-bottom: 30px;">
             <span class="previousLink">

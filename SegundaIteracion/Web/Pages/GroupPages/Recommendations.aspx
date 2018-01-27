@@ -10,9 +10,10 @@
             <asp:GridView ID="recommendationList" runat="server" AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Left" Width="402%" Height="170px" style="margin-left: 0px">
                      <Columns>
-                            <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
+                            <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="eventName" 
                                  meta:resourcekey="eventName" DataNavigateUrlFormatString="~/Pages/EventPages/EventComments.aspx?eventId={0}" />
-                            <asp:BoundField DataField="recommendationText" />
+                            <asp:BoundField DataField="reason" />
+                            <asp:BoundField DataField="groupId" />
                      </Columns>
             </asp:GridView> 
             </div>

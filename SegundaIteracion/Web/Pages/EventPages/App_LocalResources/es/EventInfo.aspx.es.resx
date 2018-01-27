@@ -138,4 +138,13 @@
   <data name="writeComment.Text" xml:space="preserve">
     <value>Escribir Comentario</value>
   </data>
+  <data name="rfvcommentResource1.Text" xml:space="preserve">
+    <value>El Comentario no debe estar vacío</value>
+  </data>
+  <data name="addRecommendation.Text" xml:space="preserve">
+    <value>Recomendar</value>
+  </data>
+  <data name="comments.Text" xml:space="preserve">
+    <value>Comentarios del Evento</value>
+  </data>
 </root>

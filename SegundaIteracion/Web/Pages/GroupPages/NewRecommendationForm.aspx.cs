@@ -20,9 +20,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         {
             IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
             userService = container.Resolve<IUserService>();
+            initFromsValues();
+           
             if (!IsPostBack)
             {
-                initFromsValues();
                 initGridView();
             }
         }
@@ -31,11 +32,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         {
             string eventIdS = Request.Params.Get("eventId");
             eventId = Convert.ToInt32(eventIdS);
+            usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
         }
 
         private void initGridView()
         {
-            usrId = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email).usrId;
             groups = userService.FindGroupsByUserId(usrId);
             groupsList.DataSource = groups;
             groupsList.DataBind();
@@ -50,16 +51,17 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 foreach (GridViewRow row in groupsList.Rows)
                 {
                     CheckBox cb = (CheckBox)row.FindControl("Sel");
-                    if(cb != null && cb.Checked)
+                    if (cb != null && cb.Checked)
                     {
-                        
+
                         String s = row.Cells[0].Text;
-                        ICollection<UserGroupDto> userGroup = userService.FindGroupsByKeywords(s, 0, 1);
-                        groupsIds.Add(userGroup.First<UserGroupDto>().groupId);
+                        UserGroupDto userGroup = userService.FindGroupByName(s);
+                        groupsIds.Add(userGroup.groupId);
                     }
                 }
-               
+
                 userService.AddRecommendation(eventId, groupsIds, usrId, comment);
+                Response.Redirect("Recommendations.aspx");
             }
             else
                 Response.Redirect("Authentication.aspx");

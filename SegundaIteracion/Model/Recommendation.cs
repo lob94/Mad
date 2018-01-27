@@ -17,8 +17,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model
     {
         public long recommendationId { get; set; }
         public Nullable<long> userId { get; set; }
-        public Nullable<long> groupId { get; set; }
-        public Nullable<long> eventId { get; set; }
+        public long groupId { get; set; }
+        public long eventId { get; set; }
         public string reason { get; set; }
         public System.DateTime created { get; set; }
     

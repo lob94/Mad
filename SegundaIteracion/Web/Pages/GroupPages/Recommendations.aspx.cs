@@ -17,7 +17,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         int startIndex = 0;
         int count = 1;
         long groupId=-1;
-        ICollection<Recommendation> recommendations;
+        ICollection<RecommendationDto> recommendations;
         IUserService userService;
         IEventService eventService;
         protected void Page_Load(object sender, EventArgs e)
