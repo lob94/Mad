@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
     
-    <form id="form1" runat="server">
+ 
         <asp:GridView ID="groupsList" runat="server"
                             AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 404px">
@@ -19,6 +19,6 @@
             </asp:GridView>
         <asp:TextBox ID="textEntry" runat="server" Width="500px" Height="100px" TextMode="MultiLine" MaxLength="50"/>
         <asp:Button ID="addRecommendation" runat="server" OnClick="AddRecommendation_Click" Text="Añadir"/>
-    </form>
+  
     
 </asp:Content>

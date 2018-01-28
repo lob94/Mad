@@ -7,45 +7,54 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages {
+namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages {
     
     
-    public partial class MyGroupsPage {
+    public partial class AddLabel {
         
         /// <summary>
-        /// Control lclMenuExplanation.
+        /// Control AddLabelLoc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize lclMenuExplanation;
+        protected global::System.Web.UI.WebControls.Localize AddLabelLoc;
         
         /// <summary>
-        /// Control myGroupsList.
+        /// Control labelName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView myGroupsList;
+        protected global::System.Web.UI.WebControls.Label labelName;
         
         /// <summary>
-        /// Control linkPrevious.
+        /// Control txtLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkPrevious;
+        protected global::System.Web.UI.WebControls.TextBox txtLabel;
         
         /// <summary>
-        /// Control linkNext.
+        /// Control rfvLabelName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkNext;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLabelName;
+        
+        /// <summary>
+        /// Control create.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button create;
     }
 }

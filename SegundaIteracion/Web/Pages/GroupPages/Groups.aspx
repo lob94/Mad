@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
     <div id="form" style="margin-right: auto; margin-left: auto; margin-bottom: 10px;">
-        <form id="form1" runat="server">
+     
             <div class="form-group" style="width: 1374px; margin-left: 0px">
                 <asp:TextBox ID="textEntry" runat="server" style="margin-left: 400px;" AutoPostBack="false" Width="311px"></asp:TextBox>
                 <asp:Button ID="searchButton" class="btn btn-primary" runat="server" OnClick="search_Click" meta:resourcekey="btnLogin" Text="Search"
@@ -26,7 +26,7 @@
                             </Columns>
                  <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
             </asp:GridView>
-        </form>
+     
         <div class="previousNextLinks" style="margin-bottom: 15px;">
             <span class="previousLink">
                 <asp:HyperLink ID="linkPrevious" meta:resourcekey="previous" Text="Previous" 

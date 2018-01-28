@@ -22,6 +22,15 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
+        /// Control FormMaster.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm FormMaster;
+        
+        /// <summary>
         /// Control lclPageTitle.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,24 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         protected global::System.Web.UI.WebControls.HyperLink lnkMyGroups;
         
         /// <summary>
+        /// Control lblDash8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDash8;
+        
+        /// <summary>
+        /// Control lnkAddLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkAddLabel;
+        
+        /// <summary>
         /// Control lblDash3.
         /// </summary>
         /// <remarks>
@@ -200,6 +227,24 @@ namespace Es.Udc.DotNet.MiniPortal.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_BodyContent;
+        
+        /// <summary>
+        /// Control LabelsContent.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder LabelsContent;
+        
+        /// <summary>
+        /// Control GvLabels.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GvLabels;
         
         /// <summary>
         /// Control lclFooter.

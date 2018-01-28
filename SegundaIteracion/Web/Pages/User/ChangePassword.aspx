@@ -12,7 +12,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
     <div id="form">
-        <form id="ChangePasswordForm" method="post" runat="server">
+      
             <div class="field">
                 <span class="label">
                     <asp:Localize ID="lclOldPassword" runat="server" meta:resourcekey="lclOldPassword" /></span><span
@@ -54,6 +54,6 @@
                 <asp:Button ID="btnChangePassword" runat="server" OnClick="BtnChangePasswordClick"
                     meta:resourcekey="btnChangePassword" />
             </div>
-        </form>
+    
     </div>
 </asp:Content>

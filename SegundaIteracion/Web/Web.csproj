@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\styles.css" />
+    <Content Include="Pages\EventPages\AddLabel.aspx" />
     <Content Include="Pages\EventPages\EventComments.aspx" />
     <Content Include="Pages\EventPages\EventInfo.aspx" />
     <Content Include="Pages\EventPages\Home.aspx" />
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="Pages\Errors\InternalError.aspx.designer.cs">
       <DependentUpon>InternalError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventPages\AddLabel.aspx.cs">
+      <DependentUpon>AddLabel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventPages\AddLabel.aspx.designer.cs">
+      <DependentUpon>AddLabel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EventPages\EventComments.aspx.cs">
       <DependentUpon>EventComments.aspx</DependentUpon>
@@ -312,6 +320,9 @@
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\NewGroupForm.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\NewGroupForm.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\NewGroupForm.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\AddLabel.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\AddLabel.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\AddLabel.aspx.gl.resx" />
     <EmbeddedResource Include="Pages\User\App_LocalResources\en-default\Register.aspx.resx" />
     <Content Include="Pages\User\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
   </ItemGroup>

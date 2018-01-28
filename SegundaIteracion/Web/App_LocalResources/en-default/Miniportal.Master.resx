@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="GvLabels.Text" xml:space="preserve">
+    <value>Labels</value>
+  </data>
   <data name="lblWelcome.Hello.Text" xml:space="preserve">
     <value>Hello</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="lclPageTitle.Text" xml:space="preserve">
     <value>MiniPortal: A Sample MVC Web Application with .NET</value>
+  </data>
+  <data name="lnkAddLabel.Text" xml:space="preserve">
+    <value>Create Label</value>
   </data>
   <data name="lnkAuthenticate.Text" xml:space="preserve">
     <value>Authentication</value>

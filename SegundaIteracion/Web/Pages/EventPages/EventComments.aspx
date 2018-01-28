@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
      <asp:Localize ID="lclMenuExplanation" runat="server" meta:resourcekey="lclMenuExplanation" />
-        <form id="form1"  runat="server">
+      
              <div id="form" align="left" style="margin-bottom: 20px; margin-left: 20px;">
                <asp:GridView ID="comentariosList" runat="server" Font-Size="Medium"
                          AutoGenerateColumns="False"
@@ -21,5 +21,5 @@
                 </asp:Button>
                 <br />
              </div>
-          </form>
+      
 </asp:Content>

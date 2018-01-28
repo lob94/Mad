@@ -11,7 +11,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
     <div id="form">
-        <form id="UpdateUserProfileForm" method="POST" runat="server">
+      
             <asp:HyperLink ID="lnkChangePassword" runat="server" 
                 NavigateUrl="~/Pages/User/ChangePassword.aspx"
                 meta:resourcekey="lnkChangePassword"/>
@@ -49,6 +49,6 @@
             <div class="button">
                 <asp:Button ID="btnUpdate" runat="server" OnClick="BtnUpdateClick" meta:resourcekey="btnUpdate"/>
             </div>
-        </form>
+     
     </div>
 </asp:Content>
