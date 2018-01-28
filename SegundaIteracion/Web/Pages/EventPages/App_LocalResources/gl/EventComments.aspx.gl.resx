@@ -132,4 +132,10 @@
   <data name="gridVacio.Text" xml:space="preserve">
     <value>Evento sen comentarios</value>
   </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
 </root>

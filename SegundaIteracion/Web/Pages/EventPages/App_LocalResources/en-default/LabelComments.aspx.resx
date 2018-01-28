@@ -126,4 +126,10 @@
   <data name="Page.Title" xml:space="preserve">
     <value>Miniportal - Comments associated to a Label</value>
   </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
 </root>

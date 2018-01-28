@@ -126,4 +126,10 @@
   <data name="Page.Title" xml:space="preserve">
     <value>Miniportal - Comentarios asociados a una etiqueta</value>
   </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
 </root>

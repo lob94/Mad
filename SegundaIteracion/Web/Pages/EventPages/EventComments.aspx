@@ -8,20 +8,22 @@
              <div id="form" align="left" style="margin-bottom: 20px; margin-left: 20px;">
                <asp:GridView ID="comentariosList" runat="server" Font-Size="Medium"
                          AutoGenerateColumns="False"
-                         ShowHeaderWhenEmpty="False" Visible="true" HorizontalAlign="Left" Width="70%" style="margin-left: 100px">
+                         ShowHeaderWhenEmpty="False" Visible="true" HorizontalAlign="Left" Width="70%" style="margin-left: 10px">
                                     <Columns>
                                         <asp:BoundField DataField="loginName"  meta:resourcekey="loginName"/>
                                         <asp:BoundField DataField="content"  meta:resourcekey="content"/>
                                         <asp:BoundField DataField="commentDate"  meta:resourcekey="date"/>
                                         <asp:TemplateField>
-                                            <ItemTemplate>
-                                                <asp:Button ID="edit" runat="server" OnClick="edit_Click" meta:resourcekey="btnEdit" Visible='<%# visibility((String)Eval("loginName")) %>'/>
-                                            </ItemTemplate> 
+                                           <ItemTemplate>
+                                              <asp:Button ID="edit" runat="server" CommandArgument='<%# (Eval("commentId")  + "," + Eval("content"))%>'
+                                                   OnCommand="edit_Click" meta:resourcekey="btnEdit" Visible='<%# visibility((String)Eval("loginName")) %>'/>
+                                           </ItemTemplate> 
                                         </asp:TemplateField>
                                         <asp:TemplateField>
-                                            <ItemTemplate>
-                                                <asp:Button ID="remove" runat="server" CommandName="Remove" CommandArgument='<%#(Eval("commentId")) %>' OnCommand="remove_Click" meta:resourcekey="btnRemove" Visible='<%# visibility((String)Eval("loginName")) %>'/>
-                                            </ItemTemplate> 
+                                           <ItemTemplate>
+                                              <asp:Button ID="remove" runat="server" CommandName="Remove" CommandArgument='<%#(Eval("commentId")) %>' 
+                                                  OnCommand="remove_Click" meta:resourcekey="btnRemove" Visible='<%# visibility((String)Eval("loginName")) %>'/>
+                                           </ItemTemplate> 
                                         </asp:TemplateField>
                                     </Columns>
                   <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>

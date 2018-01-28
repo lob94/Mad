@@ -12,9 +12,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
     public partial class LabelComment : System.Web.UI.Page
     {
         IEventService eventService;
+        long commentId;
         protected void Page_Load(object sender, EventArgs e)
         {
             callService();
+            initFromValues();
 
             if (!Page.IsPostBack)
             {
@@ -39,12 +41,16 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             eventService = iocManager.Resolve<IEventService>();
         }
 
+        protected void initFromValues()
+        {
+            commentId = Convert.ToInt32(Request.Params.Get("commentId"));
+        }
+
         protected void btnAddClick(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-                long commentId = Convert.ToInt32(Request.Params.Get("commentId"));
-
+                
                 ICollection<Model.Label> labels = new List<Model.Label>();
                 foreach (ListItem item in checkboxLabels.Items)
                 {

@@ -20,8 +20,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             eventId = Convert.ToInt32(Request.Params.Get("eventId"));
             string eventName = eventService.FindEventById(eventId).name;
             this.eventName.Text = eventName;
-            this.lnkAddLabel.NavigateUrl = "~/Pages/EventPages/LabelComment.aspx?action=Add&commentId=" + Request.Params.Get("commentId");
-            this.lnkRemoveLabel.NavigateUrl = "~/Pages/EventPages/LabelComment.aspx?action=Remove&commentId=" + Request.Params.Get("commentId");
+            this.lnkAddLabel.NavigateUrl = "~/Pages/EventPages/LabelComment.aspx?action=Add&commentId=" + Request.Params.Get("comment");
+            this.lnkRemoveLabel.NavigateUrl = "~/Pages/EventPages/LabelComment.aspx?action=Remove&commentId=" + Request.Params.Get("comment");
 
             if (!IsPostBack)
             {
@@ -40,7 +40,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             if (Page.IsValid)
             {
                 /* Get data. */
-                long commentId = Convert.ToInt32(Request.Params.Get("commentId"));
+                long commentId = Convert.ToInt32(Request.Params.Get("comment"));
                 long userId = SessionManager.GetUserSession(Context).UserProfileId;
                 String newContent = this.txtEdit.Text;
                 /*Edit Comment*/

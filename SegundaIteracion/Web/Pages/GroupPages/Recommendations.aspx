@@ -5,7 +5,6 @@
     runat="server">
     <asp:Localize ID="lclMenuExplanation" runat="server" meta:resourcekey="lclMenuExplanation" />
     <div id="form" style="margin-right: auto; margin-left: auto;">
-      
             <div id="recomGrid" style="margin-left: 100px; margin-top: 20px; float: left; height: 198px;">
             <asp:GridView ID="recommendationList" runat="server" AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="False" HorizontalAlign="Left" Width="402%" Height="170px" style="margin-left: 0px">
@@ -18,8 +17,6 @@
                  <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
             </asp:GridView> 
             </div>
-              
-      
         </div>
         <div class="previousNextLinks" style="margin-top: 10px;">
             <span class="previousLink">

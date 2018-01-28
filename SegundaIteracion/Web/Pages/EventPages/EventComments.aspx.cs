@@ -22,6 +22,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         protected void Page_Load(object sender, EventArgs e)
         {
             callService();
+            initFromValues();
             if (!IsPostBack)
             {
                 initFromValues();
@@ -83,9 +84,12 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             return b;
         }
 
-        protected void edit_Click(object sender, EventArgs e)
+        protected void edit_Click(object sender, CommandEventArgs e)
         {
-            String url = "http://localhost:8082/Pages/EventPages/" + ".aspx";
+            string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
+
+            String url = 
+                String.Format("EditComment.aspx?comment={0}&reason={1}&eventId={2}", commandArgs[0], commandArgs[1], evId);
             Response.Redirect(url);
         }
 
