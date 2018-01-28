@@ -320,18 +320,15 @@
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\NewGroupForm.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\NewGroupForm.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\gl\NewGroupForm.aspx.gl.resx" />
-<<<<<<< HEAD
     <Content Include="Pages\GroupPages\App_LocalResources\es\MyGroups.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\Recommendations.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\Recommendations.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\MyGroups.aspx.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\es\NewRecommendationForm.aspx.es.resx" />
     <Content Include="Pages\GroupPages\App_LocalResources\en-default\NewRecommendationForm.aspx.resx" />
-=======
     <Content Include="Pages\EventPages\App_LocalResources\en-default\AddLabel.aspx.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\es\AddLabel.aspx.es.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\gl\AddLabel.aspx.gl.resx" />
->>>>>>> Etiquetado_CapaWeb
     <EmbeddedResource Include="Pages\User\App_LocalResources\en-default\Register.aspx.resx" />
     <Content Include="Pages\User\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
   </ItemGroup>
