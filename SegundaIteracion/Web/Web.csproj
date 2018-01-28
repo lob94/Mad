@@ -108,9 +108,12 @@
   <ItemGroup>
     <Content Include="Css\styles.css" />
     <Content Include="Pages\EventPages\AddLabel.aspx" />
+    <Content Include="Pages\EventPages\EditComment.aspx" />
     <Content Include="Pages\EventPages\EventComments.aspx" />
     <Content Include="Pages\EventPages\EventInfo.aspx" />
     <Content Include="Pages\EventPages\Home.aspx" />
+    <Content Include="Pages\EventPages\LabelComment.aspx" />
+    <Content Include="Pages\EventPages\LabelComments.aspx" />
     <Content Include="Pages\GroupPages\Groups.aspx" />
     <Content Include="Pages\GroupPages\MyGroups.aspx" />
     <Content Include="Pages\GroupPages\NewGroupForm.aspx" />
@@ -172,6 +175,13 @@
     <Compile Include="Pages\EventPages\AddLabel.aspx.designer.cs">
       <DependentUpon>AddLabel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EventPages\EditComment.aspx.cs">
+      <DependentUpon>EditComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventPages\EditComment.aspx.designer.cs">
+      <DependentUpon>EditComment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EventPages\EventComments.aspx.cs">
       <DependentUpon>EventComments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +202,20 @@
     </Compile>
     <Compile Include="Pages\EventPages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventPages\LabelComment.aspx.cs">
+      <DependentUpon>LabelComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventPages\LabelComment.aspx.designer.cs">
+      <DependentUpon>LabelComment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventPages\LabelComments.aspx.cs">
+      <DependentUpon>LabelComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventPages\LabelComments.aspx.designer.cs">
+      <DependentUpon>LabelComments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\GroupPages\Groups.aspx.cs">
       <DependentUpon>Groups.aspx</DependentUpon>
@@ -329,6 +353,15 @@
     <Content Include="Pages\EventPages\App_LocalResources\en-default\AddLabel.aspx.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\es\AddLabel.aspx.es.resx" />
     <Content Include="Pages\EventPages\App_LocalResources\gl\AddLabel.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\EditComment.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\EditComment.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\EditComment.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\LabelComments.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\LabelComment.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\LabelComment.aspx.gl.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\en-default\LabelComment.aspx.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\es\LabelComments.aspx.es.resx" />
+    <Content Include="Pages\EventPages\App_LocalResources\gl\LabelComments.aspx.gl.resx" />
     <EmbeddedResource Include="Pages\User\App_LocalResources\en-default\Register.aspx.resx" />
     <Content Include="Pages\User\App_LocalResources\en-default\UpdateUserProfile.aspx.resx" />
   </ItemGroup>

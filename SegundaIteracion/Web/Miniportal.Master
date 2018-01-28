@@ -84,7 +84,7 @@
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:HyperLink ID="LnkLabel" runat="server" Font-Size='<%# GetFontSize(Eval("numComments")) %>'
-                                    NavigateUrl='<%# "~/Pages/EventPages/EventComments.aspx?labelId=" + Eval("labelId") %>' 
+                                    NavigateUrl='<%# "~/Pages/EventPages/LabelComments.aspx?labelId=" + Eval("labelId") %>' 
                                     Text='<%# Eval("name")%>'>
                                 </asp:HyperLink>
                             </ItemTemplate>
