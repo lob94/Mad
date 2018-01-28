@@ -216,9 +216,6 @@ C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteraci
 C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.DynamicProxy.xml
 C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll
 C:\Users\LUIS\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Es.Udc.DotNet.MiniPortal.Web.Pages.User.App_LocalResources.en_default.Register.aspx.resources
-C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csproj.GenerateResource.Cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.dll.config
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\MiniPortal.Web.pdb
@@ -243,5 +240,8 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Microsoft.Practices
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Ninject.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.xml
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\bin\Ninject.Extensions.Interception.DynamicProxy.xml
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Es.Udc.DotNet.MiniPortal.Web.Pages.User.App_LocalResources.en_default.Register.aspx.resources
+C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\Web.csproj.GenerateResource.Cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Web\obj\Debug\MiniPortal.Web.pdb
