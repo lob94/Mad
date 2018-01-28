@@ -2,7 +2,7 @@
     Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages.EventInfo" meta:resourcekey="Page"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent" runat="server">
-        <form id="form2" runat="server">
+       
             <div id="atributosEvento" style="width: 30%; float:left; margin-left:20px; margin-top:33px; margin-bottom:33px; margin-right: -300px; font-size:20px;">
                 <asp:Label ID="nombre" meta:resourcekey="nombre" runat="server"> </asp:Label><br/>
                 <asp:Label ID="categoria" meta:resourcekey="categoria" runat="server"></asp:Label><br/>
@@ -24,5 +24,5 @@
                     style="">
                 </asp:Button>
           <!--  </div> -->
-        </form>
+     
 </asp:Content>

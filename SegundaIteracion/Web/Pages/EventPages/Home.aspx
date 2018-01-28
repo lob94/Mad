@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
     <div id="form" style="margin-right: auto; margin-left: auto;">
-        <form id="form1" runat="server">
+      
             <div class="form-group">
                 <asp:TextBox ID="textEntry" meta:resourcekey="searchEventName" runat="server" AutoPostBack="True"
                     style="margin-left: 0px;">
@@ -24,7 +24,7 @@
                             </Columns>
                  </asp:GridView>
             </div>
-          </form>
+       
         </div>
         <div class="previousNextLinks" style="margin-bottom: 30px;">
             <span class="previousLink">

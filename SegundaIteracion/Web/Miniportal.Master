@@ -7,6 +7,7 @@
     <link href="~/Css/Styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <form id="FormMaster" method="post" runat="server">
     <!-- Window. -->
     <div id="window">
         <!-- Page title. -->
@@ -55,6 +56,10 @@
                     <asp:HyperLink ID="lnkMyGroups" runat="server"
                         NavigateUrl="~/Pages/GroupPages/MyGroups.aspx" 
                         meta:resourcekey="lnkMyGroups" />
+                      <asp:Label ID="lblDash8" runat="server" Text="-" />
+                    <asp:HyperLink ID="lnkAddLabel" runat="server"
+                        NavigateUrl="~/Pages/EventPages/AddLabel.aspx" 
+                        meta:resourcekey="lnkAddLabel" />
                     <asp:Label ID="lblDash3" runat="server" Text="-" />
                     <asp:HyperLink ID="lnkLogout" runat="server"
                         NavigateUrl="~/Pages/User/Logout.aspx" 
@@ -66,8 +71,31 @@
         <!-- Body content. -->
         <div id="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder_BodyContent" runat="server" />
-
         </div>
+
+         <!-- Labels. -->
+        <div style="float:left; margin-left:7%">
+            <br />
+            <asp:ContentPlaceHolder ID="LabelsContent" runat="server">
+                <asp:GridView ID="GvLabels" runat="server" GridLines="None"  
+                    AutoGenerateColumns="False" 
+                    AutoPostback = "false" meta:resourcekey="GvLabels">
+                    <Columns>                        
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:HyperLink ID="LnkLabel" runat="server" Font-Size='<%# GetFontSize(Eval("numComments")) %>'
+                                    NavigateUrl='<%# "~/Pages/EventPages/EventComments.aspx?labelId=" + Eval("labelId") %>' 
+                                    Text='<%# Eval("name")%>'>
+                                </asp:HyperLink>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            </asp:ContentPlaceHolder>
+            <br />         
+        </div>
+        <!--End of Labels -->
+
         <!-- Footer. -->
         <div id="footer">
             <asp:Localize ID="lclFooter" runat="server" meta:resourcekey="lclFooter" />
@@ -75,6 +103,7 @@
         <!-- End of Window. -->
     </div>
     <!-- End of HTML body. -->
+  </form>
 </body>
 <!-- End of HTML. -->
 </html>

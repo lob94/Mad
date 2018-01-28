@@ -117,46 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GvLabels.Text" xml:space="preserve">
-    <value>Etiquetas</value>
+  <data name="Page.Title" xml:space="preserve">
+    <value>Miniportal - Crear Etiqueta</value>
   </data>
-  <data name="lblWelcome.Hello.Text" xml:space="preserve">
-    <value>Hola</value>
+  <data name="AddLabel.Text" xml:space="preserve">
+    <value>Crear Etiqueta</value>
   </data>
-  <data name="lblWelcome.Text" xml:space="preserve">
-    <value>Benvido a Miniportal</value>
+  <data name="btnCreate.Text" xml:space="preserve">
+    <value>Crear</value>
   </data>
-  <data name="lclFooter.Text" xml:space="preserve">
-    <value>Copyright &amp;copy; Departamento TIC - Universidade da Coruña</value>
-  </data>
-  <data name="lclPageTitle.Text" xml:space="preserve">
-    <value>MiniPortal: Exemplo dunha Aplicación Web MVC con .NET</value>
-  </data>
-  <data name="lnkAddLabel.Text" xml:space="preserve">
-    <value>Engadir etiqueta</value>
-  </data>
-  <data name="lnkAuthenticate.Text" xml:space="preserve">
-    <value>Autenticación</value>
-  </data>
-  <data name="lnkEvents.Text" xml:space="preserve">
-    <value>Todos os Eventos</value>
-  </data>
-  <data name="lnkGroups.Text" xml:space="preserve">
-    <value>Todos os grupos</value>
-  </data>
-  <data name="lnkLogout.Text" xml:space="preserve">
-    <value>Saír</value>
-  </data>
-  <data name="lnkMyGroups.Text" xml:space="preserve">
-    <value>Meus grupos</value>
-  </data>
-  <data name="lnkNewGroup.Text" xml:space="preserve">
-    <value>Engadir novo grupo</value>
-  </data>
-  <data name="lnkRecommendations.Text" xml:space="preserve">
-    <value>Recomendacións</value>
-  </data>
-  <data name="lnkUpdate.Text" xml:space="preserve">
-    <value>Actualizar información de usuario</value>
+  <data name="txtlabelName.Text" xml:space="preserve">
+    <value>Nombre Etiqueta</value>
   </data>
 </root>

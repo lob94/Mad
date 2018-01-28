@@ -1,7 +1,7 @@
 <%@ Page Language="C#" MasterPageFile="~/Miniportal.Master" AutoEventWireup="true"
     Codebehind="Authentication.aspx.cs" Inherits="Es.Udc.DotNet.MiniPortal.Web.Pages.User.Authentication"
     meta:resourcekey="Page" %>
-
+ 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_MenuExplanation"
     runat="server">
     -
@@ -13,7 +13,7 @@
     runat="server">
     <asp:HyperLink ID="lnkRegister" runat="server" NavigateUrl="~/Pages/User/Register.aspx" meta:resourcekey="lnkRegister" />
     <div id="form">
-        <form id="AuthenticationForm" method="POST" runat="server">
+       
             <div class="field">
                 <span class="label">
                     <asp:Localize ID="lclLogin" runat="server" meta:resourcekey="lclLogin" /></span><span
@@ -44,6 +44,6 @@
             <div class="button">
                 <asp:Button ID="btnLogin" runat="server" OnClick="BtnLoginClick" meta:resourcekey="btnLogin" />
             </div>
-        </form>
+    
     </div>
 </asp:Content>

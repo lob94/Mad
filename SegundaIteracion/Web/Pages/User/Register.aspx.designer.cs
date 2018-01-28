@@ -22,15 +22,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.User {
         protected global::System.Web.UI.WebControls.Localize lclMenuExplanation;
         
         /// <summary>
-        /// Control RegisterForm.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm RegisterForm;
-        
-        /// <summary>
         /// Control lclUserName.
         /// </summary>
         /// <remarks>

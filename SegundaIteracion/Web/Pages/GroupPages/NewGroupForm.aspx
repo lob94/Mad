@@ -3,8 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
-    
-    <form id="form1" runat="server">
+
         <div class="field">
             <span class="label">
                 <asp:Localize ID="lclNewGroupName" runat="server" meta:resourcekey="lclNewGroupName" /></span><span
@@ -30,6 +29,5 @@
                 <asp:Button ID="btnEnter" runat="server" OnClick="BtnNewGroupClick" meta:resourcekey="btnEnter" />
             </div>
         </div>
-    </form>
-    
+     
 </asp:Content>

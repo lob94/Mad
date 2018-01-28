@@ -12,7 +12,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_BodyContent"
     runat="server">
     <div id="form">
-        <form id="RegisterForm" method="post" runat="server">
+      
             <div class="field">
                 <span class="label">
                     <asp:Localize ID="lclUserName" runat="server" meta:resourcekey="lclUserName" /></span><span
@@ -100,6 +100,6 @@
             <div class="button">
                 <asp:Button ID="btnRegister" runat="server" OnClick="BtnRegisterClick" meta:resourcekey="btnRegister" />
             </div>
-        </form>
+    
     </div>
 </asp:Content>
