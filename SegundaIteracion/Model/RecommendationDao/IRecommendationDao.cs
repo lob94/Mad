@@ -24,6 +24,13 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
         /// <returns>The Recommendation</returns>
         /// <exception cref="InstanceNotFoundException"/>
         Recommendation FindByGroupIdAndEventIdAndUsrId(long groupId, long usrId, long eventId);
+
+        /// <summary>
+        /// Finds Total Recommendations by group id
+        /// </summary>
+        /// <param groupId="GroupId">name</param>
+        /// <returns>Total recommendations on this search</returns>
+        int CountFindGroupRecommendation(long groupId);
     }
 }
 

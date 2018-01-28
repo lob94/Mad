@@ -24,7 +24,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventDao
         /// </summary>
         /// <param name="name">name</param>
         /// <param categoryId="categoryId">categoryId</param>
-        /// <returns>Total events od this search</returns>
+        /// <returns>Total events on this search</returns>
         int CountFindEvents(String[] name, long categoryId);
 
     }

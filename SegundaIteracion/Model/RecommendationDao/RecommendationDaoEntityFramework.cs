@@ -21,14 +21,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
 
             #region Option 3: Using Entity SQL and Object Services provided by old ObjectContext.
 
-            String sqlQuery =
-                "SELECT VALUE u FROM MiniPortalEntities.Recommendations AS u " +
-                "WHERE u.UserGroup.groupId = @groupId ORDER BY u.recommendationId";
-
-            ObjectParameter param = new ObjectParameter("groupId", groupId);
-
-            ObjectQuery<Recommendation> query =
-              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Recommendation>(sqlQuery, param);
+            ObjectQuery<Recommendation> query = getFindQuery(groupId);
 
             List<Recommendation> result = query.Skip(startIndex).Take(count).ToList<Recommendation>(); ;
 
@@ -45,6 +38,19 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
 
 
             return lista;
+        }
+
+        private System.Data.Entity.Core.Objects.ObjectQuery<Recommendation> getFindQuery(long groupId)
+        {
+            String sqlQuery =
+                "SELECT VALUE u FROM MiniPortalEntities.Recommendations AS u " +
+                "WHERE u.UserGroup.groupId = @groupId ORDER BY u.recommendationId";
+
+            ObjectParameter param = new ObjectParameter("groupId", groupId);
+
+            ObjectQuery<Recommendation> query =
+              ((System.Data.Entity.Infrastructure.IObjectContextAdapter)Context).ObjectContext.CreateQuery<Recommendation>(sqlQuery, param);
+            return query;
         }
 
         public Recommendation FindByGroupIdAndEventIdAndUsrId(long groupId, long usrId, long eventId)
@@ -79,6 +85,12 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
 
 
             return recommendation;
+        }
+
+        public int CountFindGroupRecommendation(long groupId)
+        {
+            int result = getFindQuery(groupId).Count();
+            return result;
         }
 
         #endregion

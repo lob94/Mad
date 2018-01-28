@@ -15,23 +15,17 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
     public partial class RecommendationsPage : System.Web.UI.Page
     {
         int startIndex = 0;
-        int count = 10;
+        int count = 1;
         long groupId = -1;
         ICollection<RecommendationDto> recommendations;
         IUserService userService;
         IEventService eventService;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                callService();
-                initFromValues();
-            }
-            else
-            {
-                callService();
-                initFromValues();
-            }
+            callService();
+            initFromValues();
+            initGridViewMyRecommendations();
+            PreviousNextButtons();
         }
 
         protected void callService()
@@ -51,7 +45,15 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             else
             {
                 groupId = Convert.ToInt32(groupIdString);
-                initGridViewMyRecommendations();
+            }
+            String startString = Request.Params.Get("startIndex");
+            if (startString == null || startString == "0")
+            {
+                startIndex = 0;
+            }
+            else
+            {
+                startIndex = Convert.ToInt16(startString);
             }
         }
 
@@ -64,6 +66,29 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             recommendations = userService.FindGroupRecommendations(groupId, u.usrId, startIndex, count);
             recommendationList.DataSource = recommendations;
             recommendationList.DataBind();
+        }
+
+        private void PreviousNextButtons()
+        {
+            if ((startIndex - count) >= 0)
+            {
+                String url = "http://localhost:8082/Pages/GroupPages/" + "Recommendations.aspx" + "?groupId=" 
+                    + groupId + "&startIndex=" + (startIndex - count);
+                
+                this.linkPrevious.NavigateUrl = Response.ApplyAppPathModifier(url);
+                this.linkPrevious.Visible = true;
+            }
+            int numberResult;
+            
+                numberResult = userService.CountFindGroupRecommendation(groupId);
+            if ((startIndex + count) < numberResult)
+            {
+                String url = "http://localhost:8082/Pages/GroupPages/" + "Recommendations.aspx" + "?groupId="
+                    + groupId + "&startIndex=" + (startIndex + count);
+                
+                this.linkNext.NavigateUrl = Response.ApplyAppPathModifier(url);
+                this.linkNext.Visible = true;
+            }
         }
 
     }
