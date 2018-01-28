@@ -1,4 +1,4 @@
-﻿C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.dll.config
+C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.dll.config
 C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.dll
 C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\MiniPortal.Web.pdb
 C:\Users\patri\Documents\MARCOSDEDESARROLLO\MiniPortal\Web\bin\Castle.Core.dll

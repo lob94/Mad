@@ -15,8 +15,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
     public partial class RecommendationsPage : System.Web.UI.Page
     {
         int startIndex = 0;
-        int count = 1;
-        long groupId=-1;
+        int count = 10;
+        long groupId = -1;
         ICollection<RecommendationDto> recommendations;
         IUserService userService;
         IEventService eventService;
@@ -52,7 +52,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             {
                 groupId = Convert.ToInt32(groupIdString);
                 initGridViewMyRecommendations();
-            }    
+            }
         }
 
         protected void initGridViewMyRecommendations()

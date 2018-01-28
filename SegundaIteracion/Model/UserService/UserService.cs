@@ -278,15 +278,24 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             ICollection<Recommendation> recs = new List<Recommendation>();
             foreach (long groupId in groups)
             {
-                UserGroup g = GroupDao.Find(groupId);
-                UserProfile u = UserProfileDao.Find(userId);
-                Recommendation r = new Recommendation();
-                r.UserGroup = g;
-                r.UserProfile = u;
-                r.Event = e;
-                r.reason = description;
-                RecommendationDao.Create(r);
-                recs.Add(r);
+                Recommendation r = RecommendationDao.FindByGroupIdAndEventIdAndUsrId(groupId, userId, eventId);
+                if(r != null)
+                {
+                    r.reason = description;
+                    RecommendationDao.Update(r);
+                }
+                else
+                {
+                    UserGroup g = GroupDao.Find(groupId);
+                    UserProfile u = UserProfileDao.Find(userId);
+                    Recommendation rec = new Recommendation();
+                    rec.UserGroup = g;
+                    rec.UserProfile = u;
+                    rec.Event = e;
+                    rec.reason = description;
+                    RecommendationDao.Create(rec);
+                    recs.Add(rec);
+                }
             }
             return recs;
         }

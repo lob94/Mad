@@ -55,7 +55,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                     {
 
                         String s = row.Cells[0].Text;
-                        UserGroupDto userGroup = userService.FindGroupByName(s);
+                        UserGroupDto userGroup = userService.FindGroupsByName(s);
                         groupsIds.Add(userGroup.groupId);
                     }
                 }
