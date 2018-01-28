@@ -10,7 +10,8 @@
              <asp:GridView ID="myGroupsList" runat="server"  AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="False" HorizontalAlign="Justify" Width="18%" Height="171px">
                       <Columns>
-                           <asp:HyperLinkField DataNavigateUrlFields="groupId" DataTextField="name" 
+                          <asp:BoundField DataField="name" meta:resourcekey="name" />
+                           <asp:HyperLinkField  DataNavigateUrlFields="groupId" 
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/GroupPages/Recommendations.aspx?groupId={0}" />
                            <asp:TemplateField>
                                   <ItemTemplate>

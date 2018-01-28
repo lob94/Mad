@@ -22,15 +22,9 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
         IEventService eventService;
         protected void Page_Load(object sender, EventArgs e)
         {
+            callService();
             if (!IsPostBack)
             {
-                callService();
-                initFromValues();
-                initGridViewMyGroups();
-            }
-            else
-            {
-                callService();
                 initFromValues();
                 initGridViewMyGroups();
             }

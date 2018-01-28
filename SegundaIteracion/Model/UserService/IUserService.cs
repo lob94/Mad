@@ -205,6 +205,14 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         [Transactional]
         ICollection<RecommendationDto> FindGroupRecommendations(long groupId, long userId, int startIndex, int count);
 
+        /// <summary>
+        /// Finds number of recommendations by groupId.
+        /// </summary>
+        /// <param groupId="GroupId">The group id.</param>
+        /// <returns>The number of recommendation in one group</returns> 
+        /// <exception cref="InstanceNotFoundException"/>  
+        [Transactional]
+        int CountFindGroupRecommendation(long groupId);
 
     }
 

@@ -335,6 +335,25 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             return recsDto;
         }
 
+        public int CountFindGroupRecommendation(long groupId)
+        {
+            String clave = "CountFindGroup" + groupId.ToString();
+            CacheItemPolicy policy = new CacheItemPolicy();
+            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
+            object cacheCountRecommendation = (object)cache.Get(clave);
+            int countRecommendation;
+            if (cacheCountRecommendation == null)
+            {
+                countRecommendation = RecommendationDao.CountFindGroupRecommendation(groupId);
+                cache.Add(clave, countRecommendation, policy);
+            }
+            else
+            {
+                countRecommendation = (int)cacheCountRecommendation;
+            }
+
+            return (int)countRecommendation;
+        }
         #endregion
 
     }
