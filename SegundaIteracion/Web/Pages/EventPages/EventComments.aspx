@@ -13,6 +13,16 @@
                                         <asp:BoundField DataField="loginName"  meta:resourcekey="loginName"/>
                                         <asp:BoundField DataField="content"  meta:resourcekey="content"/>
                                         <asp:BoundField DataField="commentDate"  meta:resourcekey="date"/>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:Button ID="edit" runat="server" OnClick="edit_Click" meta:resourcekey="btnEdit" Visible='<%# visibility((String)Eval("loginName")) %>'/>
+                                            </ItemTemplate> 
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:Button ID="remove" runat="server" OnClick="remove_Click" meta:resourcekey="btnRemove" Visible='<%# visibility((String)Eval("loginName")) %>'/>
+                                            </ItemTemplate> 
+                                        </asp:TemplateField>
                                     </Columns>
                   <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
                 </asp:GridView>

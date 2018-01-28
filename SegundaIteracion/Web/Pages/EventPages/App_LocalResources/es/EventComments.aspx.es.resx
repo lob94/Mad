@@ -138,4 +138,10 @@
   <data name="loginName.HeaderText" xml:space="preserve">
     <value>Nombre usuario</value>
   </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
 </root>
