@@ -8,12 +8,12 @@
         <form id="form1" runat="server">
             <div id="recomGrid" style="margin-left: 100px; margin-top: 20px; float: left; height: 198px;">
             <asp:GridView ID="recommendationList" runat="server" AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Left" Width="402%" Height="170px" style="margin-left: 0px">
+                            ShowHeaderWhenEmpty="False" HorizontalAlign="Left" Width="402%" Height="170px" style="margin-left: 0px">
                      <Columns>
                             <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="eventName" 
                                  meta:resourcekey="eventName" DataNavigateUrlFormatString="~/Pages/EventPages/EventComments.aspx?eventId={0}" />
-                            <asp:BoundField DataField="reason" />
-                            <asp:BoundField DataField="groupId" />
+                            <asp:BoundField DataField="reason" meta:resourcekey="reason"/>
+                            <asp:BoundField DataField="groupId" meta:resourcekey="groupId"/>
                      </Columns>
                  <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
             </asp:GridView> 

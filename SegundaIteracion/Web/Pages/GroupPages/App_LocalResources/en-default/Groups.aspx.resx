@@ -135,4 +135,19 @@
   <data name="gridVacio.Text" xml:space="preserve">
     <value>No Groups found.</value>
   </data>
+  <data name="description.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="name.HeaderText" xml:space="preserve">
+    <value>Group name</value>
+  </data>
+  <data name="recommendationCount.HeaderText" xml:space="preserve">
+    <value>Recommedation number</value>
+  </data>
+  <data name="select.Text" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="usersCount.HeaderText" xml:space="preserve">
+    <value>Users number</value>
+  </data>
 </root>

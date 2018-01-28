@@ -12,15 +12,15 @@
             </div>
             <asp:GridView ID="groupList" runat="server"
                             AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 404px">
+                            ShowHeaderWhenEmpty="False" HorizontalAlign="Justify" Width="50%" style="margin-left: 404px">
                             <Columns>
                                 <asp:BoundField DataField="name" meta:resourcekey="name" />
                                 <asp:BoundField DataField="description" meta:resourcekey="description" />
                                 <asp:BoundField DataField="usersCount" meta:resourcekey="usersCount" />
                                 <asp:BoundField DataField="recommendationsCount" meta:resourcekey="recommendationCount" />
-                                <asp:TemplateField  HeaderText="Seleccionar">
+                                <asp:TemplateField>
                                   <ItemTemplate>
-                                    <asp:Button ID="subs" runat="server" OnClick="subs_Click" Text="Inscribirse" Visible='<%# UpdateRow((String)Eval("name")) %>'/>
+                                    <asp:Button ID="subs" runat="server" OnClick="subs_Click" meta:resourcekey="select" Visible='<%# UpdateRow((String)Eval("name")) %>'/>
                                   </ItemTemplate> 
                                 </asp:TemplateField>
                             </Columns>

@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="dropout.text" xml:space="preserve">
+    <value>Dropout Group</value>
+  </data>
+  <data name="gridVacio.Text" xml:space="preserve">
+    <value>You are not in any Group!</value>
+  </data>
   <data name="lclMenuExplanation.text" xml:space="preserve">
     <value>My Groups</value>
   </data>
-  <data name="dropout.text" xml:space="preserve">
-    <value>Dropout Group</value>
+  <data name="nameField.HeaderText" xml:space="preserve">
+    <value>Group name</value>
   </data>
   <data name="nameField.text" xml:space="preserve">
     <value>Group Name</value>
@@ -129,13 +135,10 @@
   <data name="next.Text" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="previous.Text" xml:space="preserve">
-    <value>Previous</value>
-  </data>
   <data name="Page.Title" xml:space="preserve">
     <value>Miniportal - MyGroupsAndRecommendations Page</value>
   </data>
-  <data name="gridVacio.Text" xml:space="preserve">
-    <value>You are not in any Group!</value>
+  <data name="previous.Text" xml:space="preserve">
+    <value>Previous</value>
   </data>
 </root>

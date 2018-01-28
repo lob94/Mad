@@ -7,10 +7,10 @@
     <form id="form1" runat="server">
         <asp:GridView ID="groupsList" runat="server"
                             AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 404px">
+                            ShowHeaderWhenEmpty="False" HorizontalAlign="Justify" Width="50%" style="margin-left: 404px">
                             <Columns>
                                 <asp:BoundField DataField="name" meta:resourcekey="name" />
-                                <asp:TemplateField  HeaderText="Seleccionar">
+                                <asp:TemplateField>
                                   <ItemTemplate>
                                     <asp:Checkbox ID="Sel" runat="server"/>
                                   </ItemTemplate> 

@@ -15,7 +15,7 @@
                     style=" margin-left: 10px;" />
                 <asp:GridView ID="eventList2" runat="server"
                             AutoGenerateColumns="False"
-                            ShowHeaderWhenEmpty="True" HorizontalAlign="Justify" Width="50%" style="margin-left: 500px">
+                            ShowHeaderWhenEmpty="False" HorizontalAlign="Justify" Width="50%" style="margin-left: 500px">
                             <Columns>
                                 <asp:HyperLinkField DataNavigateUrlFields="eventId" DataTextField="name" 
                                     meta:resourcekey="nameField" DataNavigateUrlFormatString="~/Pages/EventPages/EventInfo.aspx?eventId={0}" />

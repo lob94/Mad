@@ -8,11 +8,11 @@
              <div id="form" align="left" style="margin-bottom: 20px; margin-left: 20px;">
                <asp:GridView ID="comentariosList" runat="server" Font-Size="Medium"
                          AutoGenerateColumns="False"
-                         ShowHeaderWhenEmpty="True" Visible="true" HorizontalAlign="Left" Width="70%" style="margin-left: 100px">
+                         ShowHeaderWhenEmpty="False" Visible="true" HorizontalAlign="Left" Width="70%" style="margin-left: 100px">
                                     <Columns>
-                                        <asp:BoundField DataField="loginName"/>
-                                        <asp:BoundField DataField="content"/>
-                                        <asp:BoundField DataField="commentDate"/>
+                                        <asp:BoundField DataField="loginName"  meta:resourcekey="loginName"/>
+                                        <asp:BoundField DataField="content"  meta:resourcekey="content"/>
+                                        <asp:BoundField DataField="commentDate"  meta:resourcekey="date"/>
                                     </Columns>
                   <EmptyDataTemplate> <asp:Label runat="server" meta:resourcekey="gridVacio"/></EmptyDataTemplate>
                 </asp:GridView>

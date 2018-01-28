@@ -120,6 +120,15 @@
   <data name="btnLogin.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
+  <data name="description.HeaderText" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="gridVacio.Text" xml:space="preserve">
+    <value>No hay grupos</value>
+  </data>
+  <data name="name.HeaderText" xml:space="preserve">
+    <value>Nombre del grupo</value>
+  </data>
   <data name="nameField.Text" xml:space="preserve">
     <value>Nombre del Grupo</value>
   </data>
@@ -132,7 +141,13 @@
   <data name="previous.Text" xml:space="preserve">
     <value>Anterior</value>
   </data>
-  <data name="gridVacio.Text" xml:space="preserve">
-    <value>No hay grupos</value>
+  <data name="recommendationCount.HeaderText" xml:space="preserve">
+    <value>Número recomendaciones</value>
+  </data>
+  <data name="select.Text" xml:space="preserve">
+    <value>Inscribirse</value>
+  </data>
+  <data name="usersCount.HeaderText" xml:space="preserve">
+    <value>Número usuarios</value>
   </data>
 </root>

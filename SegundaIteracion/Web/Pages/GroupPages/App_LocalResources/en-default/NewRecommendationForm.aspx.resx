@@ -117,31 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnSearch.Text" xml:space="preserve">
-    <value>Buscar</value>
-  </data>
-  <data name="nameField.Text" xml:space="preserve">
-    <value>Página del Evento</value>
-  </data>
-  <data name="next.Text" xml:space="preserve">
-    <value>Siguiente</value>
-  </data>
-  <data name="Page.Title" xml:space="preserve">
-    <value>Miniportal - Página Eventos</value>
-  </data>
-  <data name="previous.Text" xml:space="preserve">
-    <value>Anterior</value>
-  </data>
-  <data name="searchEventName.Text" xml:space="preserve">
-    <value>Evento a buscar...</value>
-  </data>
-  <data name="categoryName.HeaderText" xml:space="preserve">
-    <value>Categoría</value>
-  </data>
-  <data name="nameField.HeaderText" xml:space="preserve">
-    <value>Nombre del evento</value>
-  </data>
-  <data name="review.HeaderText" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="name.HeaderText" xml:space="preserve">
+    <value>Group name</value>
   </data>
 </root>

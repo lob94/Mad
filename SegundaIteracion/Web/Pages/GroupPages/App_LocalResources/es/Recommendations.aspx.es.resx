@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="eventNameField.Text" xml:space="preserve">
+  <data name="eventName.Text" xml:space="preserve">
     <value>Nombre Evento</value>
+  </data>
+  <data name="gridVacio.Text" xml:space="preserve">
+    <value>No hay recomendaciones en este grupo</value>
   </data>
   <data name="lclMenuExplanation.Text" xml:space="preserve">
     <value>Recomendaciones</value>
@@ -132,7 +135,13 @@
   <data name="previous.Text" xml:space="preserve">
     <value>Anterior</value>
   </data>
-  <data name="gridVacio.Text" xml:space="preserve">
-    <value>No hay recomendaciones en este grupo</value>
+  <data name="eventName.HeaderText" xml:space="preserve">
+    <value>Nombre del evento</value>
+  </data>
+  <data name="groupId.HeaderText" xml:space="preserve">
+    <value>Id. del grupo</value>
+  </data>
+  <data name="reason.HeaderText" xml:space="preserve">
+    <value>Razón</value>
   </data>
 </root>

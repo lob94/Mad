@@ -135,4 +135,13 @@
   <data name="searchEventName.Text" xml:space="preserve">
     <value>Event to search...</value>
   </data>
+  <data name="categoryName.HeaderText" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="nameField.HeaderText" xml:space="preserve">
+    <value>Event name</value>
+  </data>
+  <data name="review.HeaderText" xml:space="preserve">
+    <value>Review</value>
+  </data>
 </root>

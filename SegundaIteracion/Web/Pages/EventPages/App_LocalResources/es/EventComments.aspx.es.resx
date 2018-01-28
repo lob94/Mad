@@ -129,4 +129,13 @@
   <data name="gridVacio.Text" xml:space="preserve">
     <value>Evento sin comentarios</value>
   </data>
+  <data name="content.HeaderText" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="date.HeaderText" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="loginName.HeaderText" xml:space="preserve">
+    <value>Nombre usuario</value>
+  </data>
 </root>
