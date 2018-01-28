@@ -124,36 +124,124 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         void DeleteComment(long commentId, long userId);
 
         /// <summary>
-        /// Add Label to a Comment
+        /// Creates a label into database
         /// </summary>
-        /// <param commentId="CommentId">The Comment where a label is added</param>
-        /// <param name="Name">The Label's Name</param>
-        /// <exception cref="DuplicateInstanceException"/> 
+        /// <param name="Label"> Label to create</param>
+        /// <returns>Label</returns>
+        /// <exception cref="DuplicateInstanceException"/>
         [Transactional]
-        Label AddLabel(long commentId, string name);
+        Label Create(Label label);
 
         /// <summary>
-        /// Edit Label's name of a Comment
+        /// Find a label by name
         /// </summary>
-        /// <param commentId="CommentId">The Comment where the label is</param>
-        /// <param name="Name">The new label's name</param>
-        /// <exception cref="InstanceNotFoundException"/> 
+        /// <param name="labelName"> Name of the label</param>
+        /// <returns>Label</returns>
+        /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
-        Label EditLabel(long commentId, string name);
+        Label FindLabelByName(string labelName);
+
+        /// <summary>
+        /// Finds a label by id
+        /// </summary>
+        /// <param name="labelId">Identifier of the label</param>
+        /// <returns>Label</returns>
+        /// /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        LabelDto Find(long labelId);
+
+        /// <summary>
+        /// Gets All of labelsDtos
+        /// </summary>
+        /// <param name="startIndex">starting at 0</param>
+        /// <param name="count">the maximun elements to return</param>
+        /// <returns> of labels</returns>
+        [Transactional]
+        ICollection<LabelDto> GetLabelsDtos();
 
         ///<summary>
         /// Show All Labels to choose
         /// </summary>
         /// <exception cref="InstanceNotFoundException"/>
         [Transactional]
-        ICollection<Label> ShowLabels();
+        ICollection<Label> GetAllLabels();
 
+        /// <summary>
+        /// Get number of references
+        /// </summary>
+        /// <param name="label">Label object</param>
+        /// <returns>Number of references</returns>
+        [Transactional]
+        int GetReferences(Label label);
+
+        /// <summary>
+        /// Get the number of references
+        /// </summary>
+        /// <returns>int number of references</returns>
+        [Transactional]
+        int GetTotalReferences();
+
+        /// <summary>
+        /// Returns number of labels registered
+        /// </summary>
+        /// <returns>Total number of labels</returns>
+        [Transactional]
+        int GetNumberOfLabels();
+
+        /// <summary>
+        /// Add label in acomment
+        /// </summary>
+        /// <param name="commentId">commentId</param>
+        /// <param name="labels">collection with the labels</param>
+        /// <returns>Comnment with the labels added</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        Comment AddLabel(long commentId, ICollection<Label> labels);
+
+        /// <summary>
+        /// Get the labels asociated to a comment
+        /// </summary>
+        /// <param name="commentId">Identifier of the comment</param>
+        /// <returns>ICollection with Labels</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        ICollection<LabelDto> GetCommentLabels(long commentId);
+
+        /// <summary>
+        /// remove a list of labels
+        /// </summary>
+        /// <param name="commentId">Identifier of the comment</param>
+        /// <param name="labels">collection with the labels</param>
+        /// <returns>Comment</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        [Transactional]
+        Comment RemoveLabel(long commentId, ICollection<Label> labels);
+
+        /// <summary>
+        /// Number of found events
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns>int</returns>
         int CountFindEventsByKeywords(string name);
 
+        /// <summary>
+        /// Number of found events
+        /// </summary>
+        /// <param name="categoryId">categoryId</param>
+        /// <returns>int</returns>
         int CountFindEventsByCategory(long categoryId);
 
+        /// <summary>
+        /// Number of found events
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <param name="categoryId">categoryId</param>
+        /// <returns>int</returns>
         int CountFindEventsByKeywordsAndCategory(string name, long categoryId);
 
+        /// <summary>
+        /// Clean cache for tests
+        /// </summary>
         void cleanCache();
     }
 }

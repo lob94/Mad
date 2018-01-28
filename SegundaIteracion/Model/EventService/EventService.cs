@@ -91,7 +91,6 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             }
             else
             {
-
                 String[] keywords = name.Split(' ');
                 ICollection<Event> events = EventDao.FindByKeywordsAndCategory(keywords, categoryId, startIndex, count);
                 cachingProvider.AddItem(name, events);
@@ -184,34 +183,135 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 
         }
 
-
         [Transactional]
-        public Label AddLabel(long commentId, string name)
+        public Label Create(Label label)
         {
-            Comment c = CommentDao.Find(commentId);
-            Label l = new Label();
-            l.name = name;
-            l.Comments = null; // ¿Cómo hacer esto?
-            c.Labels.Add(l); //SE AÑADE LA ETIQUETA AL COMENTARIO????
-            LabelDao.Create(l);
-            return l;
+            label.name = label.name.ToLower();
+            try
+            {
+                LabelDao.FindByName(label.name);
+                throw new DuplicateInstanceException(label,
+                    typeof(Label).FullName);
+            }
+            catch (InstanceNotFoundException)
+            {
+                label.commentsNum = 0;
+                LabelDao.Create(label);
+                return label;
+            }
         }
 
         [Transactional]
-        public Label EditLabel(long commentId, string name)
+        public Comment AddLabel(long commentId, ICollection<Label> labels)
         {
             Comment c = CommentDao.Find(commentId);
-            Label l = new Label();
-            //c.Labels.() ??????????????? MODIFICAR EL ELEMENTO DE LA LISTA DENTRO DE COMMENTS
-            //O ENCONTRAR LA LABEL POR ID Y MODIFICARLA
-            l.name = name;
-            return l;
+            foreach (Label l in labels)
+            {
+                if (!c.Labels.Contains(l))
+                {
+                    c.Labels.Add(l);
+                    l.commentsNum++;
+                    LabelDao.Update(l);
+                }
+            }
+            CommentDao.Update(c);
+            return c;
         }
 
-        public ICollection<Label> ShowLabels()
+        [Transactional]
+        public LabelDto Find(long labelId)
         {
-            ICollection<Label> lista = LabelDao.GetAllElements();
-            return lista;
+            Label label = LabelDao.Find(labelId);
+            ICollection<CommentDto> commentsDto = new List<CommentDto>();
+            foreach (Comment c in label.Comments)
+                commentsDto.Add(new CommentDto(c, c.Event.eventId));
+            return new LabelDto(label.labelId, label.name, label.commentsNum, commentsDto);
+        }
+
+        [Transactional]
+        public Label FindLabelByName(string labelName)
+        {
+            return LabelDao.FindByName(labelName);
+        }
+
+        [Transactional]
+        public ICollection<LabelDto> GetLabelsDtos()
+        {
+            ICollection<Label> labels = LabelDao.GetAllElements();
+            ICollection<LabelDto> labelsDto = new List<LabelDto>();
+            foreach (Label l in labels)
+            {
+                ICollection<CommentDto> commentsDto = new List<CommentDto>();
+                foreach (Comment c in l.Comments)
+                    commentsDto.Add(new CommentDto(c, c.Event.eventId));
+                labelsDto.Add(new LabelDto(l.labelId, l.name, l.commentsNum, commentsDto));
+
+            }
+            return labelsDto;
+        }
+
+        [Transactional]
+        public int GetNumberOfLabels()
+        {
+            return LabelDao.GetAllElements().Count;
+        }
+
+        [Transactional]
+        public int GetReferences(Label label)
+        {
+            return label.commentsNum;
+        }
+
+        [Transactional]
+        public int GetTotalReferences()
+        {
+            int count = 0;
+            List<Label> labels = LabelDao.GetAllElements();
+            foreach (Label l in labels)
+            {
+                count += l.commentsNum;
+            }
+            return count;
+        }
+
+        [Transactional]
+        public Comment RemoveLabel(long commentId, ICollection<Label> labels)
+        {
+            Comment comment = CommentDao.Find(commentId);
+
+            foreach (Label l in labels)
+            {
+                if (comment.Labels.Contains(l))
+                {
+                    comment.Labels.Remove(l);
+                    l.commentsNum--;
+                    l.Comments.Remove(comment);
+                    LabelDao.Update(l);
+                }
+            }
+            CommentDao.Update(comment);
+            return comment;
+        }
+
+        [Transactional]
+        public ICollection<LabelDto> GetCommentLabels(long commentId)
+        {
+            Comment comment = CommentDao.Find(commentId);
+            ICollection<LabelDto> labelDtos = new List<LabelDto>();
+            foreach (Label l in comment.Labels)
+            {
+                ICollection<CommentDto> commentsDtos = new List<CommentDto>();
+                foreach (Comment c in l.Comments)
+                    commentsDtos.Add(new CommentDto(c, c.Event.eventId));
+                labelDtos.Add(new LabelDto(l.labelId, l.name, l.commentsNum, commentsDtos));
+            }
+            return labelDtos;
+        }
+
+        [Transactional]
+        public ICollection<Label> GetAllLabels()
+        {
+            return LabelDao.GetAllElements();
         }
 
         public int CountFindEventsByKeywords(string name)

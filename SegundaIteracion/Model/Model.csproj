@@ -123,6 +123,7 @@
     <Compile Include="Event.cs">
       <DependentUpon>MiniPortal.tt</DependentUpon>
     </Compile>
+    <Compile Include="EventService\LabelDto.cs" />
     <Compile Include="EventService\CommentDto.cs" />
     <Compile Include="EventService\EventDto.cs" />
     <Compile Include="EventService\IEventService.cs" />

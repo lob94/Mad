@@ -22,7 +22,9 @@ namespace Es.Udc.DotNet.MiniPortal.Model
     
         public long labelId { get; set; }
         public string name { get; set; }
-    
+        public int commentsNum { get; set; }
+
+
         public virtual ICollection<Comment> Comments { get; set; }
     
     	/// <summary>
@@ -41,8 +43,9 @@ namespace Es.Udc.DotNet.MiniPortal.Model
     
     			hash = hash * multiplier + labelId.GetHashCode();
     			hash = hash * multiplier + (name == null ? 0 : name.GetHashCode());
-    
-    			return hash;
+                hash = hash * multiplier + commentsNum.GetHashCode();
+
+                return hash;
     	    }
     
     	}
@@ -55,7 +58,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model
     
     		return true
                &&  (this.labelId == target.labelId )       
-               &&  (this.name == target.name )       
+               &&  (this.name == target.name )
+                && (this.commentsNum == target.commentsNum)
                ;
     
         }
@@ -74,7 +78,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model
     
     		strLabel.Append("[ ");
            strLabel.Append(" labelId = " + labelId + " | " );       
-           strLabel.Append(" name = " + name + " | " );       
+           strLabel.Append(" name = " + name + " | " );
+            strLabel.Append(" commentsNum = " + commentsNum + " | ");
             strLabel.Append("] ");    
     
     		return strLabel.ToString();
