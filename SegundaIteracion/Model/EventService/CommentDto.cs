@@ -8,6 +8,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 {
     public class CommentDto
     {
+        public long commentId { get; set; }
         public long userId { get; set; }
         public long eventId { get; set; }
         public string loginName { get; set; }
@@ -17,6 +18,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
 
         public CommentDto(Comment comment, long eventId)
         {
+            this.commentId = comment.commentId;
             this.userId = comment.UserProfile.usrId;
             this.eventId = eventId;
             this.loginName = comment.UserProfile.loginName;

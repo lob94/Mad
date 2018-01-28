@@ -8,6 +8,7 @@ using Es.Udc.DotNet.MiniPortal.Model;
 using Es.Udc.DotNet.MiniPortal.Model.EventService;
 using Es.Udc.DotNet.MiniPortal.Model.UserService;
 using Es.Udc.DotNet.ModelUtil.IoC;
+using Es.Udc.DotNet.MiniPortal.Web.HTTP.Session;
 
 namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 {
@@ -21,9 +22,11 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         protected void Page_Load(object sender, EventArgs e)
         {
             callService();
-            initFromValues();
-            initGridView();
-
+            if (!IsPostBack)
+            {
+                initFromValues();
+                initGridView();
+            }
         }
 
         private void initGridView()
@@ -61,6 +64,37 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
                     String.Format("./Home.aspx");
 
             Response.Redirect(Response.ApplyAppPathModifier(url));
+        }
+
+        protected Boolean visibility(String loginName)
+        {
+            Boolean b = true;
+            if (SessionManager.IsUserAuthenticated(Context))
+            {
+                UserProfile u = userService.FindUserByEmail(SessionManager.FindUserProfileDetails(Context).Email);
+                if (u.loginName != loginName)
+                {
+                    b = false;
+                }
+            }else
+            {
+                b = false;
+            }
+            return b;
+        }
+
+        protected void edit_Click(object sender, EventArgs e)
+        {
+            String url = "http://localhost:8082/Pages/EventPages/" + ".aspx";
+            Response.Redirect(url);
+        }
+
+        protected void remove_Click(object sender, CommandEventArgs e)
+        {
+            long cId = Convert.ToInt32(e.CommandArgument);
+
+            long usrId = SessionManager.GetUserSession(Context).UserProfileId;
+            eventService.DeleteComment(cId, usrId);
         }
     }
 }
