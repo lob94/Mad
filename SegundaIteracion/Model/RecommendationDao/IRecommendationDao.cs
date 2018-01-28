@@ -15,6 +15,15 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
         /// <exception cref="InstanceNotFoundException"/>
         ICollection<Recommendation> FindByGroupId(long id, int startIndex, int count);
 
+        /// <summary>
+        /// Finds a Recommendation by Group
+        /// </summary>
+        /// <param groupId="groupId">groupId</param>
+        /// <param usrId="usrId">groupId</param>
+        /// <param eventId="eventId">groupId</param>
+        /// <returns>The Recommendation</returns>
+        /// <exception cref="InstanceNotFoundException"/>
+        Recommendation FindByGroupIdAndEventIdAndUsrId(long groupId, long usrId, long eventId);
     }
 }
 

@@ -16,7 +16,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
     {
         int startIndexGroup = 0;
         int countGroup = 1;
-        long groupId=-1;
+        long groupId = -1;
         ICollection<UserGroupDto> groupList;
         IUserService userService;
         IEventService eventService;
@@ -26,7 +26,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             {
                 callService();
                 initFromValues();
-                initGridViewMyGroups();          
+                initGridViewMyGroups();
             }
             else
             {
@@ -53,7 +53,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             else
             {
                 groupId = Convert.ToInt32(groupIdString);
-            }    
+            }
         }
 
         protected void initGridViewMyGroups()
@@ -88,6 +88,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
             else
                 Response.Redirect("Authentication.aspx");
         }
- 
+
     }
 }
