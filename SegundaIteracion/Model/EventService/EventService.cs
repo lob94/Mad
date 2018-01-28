@@ -177,7 +177,11 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         {
             Comment c = CommentDao.Find(commentId);
             if (c.UserProfile.usrId == userId)
+            {
+                c.UserProfile.Comments.Remove(c);
+                c.Event.Comments.Remove(c);
                 CommentDao.Remove(c.commentId);
+            }
             else
                 throw new Exception();
 

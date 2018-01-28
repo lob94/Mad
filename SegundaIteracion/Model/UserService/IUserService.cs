@@ -210,7 +210,6 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         /// </summary>
         /// <param groupId="GroupId">The group id.</param>
         /// <returns>The number of recommendation in one group</returns> 
-        /// <exception cref="InstanceNotFoundException"/>  
         [Transactional]
         int CountFindGroupRecommendation(long groupId);
 

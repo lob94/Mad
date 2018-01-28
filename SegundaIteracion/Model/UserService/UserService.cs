@@ -335,9 +335,10 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             return recsDto;
         }
 
+        [Transactional]
         public int CountFindGroupRecommendation(long groupId)
         {
-            String clave = "CountFindGroup" + groupId.ToString();
+            String clave = "CountFindRecommendation" + groupId.ToString();
             CacheItemPolicy policy = new CacheItemPolicy();
             policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5.0);
             object cacheCountRecommendation = (object)cache.Get(clave);

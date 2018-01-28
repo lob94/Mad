@@ -20,7 +20,7 @@
                                         </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button ID="remove" runat="server" OnClick="remove_Click" meta:resourcekey="btnRemove" Visible='<%# visibility((String)Eval("loginName")) %>'/>
+                                                <asp:Button ID="remove" runat="server" CommandName="Remove" CommandArgument='<%#(Eval("commentId")) %>' OnCommand="remove_Click" meta:resourcekey="btnRemove" Visible='<%# visibility((String)Eval("loginName")) %>'/>
                                             </ItemTemplate> 
                                         </asp:TemplateField>
                                     </Columns>
