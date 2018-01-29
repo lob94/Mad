@@ -180,18 +180,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
         {
             Comment c = CommentDao.Find(commentId);
             if (c.UserProfile.usrId == userId)
-            {
-                c.UserProfile.Comments.Remove(c);
-                UserProfileDao.Update(c.UserProfile);
-                c.Event.Comments.Remove(c);
-                EventDao.Update(c.Event);
-                //CommentDao.Remove(commentId); Remove no funciona
-                foreach (Label l in c.Labels)
-                {
-                    l.Comments.Remove(c);
-                    LabelDao.Update(l);
-                }
-            }
+                CommentDao.Remove(commentId); //Remove no funciona
             else
                 throw new Exception();
 

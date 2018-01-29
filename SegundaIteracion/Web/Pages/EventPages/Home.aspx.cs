@@ -28,11 +28,10 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            callService();
             if (!IsPostBack)
             {
-                IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
-                eventService = container.Resolve<IEventService>();
-                ICollection<EventDto> eventDto = eventService.FindAllEvents();
+                
                 initFromsValues();
                 initDropDownListView();
                 initGridView();
@@ -40,13 +39,17 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             }
             else
             {
-                IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
-                eventService = container.Resolve<IEventService>();
-                ICollection<EventDto> eventDto = eventService.FindAllEvents();
                 initFromsValues();
                 initGridView();
                 PreviousNextButtons();
             }
+        }
+
+        private void callService()
+        {
+            IIoCManager container = (IIoCManager)HttpContext.Current.Application["managerIoC"];
+            eventService = container.Resolve<IEventService>();
+            ICollection<EventDto> eventDto = eventService.FindAllEvents();
         }
         private void initDropDownListView()
         {
