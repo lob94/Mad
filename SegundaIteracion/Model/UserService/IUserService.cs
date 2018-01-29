@@ -205,6 +205,11 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         [Transactional]
         ICollection<RecommendationDto> FindGroupRecommendations(long groupId, long userId, int startIndex, int count);
 
+        /// <summary>
+        /// Visualize all recommendations
+        /// </summary>
+        [Transactional]
+        ICollection<RecommendationDto> FindAllRecommendations();
 
     }
 

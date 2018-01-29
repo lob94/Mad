@@ -14,6 +14,7 @@ using Es.Udc.DotNet.MiniPortal.Model.UserService;
 using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
 using Es.Udc.DotNet.MiniPortal.Model.UserProfileDao;
 using Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao;
+using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 
 namespace Es.Udc.DotNet.MiniPortal.Test
 {
@@ -29,6 +30,7 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         private static ICategoryDao categoryDao;
         private static ICommentDao commentDao;
         private static IUserGroup1Dao userGroupDao;
+        private static ILabelDao labelDao;
         private static Event myEvent;
         private static Category category;
         private static Comment comment;
@@ -99,6 +101,7 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         [ClassCleanup()]
         public static void MyClassCleanup()
         {
+            eventService.cleanCache();
             TestManager.ClearNInjectKernel(kernel);
         }
 
@@ -223,7 +226,7 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         }
 
         /// <summary>
-        ///A test for FindEventByName
+        ///A test for FindEventByCategory
         ///</summary>
         [TestMethod()]
         public void Service_FindByCategoryTest()
@@ -275,6 +278,58 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         }
 
         /// <summary>
+        ///A test for FindEventByName
+        ///</summary>
+        [TestMethod()]
+        public void Service_FindEventsByKeywordsAndCategoryTest()
+        {
+            try
+            {
+                Category category2 = new Category();
+                category2.name = "Basket";
+
+                categoryDao.Create(category2);
+
+                Event myEvent2 = new Event();
+                myEvent2.categoryId = category2.categoryId;
+                myEvent2.name = "Liga EuroBasket";
+                myEvent2.eventDate = DateTime.Now;
+                myEvent2.review = review;
+                myEvent2.Category = category2;
+                //myEvent.Recommendations = new List<Recommendation>();
+
+                eventDao.Create(myEvent2);
+
+
+                Event myEvent3 = new Event();
+                myEvent3.categoryId = category.categoryId;
+                myEvent3.name = "Liga EuroBasket";
+                myEvent3.eventDate = DateTime.Now;
+                myEvent3.review = review;
+                myEvent3.Category = category;
+                //myEvent.Recommendations = new List<Recommendation>();
+
+                eventDao.Create(myEvent3);
+
+
+                ICollection<EventDto> actual = eventService.FindEventsByKeywordsAndCategory("Liga", category.categoryId, 0, 10);
+
+                Assert.AreEqual(actual.Count, 2, "Event found does not correspond with the original one.");
+
+                actual = eventService.FindEventsByKeywordsAndCategory("Euro", category2.categoryId, 0, 10);
+
+                Assert.AreEqual(actual.Count, 1, "Event found does not correspond with the original one.");
+
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
         ///A test for FindAllEvents
         ///</summary>
         [TestMethod()]
@@ -306,6 +361,24 @@ namespace Es.Udc.DotNet.MiniPortal.Test
             {
                 ICollection < Comment > comentarios = myEvent.Comments;
                 Assert.AreEqual(1, comentarios.Count, "FindAllComments doesn't work propperly.");
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        ///A test for FindAllCategories
+        ///</summary>
+        [TestMethod()]
+        public void Service_FindAllCategoriesTest()
+        {
+            try
+            {
+                ICollection<Category> categories = eventService.FindAllCategories();
+                Assert.AreEqual(1, categories.Count, "FindAllCategories doesn't work propperly.");
             }
             catch (Exception e)
             {
@@ -367,21 +440,24 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         }
 
         /// <summary>
-        ///A test for DeleteComment
-        ///</summary>
-        /*[TestMethod()]
-        public void Service_DeleteComment()
+        /// A test for Create
+        /// </summary>
+        [TestMethod()]
+        public void Service_CreateTest()
         {
             try
             {
-                long userId =
-                    userService.RegisterUser(userLoginName2, clearPassword,
-                    new UserProfileDetails(firstName, lastName, email, language, country));
-                Comment commentToDelete = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                String label1 = "label1";
+                Label label = new Label();
+                label.commentsNum = 1;
+                label.Comments = comments;
+                label.name = label1;
 
-                eventService.DeleteComment(commentToDelete.commentId, userId);
+                Label label2 = eventService.Create(label);
 
-                Assert.IsNull(commentToDelete);
+                Assert.AreEqual(label, label2, "Create doesn't work properly.");
+
 
             }
             catch (Exception e)
@@ -389,11 +465,11 @@ namespace Es.Udc.DotNet.MiniPortal.Test
                 Assert.Fail(e.Message);
             }
 
-        }*/
+        }
 
-        /*/// <summary>
-        ///A test for AddLabel
-        ///</summary>
+        /// <summary>
+        /// A test for AddLabel
+        /// </summary>
         [TestMethod()]
         public void Service_AddLabel()
         {
@@ -402,36 +478,19 @@ namespace Es.Udc.DotNet.MiniPortal.Test
                 long userId =
                     userService.RegisterUser(userLoginName2, clearPassword,
                     new UserProfileDetails(firstName, lastName, email, language, country));
-                Comment commentToEdit = eventService.AddComment(content2, myEvent.eventId, userId);
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection <Label> labels = comment.Labels;
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.commentsNum = 1;
+                label1.Comments = comments;
+                label1.name = labelname;
+                labels.Add(label1);
 
-                eventService.AddLabel(commentToEdit.commentId, label);
+                eventService.AddLabel(comment.commentId, labels);
 
-                Assert.AreEqual(1, commentToEdit.Labels.Count, "Label has not been edited.");
-
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-
-        }
-
-        /// <summary>
-        ///A test for EditLabel
-        ///</summary>
-        [TestMethod()]
-        public void Service_EditLabel()
-        {
-            try
-            {
-                long userId =
-                    userService.RegisterUser(userLoginName2, clearPassword,
-                    new UserProfileDetails(firstName, lastName, email, language, country));
-                Comment commentToEdit = eventService.AddComment(content2, myEvent.eventId, userId);
-
-                Label label = eventService.EditLabel(commentToEdit.commentId, labelEdited);
-
-                Assert.AreEqual(label.name, labelEdited, "Label has not been edited.");
+                Assert.AreEqual(1, comment.Labels.Count, "Label has not been edited.");
 
             }
             catch (Exception e)
@@ -442,24 +501,27 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         }
 
         /// <summary>
-        ///A test for ShowLabels
-        ///</summary>
+        /// A test for FindLabel
+        /// </summary>
         [TestMethod()]
-        public void Service_ShowLabels()
+        public void Service_FindTest()
         {
             try
             {
                 long userId =
                     userService.RegisterUser(userLoginName2, clearPassword,
                     new UserProfileDetails(firstName, lastName, email, language, country));
-                Comment commentToEdit = eventService.AddComment(content2, myEvent.eventId, userId);
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> labelComments=myEvent.Comments;
+                String label1 = "label1";
+                Label label = new Label();
+                label.name = label1;
+                eventService.Create(label);
+                ICollection<CommentDto> labelCommentsDto = new List<CommentDto>();
 
-                eventService.AddLabel(commentToEdit.commentId, label);
+                LabelDto labelFound = eventService.Find(label.labelId);
 
-                ICollection<Label> labels = eventService.ShowLabels();
-                int count = labels.Count;
-
-                Assert.AreEqual(1, count, "Comment has not been edited.");
+                Assert.AreEqual(label1, labelFound.name, "Label doesn't work properly.");
 
             }
             catch (Exception e)
@@ -467,7 +529,254 @@ namespace Es.Udc.DotNet.MiniPortal.Test
                 Assert.Fail(e.Message);
             }
 
-        }*/
+        }
+
+        /// <summary>
+        /// A test for FindLabelByName
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindLabelByNameTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection<Label> labels = comment.Labels;
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.name = labelname;
+                eventService.Create(label1);
+                labels.Add(label1);
+
+                eventService.AddLabel(comment.commentId, labels);
+
+                Label labelFound = eventService.FindLabelByName(labelname);
+
+                Assert.AreEqual(label1, labelFound, "FindLabelByName doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for GetNumberOfLabels
+        /// </summary>
+        [TestMethod()]
+        public void Service_GetNumberOfLabelsTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection<Label> labels = comment.Labels;
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.name = labelname;
+                eventService.Create(label1);
+                labels.Add(label1);
+
+                eventService.AddLabel(comment.commentId, labels);
+
+                int count = eventService.GetNumberOfLabels();
+
+                Assert.AreEqual(1, count, "GetNumberOfLabels doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for GetReferences
+        /// </summary>
+        [TestMethod()]
+        public void Service_GetReferencesTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection<Label> labels = new List<Label>();
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.name = labelname;
+                eventService.Create(label1);
+                labels.Add(label1);
+
+                eventService.AddLabel(comment.commentId, labels);
+
+                int count = eventService.GetReferences(label1);
+
+                Assert.AreEqual(1, count, "GetNumberOfLabels doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for GetLabelsDtos
+        /// </summary>
+        [TestMethod()]
+        public void Service_GetLabelsDtosTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection<Label> labels = new List<Label>();
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.name = labelname;
+                eventService.Create(label1);
+                labels.Add(label1);
+
+                eventService.AddLabel(comment.commentId, labels);
+
+                ICollection<LabelDto> labelsDtos = eventService.GetLabelsDtos();
+
+                Assert.AreEqual(1, labelsDtos.Count, "GetNumberOfLabels doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// A test for GetTotalReferences
+        /// </summary>
+        [TestMethod()]
+        public void Service_GetTotalReferencesTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                Comment comment2 = eventService.AddComment(content, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;;
+                ICollection<Label> labels = new List<Label>(); ;
+                ICollection<Label> labels2 = new List<Label>(); ;
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.name = labelname;
+                eventService.Create(label1);
+                labels.Add(label1);
+                String labelname2 = "label2";
+                Label label2 = new Label();
+                label2.name = labelname2;
+                eventService.Create(label2);
+                labels2.Add(label2);
+
+                eventService.AddLabel(comment.commentId, labels);
+                eventService.AddLabel(comment2.commentId, labels2);
+
+                int count = eventService.GetTotalReferences();
+
+                Assert.AreEqual(2, count, "GetTotalReferences doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for GetAllLabels
+        /// </summary>
+        [TestMethod()]
+        public void Service_GetAllLabelsTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection<Label> labels = comment.Labels;
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.commentsNum = 1;
+                label1.Comments = comments;
+                label1.name = labelname;
+                labels.Add(label1);
+
+                eventService.AddLabel(comment.commentId, labels);
+
+                ICollection<Label> labelsFound = eventService.GetAllLabels();
+
+                Assert.AreEqual(1, labelsFound.Count, "GetNumberOfLabels doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for RemoveLabel
+        /// </summary>
+        [TestMethod()]
+        public void Service_GetCommentLabelsTest()
+        {
+            try
+            {
+                long userId =
+                    userService.RegisterUser(userLoginName2, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+                Comment comment = eventService.AddComment(content2, myEvent.eventId, userId);
+                ICollection<Comment> comments = myEvent.Comments;
+                ICollection<Label> labels = comment.Labels;
+                String labelname = "label1";
+                Label label1 = new Label();
+                label1.commentsNum = 1;
+                label1.Comments = comments;
+                label1.name = labelname;
+                labels.Add(label1);
+
+                Comment commentObtained = eventService.AddLabel(comment.commentId, labels);
+                ICollection<LabelDto> commentLabels = eventService.GetCommentLabels(commentObtained.commentId);
+
+                Assert.AreEqual(1, commentLabels.Count, "GetCommentLabels doesn't work properly.");
+
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
 
     }
+    
 }

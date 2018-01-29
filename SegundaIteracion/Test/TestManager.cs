@@ -12,6 +12,7 @@ using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
 using Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao;
 using Es.Udc.DotNet.MiniPortal.Model.LabelDao;
 using Es.Udc.DotNet.MiniPortal.Model.RecommendationDao;
+using Es.Udc.DotNet.MiniPortal.Model.Caching;
 
 namespace Es.Udc.DotNet.MiniPortal.Test
 {
@@ -54,6 +55,9 @@ namespace Es.Udc.DotNet.MiniPortal.Test
 
             kernel.Bind<IRecommendationDao>().
                 To<RecommendationDaoEntityFramework>();
+
+            kernel.Bind<ICachingProvider>().
+                To<CachingProvider>();
 
             string connectionString =
                 ConfigurationManager.ConnectionStrings["MiniPortalEntities"].ConnectionString;
