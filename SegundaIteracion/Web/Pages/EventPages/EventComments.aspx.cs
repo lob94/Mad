@@ -99,6 +99,9 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
 
             long usrId = SessionManager.GetUserSession(Context).UserProfileId;
             eventService.DeleteComment(cId, usrId);
+            String url =
+                String.Format("EventComments.aspx?eventId={0}", evId);
+            Response.Redirect(url);
         }
     }
 }

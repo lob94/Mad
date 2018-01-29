@@ -61,7 +61,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
                 }
 
                 userService.AddRecommendation(eventId, groupsIds, usrId, comment);
-                Response.Redirect("Recommendations.aspx");
+                Response.Redirect("MyGroups.aspx");
             }
             else
                 Response.Redirect("Authentication.aspx");

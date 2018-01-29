@@ -44,7 +44,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
         {
             String sqlQuery =
                 "SELECT VALUE u FROM MiniPortalEntities.Recommendations AS u " +
-                "WHERE u.UserGroup.groupId = @groupId ORDER BY u.recommendationId";
+                "WHERE u.UserGroup.groupId = @groupId ORDER BY u.created";
 
             ObjectParameter param = new ObjectParameter("groupId", groupId);
 
@@ -61,7 +61,8 @@ namespace Es.Udc.DotNet.MiniPortal.Model.RecommendationDao
 
             String sqlQuery =
                 "SELECT VALUE u FROM MiniPortalEntities.Recommendations AS u " +
-                "WHERE u.UserGroup.groupId = @groupId AND u.Event.eventId = @eventId AND u.UserProfile.usrId = @usrId";
+                "WHERE u.UserGroup.groupId = @groupId AND u.Event.eventId = @eventId AND u.UserProfile.usrId = @usrId " + 
+                "ORDER BY u.created";
 
             ObjectParameter param1 = new ObjectParameter("groupId", groupId);
             ObjectParameter param2 = new ObjectParameter("eventId", eventId);

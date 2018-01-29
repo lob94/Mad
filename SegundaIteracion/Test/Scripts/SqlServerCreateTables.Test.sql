@@ -193,8 +193,9 @@ CREATE TABLE Comment (
 	commentDate date NOT NULL,
 
 	CONSTRAINT [PK_Comment] PRIMARY KEY (commentId),
-	CONSTRAINT [FK_Comment_User] FOREIGN KEY (userId) REFERENCES UserProfile ON DELETE SET NULL,
-	CONSTRAINT [FK_Comment_Event] FOREIGN KEY (eventId) REFERENCES Event ON DELETE CASCADE
+	
+	CONSTRAINT [FK_Comment_Event] FOREIGN KEY (eventId) REFERENCES Event ON DELETE CASCADE,
+	CONSTRAINT [FK_Comment_User] FOREIGN KEY (userId) REFERENCES UserProfile ON DELETE SET NULL
 )
 
 CREATE NONCLUSTERED INDEX [IX_CommentIndexByEventId]
@@ -219,8 +220,8 @@ CREATE TABLE CommentsAndLabels (
 	commentId bigint NOT NULL,
 
 	CONSTRAINT [PK_CommentsAndLabels] PRIMARY KEY (labelId, commentId),
-	CONSTRAINT [FK_CommentsAndLabels_Label] FOREIGN KEY (labelId) REFERENCES Label ON DELETE CASCADE,
-	CONSTRAINT [FK_CommentsAndLabels_Comment] FOREIGN KEY (commentId) REFERENCES Comment ON DELETE CASCADE
+	CONSTRAINT [FK_CommentsAndLabels_Comment] FOREIGN KEY (commentId) REFERENCES Comment ON DELETE CASCADE,
+	CONSTRAINT [FK_CommentsAndLabels_Label] FOREIGN KEY (labelId) REFERENCES Label ON DELETE CASCADE
 )
 
 CREATE NONCLUSTERED INDEX [IX_CommentsAndLabelsIndexByCommentId]

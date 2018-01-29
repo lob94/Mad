@@ -138,8 +138,8 @@
   <data name="eventName.HeaderText" xml:space="preserve">
     <value>Nombre del evento</value>
   </data>
-  <data name="groupId.HeaderText" xml:space="preserve">
-    <value>Id. del grupo</value>
+  <data name="groupName.HeaderText" xml:space="preserve">
+    <value>Grupo</value>
   </data>
   <data name="reason.HeaderText" xml:space="preserve">
     <value>Razón</value>

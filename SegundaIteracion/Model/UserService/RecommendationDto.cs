@@ -14,6 +14,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
         public long recommendationId { get; set; }
         public long groupId { get; set; }
         public string reason { get; set; }
+        public string groupName { get; set; }
         
 
 
@@ -24,6 +25,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.UserService
             this.eventId = r.eventId;
             this.reason = r.reason;
             this.groupId = r.groupId;
+            this.groupName = r.UserGroup.name;
         }
     }
 }
