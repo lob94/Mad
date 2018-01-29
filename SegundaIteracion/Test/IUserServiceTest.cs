@@ -12,6 +12,8 @@ using Ninject;
 using Es.Udc.DotNet.MiniPortal.Model.EventService;
 using Es.Udc.DotNet.MiniPortal.Model.EventDao;
 using Es.Udc.DotNet.MiniPortal.Model.CategoryDao;
+using Es.Udc.DotNet.MiniPortal.Model.UserGroup1Dao;
+using Es.Udc.DotNet.MiniPortal.Model.CommentDao;
 
 namespace Es.Udc.DotNet.MiniPortal.Test
 {
@@ -30,6 +32,7 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         private static IEventDao eventDao;
         private static IEventService eventService;
         private static ICategoryDao categoryDao;
+        private static IUserGroup1Dao userGroupDao;
 
         // Variables used in several tests are initialized here
         private const String loginName = "loginNameTest";
@@ -42,11 +45,12 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         private const long NON_EXISTENT_USER_ID = -1;
 
         private const String name = "Liga BBVA";
+        private const String description = "Grupo de fútbol de la liga BBVA";
         private const String review = "La liga más valorada a nivel mundial";
         private DateTime date = DateTime.Now;
         private const String content = "La liga con los mejores jugadores";
         private const long NON_EXISTENT_Event_ID = -1;
-        private const String categoryName = "Futbol";
+        private const String categoryName = "Futbol total";
         private const String keywords = "myEv";
         private const String label = "jajajaja muy bueno!";
 
@@ -97,6 +101,30 @@ namespace Es.Udc.DotNet.MiniPortal.Test
         [TestInitialize()]
         public void MyTestInitialize()
         {
+
+            /*category = new Category();
+            category.name = categoryName;
+
+            categoryDao.Create(category);
+
+            myEvent = new Event();
+            myEvent.categoryId = category.categoryId;
+            myEvent.name = name;
+            myEvent.eventDate = date;
+            myEvent.review = review;
+            myEvent.Category = category;
+            //myEvent.Recommendations = new List<Recommendation>();
+
+            eventDao.Create(myEvent);
+
+            comment = new Comment();
+            comment.content = content;
+            comment.Event = myEvent;
+            //comment.Labels = new List<Label>();
+            comment.UserProfile = userProfile;
+            comment.loginName = loginName;
+
+            commentDao.Create(comment);*/
         }
 
         //Use TestCleanup to run code after each test has run
@@ -407,6 +435,301 @@ namespace Es.Udc.DotNet.MiniPortal.Test
 
                 ICollection<Recommendation> r = userService.AddRecommendation(myEvent.eventId, groups, a, "hola");
                 Assert.AreEqual(r.Count, 0);
+            }
+        }
+
+        /// <summary>
+        /// A test for AddGroup
+        /// </summary>
+        [TestMethod()]
+        public void Service_AddGroupTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserGroup userGroupAdded = userService.AddGroup(name, description, userId);
+                long groupId = userGroupAdded.groupId;
+
+                Assert.AreEqual(name, userGroupAdded.name);
+                Assert.AreEqual(description, userGroupAdded.description);
+                Assert.AreEqual(groupId, userGroupAdded.groupId);
+
+            }
+
+        }
+
+        /// <summary>
+        /// A test for JoinGroup
+        /// </summary>
+        [TestMethod()]
+        public void Service_JoinGroupTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserGroup userGroup = userService.AddGroup(name, description, userId);
+                long groupId = userGroup.groupId;
+                UserProfile userProfile = userProfileDao.Find(userId);
+
+                UserGroup userGroupJoined = userService.JoinGroup(userId, groupId);
+
+                Assert.AreEqual(1, userGroupJoined.UserProfiles.Count);
+
+            }
+
+        }
+
+        /*/// <summary>
+        /// A test for UnJoinGroup
+        /// </summary>
+        [TestMethod()]
+        public void Service_UnJoinGroupTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserGroup userGroup = userService.AddGroup(name, description, userId);
+                UserGroup userGroupFound = userGroupDao.FindByName(name);
+                UserProfile userProfile = userProfileDao.Find(userId);
+
+                UserGroup userGroupJoined = userService.JoinGroup(userId, userGroupFound.groupId);
+
+                Assert.AreEqual(1, userGroupJoined.UserProfiles.Count);
+
+                UserGroup userGroupUnJoined = userService.UnJoinGroup(userId, userGroupFound.groupId);
+
+                Assert.AreEqual(0, userGroupUnJoined.UserProfiles.Count);
+            }
+            
+        }*/
+
+        /// <summary>
+        /// A test for FindGroupsByUserId
+        /// </summary>
+       [TestMethod()]
+        public void Service_FindGroupsByUserIdTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                userService.AddGroup(name, description, userId);
+                UserProfile userProfile = userProfileDao.Find(userId);
+
+                ICollection<UserGroupDto> userGroupFound = userService.FindGroupsByUserId(userId);
+
+                Assert.AreEqual(1, userGroupFound.Count);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for FindGroupsByKeywords
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindGroupsByKeywordsTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                userService.AddGroup(name, description, userId);
+
+                ICollection<UserGroupDto> userGroupFound = userService.FindGroupsByKeywords(name,0,10);
+
+                Assert.AreEqual(1, userGroupFound.Count);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for FindGroupsByName
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindGroupsByNameTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                userService.AddGroup(name, description, userId);
+
+                UserGroupDto userGroupFound = userService.FindGroupsByName(name);
+
+                Assert.AreEqual(name, userGroupFound.name);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for FindGroupsById
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindGroupsByIdTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserGroup userGroup = userService.AddGroup(name, description, userId);
+                long groupId = userGroup.groupId;
+
+                UserGroupDto userGroupFound = userService.FindGroupById(groupId);
+
+                Assert.AreEqual(name, userGroupFound.name);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for FindAllGroups
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindAllGroupsTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                userService.AddGroup(name, description, userId);
+
+                ICollection<UserGroupDto> userGroupFound = userService.FindAllGroups();
+
+                Assert.AreEqual(1, userGroupFound.Count);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for FindUserByLoginName
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindUserByLoginNameTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserProfile userProfile = userService.FindUserByLoginName(loginName);
+
+                Assert.AreEqual(loginName, userProfile.loginName);
+            }
+
+        }
+
+        /// <summary>
+        /// A test for FindUserByEmail
+        /// </summary>
+        [TestMethod()]
+        public void Service_FindUserByEmailTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                long userId =
+                    userService.RegisterUser(loginName, clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserProfile userProfile = userService.FindUserByEmail(email);
+
+                Assert.AreEqual(loginName, userProfile.loginName);
+            }
+
+        }
+
+        /// <summary>
+        ///A test for FindGroupRecommendations
+        ///</summary>
+        [TestMethod()]
+        public void FindGroupRecommendationsTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                ICollection<long> groups = new List<long>();
+                long a = userService.RegisterUser("Patata", clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserGroup userGroupAdded = userService.AddGroup(name, description, a);
+                long groupId = userGroupAdded.groupId;
+                UserProfile userProfile = userService.FindUserByLoginName("Patata");
+                userProfile.UserGroups.Add(userGroupAdded);
+                groups.Add(groupId);
+
+                Category category = new Category();
+                category.name = categoryName;
+                categoryDao.Create(category);
+
+                Event myEvent = new Event();
+                myEvent.categoryId = category.categoryId;
+                myEvent.name = name;
+                myEvent.eventDate = date;
+                myEvent.review = review;
+                myEvent.Category = category;
+                eventDao.Create(myEvent);
+
+                userService.AddRecommendation(myEvent.eventId, groups, a, "hola");
+                ICollection<RecommendationDto> r = userService.FindGroupRecommendations(groupId,a,0,10);
+
+
+                Assert.AreEqual(r.Count, 1);
+            }
+        }
+
+        /// <summary>
+        ///A test for FindAllRecommendations
+        ///</summary>
+        [TestMethod()]
+        public void FindAllRecommendationsTest()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                ICollection<long> groups = new List<long>();
+                long a = userService.RegisterUser("Patata", clearPassword,
+                    new UserProfileDetails(firstName, lastName, email, language, country));
+
+                UserGroup userGroupAdded = userService.AddGroup(name, description, a);
+                long groupId = userGroupAdded.groupId;
+                UserProfile userProfile = userService.FindUserByLoginName("Patata");
+                userProfile.UserGroups.Add(userGroupAdded);
+                groups.Add(groupId);
+
+                Category category = new Category();
+                category.name = categoryName;
+                categoryDao.Create(category);
+
+                Event myEvent = new Event();
+                myEvent.categoryId = category.categoryId;
+                myEvent.name = name;
+                myEvent.eventDate = date;
+                myEvent.review = review;
+                myEvent.Category = category;
+                eventDao.Create(myEvent);
+
+                userService.AddRecommendation(myEvent.eventId, groups, a, "hola");
+                ICollection<RecommendationDto> r = userService.FindAllRecommendations();
+
+
+                Assert.AreEqual(r.Count, 1);
             }
         }
 

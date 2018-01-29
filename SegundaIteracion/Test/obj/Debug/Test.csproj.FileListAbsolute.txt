@@ -213,3 +213,35 @@ C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\bin\Debug\es\Microsoft
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\obj\Debug\MiniPortal.Test.dll
 C:\Users\patri\Documents\GitHub\Mad\SegundaIteracion\Test\obj\Debug\MiniPortal.Test.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Modules\ninjectConfiguration.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.Test.dll.config
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.Test.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.Test.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Castle.Core.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.Model.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\ModelUtil.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.Extensions.Interception.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.Extensions.Interception.DynamicProxy.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.Extensions.Xml.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\MiniPortal.Model.pdb
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Castle.Core.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.Extensions.Interception.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.Extensions.Interception.DynamicProxy.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\Ninject.Extensions.Xml.xml
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\obj\Debug\MiniPortal.Test.dll
+C:\Users\Tejeteller\Desktop\FIC\4º\Primer Cuatri\MaD\MaD_Git\Mad\SegundaIteracion\Test\obj\Debug\MiniPortal.Test.pdb
