@@ -14,8 +14,6 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
 {
     public partial class MyGroupsPage : System.Web.UI.Page
     {
-        int startIndexGroup = 0;
-        int countGroup = 1;
         long groupId = -1;
         ICollection<UserGroupDto> groupList;
         IUserService userService;

@@ -152,6 +152,7 @@ namespace Es.Udc.DotNet.MiniPortal.Model.EventService
             c.content = comment;
             c.Event = e;
             c.UserProfile = u;
+            c.commentDate = DateTime.Now;
             c.Labels = new List<Label>();
             c.loginName = u.loginName;
             CommentDao.Create(c);

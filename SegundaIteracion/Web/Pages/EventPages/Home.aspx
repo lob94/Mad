@@ -6,7 +6,7 @@
     <div id="form" style="margin-right: auto; margin-left: auto;">
       
             <div class="form-group">
-                <asp:TextBox ID="textEntry" meta:resourcekey="searchEventName" runat="server" AutoPostBack="True"
+                <asp:TextBox ID="textEntry" meta:resourcekey="searchEventName" runat="server" AutoPostBack="False"
                     style="margin-left: 0px;">
                 </asp:TextBox>
                 <asp:DropDownList ID="dropDownList" runat="server" DataTextField="name" DataValueField="categoryId" 

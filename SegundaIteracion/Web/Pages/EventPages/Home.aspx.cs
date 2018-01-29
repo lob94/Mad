@@ -22,7 +22,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         Boolean categoryForm = false;
         long categoryID = -1;
         int startIndex = 0;
-        int count = 1;
+        int count = 10;
         ICollection<EventDto> events;
         IEventService eventService;
 
@@ -53,6 +53,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         }
         private void initDropDownListView()
         {
+            dropDownList.Items.Insert(0, new ListItem("- Select -", "-1"));
             ICollection<Category> cat = eventService.FindAllCategories();
             dropDownList.DataSource = cat;
             dropDownList.DataBind();
@@ -76,7 +77,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
             }
 
             String catString = Request.Params.Get("categoryId");
-            if (catString == null || catString == "0")
+            if (catString == null || catString == "-1")
             {
                 categoryForm = false;
             }

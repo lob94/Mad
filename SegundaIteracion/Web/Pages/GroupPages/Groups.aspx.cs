@@ -19,10 +19,8 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.GroupPages
     public partial class Groups : System.Web.UI.Page
     {
         String keywords;
-        Boolean categoryForm = false;
-        long categoryID = -1;
         int startIndex = 0;
-        int count = 5;
+        int count = 10;
         ICollection<UserGroupDto> groups;
         IUserService userService;
 

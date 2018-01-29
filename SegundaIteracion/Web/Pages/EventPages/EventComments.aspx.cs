@@ -22,6 +22,7 @@ namespace Es.Udc.DotNet.MiniPortal.Web.Pages.EventPages
         protected void Page_Load(object sender, EventArgs e)
         {
             callService();
+            initFromValues();
             if (!IsPostBack)
             {
                 initFromValues();
